@@ -6,6 +6,9 @@ class Profile extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
+        if (!$this->session->userdata('email')) {
+            redirect('admin/auth');
+        }
     }
     public function index()
     {

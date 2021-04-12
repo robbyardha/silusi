@@ -2,6 +2,13 @@
 
 class Admin extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        if (!$this->session->userdata('email')) {
+            redirect('admin/auth');
+        }
+    }
     public function index()
     {
         $data['title'] = "Admin - Dashboard";
