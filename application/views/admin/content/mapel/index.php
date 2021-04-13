@@ -13,43 +13,36 @@
                         </p> -->
                         <div class="row">
                             <div class="col-12">
-                                <?php if ($this->session->flashdata('sekolah')) : ?>
+                                <?php if ($this->session->flashdata('mapel')) : ?>
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">×</span>
-                                        </button>Data <strong>Sekolah </strong>Berhasil <?= $this->session->flashdata('sekolah') ?>
+                                        </button>Data <strong>Mata Pelajaran </strong>Berhasil <?= $this->session->flashdata('mapel') ?>
                                     </div>
                                 <?php endif ?>
                                 <div class="p-2">
                                     <div class="d-flex justify-content-end mb-3">
-                                        <a href="<?= base_url('admin/sekolah/tambah') ?>" class="btn btn-primary">Tambah</a>
+                                        <a href="<?= base_url('admin/mapel/import') ?>" class="btn btn-info waves-effect waves-light mr-1"><i class="fas fa-file-excel mr-1"></i> <span>Import</span> </a>
+                                        <a href="<?= base_url('admin/mapel/tambah') ?>" class="btn btn-primary">Tambah</a>
                                     </div>
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <?php $no = 1; ?>
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Nama Sekolah</th>
-                                                <th>Alamat</th>
-                                                <th>Nomor Tlp</th>
-                                                <th>Logo</th>
+                                                <th>Nama Mapel</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php $no = 1; ?>
-                                            <?php foreach ($sekolah as $s) : ?>
+                                            <?php foreach ($mapel as $m) : ?>
                                                 <tr>
                                                     <td><?= $no++ ?></td>
-                                                    <td><?= $s['nama_sekolah'] ?></td>
-                                                    <td><?= $s['alamat_sekolah'] ?></td>
-                                                    <td><?= $s['notlp_sekolah'] ?></td>
+                                                    <td><?= $m['nama_mapel'] ?></td>
                                                     <td>
-                                                        <img src="<?= base_url('assets/images/sekolah/') . $s['logo_sekolah'] ?>" alt="" srcset="" height="75px">
-                                                    </td>
-                                                    <td>
-                                                        <a href="<?= base_url('admin/sekolah/ubah/') ?><?= $s['id'] ?> " class="btn btn-success">Ubah</a>
-                                                        <a href="<?= base_url('admin/sekolah/hapus/') ?><?= $s['id'] ?>" class="btn btn-danger">Hapus</a>
+                                                        <a href="<?= base_url('admin/mapel/ubah/') ?><?= $m['id'] ?> " class="btn btn-success">Ubah</a>
+                                                        <a href="<?= base_url('admin/mapel/hapus/') ?><?= $m['id'] ?>" class="btn btn-danger">Hapus</a>
                                                     </td>
                                                 </tr>
                                             <?php endforeach ?>
