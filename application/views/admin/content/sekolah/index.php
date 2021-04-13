@@ -48,8 +48,8 @@
                                                         <img src="<?= base_url('assets/images/sekolah/') . $s['logo_sekolah'] ?>" alt="" srcset="" height="75px">
                                                     </td>
                                                     <td>
-                                                        <a href="#" class="btn btn-success">Ubah</a>
-                                                        <a href="#" class="btn btn-danger">Hapus</a>
+                                                        <a href="<?= base_url('admin/sekolah/ubah/') ?><?= $s['id'] ?> " class="btn btn-success">Ubah</a>
+                                                        <a href="<?= base_url('admin/sekolah/hapus/') ?><?= $s['id'] ?>" class="btn btn-danger">Hapus</a>
                                                     </td>
                                                 </tr>
                                             <?php endforeach ?>
