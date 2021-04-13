@@ -6,6 +6,9 @@ class Mapel extends CI_Controller
         parent::__construct();
         $this->load->library('form_validation');
         $this->load->model('Mapel_model');
+        if (!$this->session->userdata('email')) {
+            redirect('admin/auth');
+        }
     }
     public function index()
     {
@@ -108,5 +111,29 @@ class Mapel extends CI_Controller
             $this->session->set_flashdata('mapel', 'Dihapus');
             redirect('admin/mapel');
         }
+    }
+    public function import($id = null)
+    {
+        $data['sidename'] = $this->session->userdata('nama');
+        $data['current_user'] = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
+        $data['title'] = "Admin - Hapus Mata Pelajaran";
+        $data['page_title'] = "Hapus Mata Pelajaran";
+        $data['headertitle'] = "Hapus Data Mata Pelajaran";
+        $data['mapel'] = $this->Mapel_model->getMapelById($id);
+        $this->load->view('admin/layout/header', $data);
+        $this->load->view('admin/layout/topbar');
+        $this->load->view('admin/layout/sidebar');
+        $this->load->view('admin/content/mapel/import', $data);
+        $this->load->view('admin/layout/theme');
+        $this->load->view('admin/layout/footer');
+
+        $this->load->helper('form');
+        $this->Mapel_model->importExcel();
+    }
+
+    public function downloadFormat()
+    {
+        $this->load->helper('download');
+        force_download('upload/format_mapel.xlsx', NULL);
     }
 }
