@@ -21,9 +21,8 @@ class Sekolah_model extends CI_Model
         if ($upload_image) {
             $config['allowed_types'] = 'jpeg|gif|jpg|png';
             $config['max_size']  = 2048;
-            $config['upload_path']  = './assets/images/sekolah/';
-            $new_name = time() . $_FILES["userfiles"]['name'] . $this->session->userdata('email');
-            $config['file_name'] = $new_name;
+            $config['upload_path']  = './assets/images/sekolah';
+
             $this->load->library('upload', $config);
 
             if ($this->upload->do_upload('file_image')) {
@@ -31,10 +30,10 @@ class Sekolah_model extends CI_Model
                 // $image = $data['file_name'];
                 $newimage = $this->upload->data('file_name');
                 $data = [
-                    'nama_sekolah' => htmlspecialchars($this->input->post('nama_sekolah', TRUE)),
-                    'alamat_sekolah' => htmlspecialchars($this->input->post('alamat_sekolah', TRUE)),
-                    'notlp_sekolah' => htmlspecialchars($this->input->post('notlp_sekolah', TRUE)),
-                    'logo_sekolah' => $newimage
+                    'nama_sekolah' => htmlspecialchars($this->input->post('nama_sekolah', true)),
+                    'alamat_sekolah' => htmlspecialchars($this->input->post('alamat_sekolah', true)),
+                    'notlp_sekolah' => htmlspecialchars($this->input->post('notlp_sekolah', true)),
+                    'logo_sekolah' => $newimage,
                 ];
                 $this->db->insert('sekolah', $data);
             } else {
@@ -50,14 +49,12 @@ class Sekolah_model extends CI_Model
         $alamat = htmlspecialchars($this->input->post('alamat_sekolah', TRUE));
         $notlp = htmlspecialchars($this->input->post('notlp_sekolah', TRUE));
 
-        //cek image
         $upload_image = $_FILES['file_image']['name'];
         if ($upload_image) {
             $config['allowed_types'] = 'jpeg|gif|jpg|png';
             $config['max_size']  = 2048;
-            $config['upload_path']  = './assets/images/sekolah/';
-            $new_name = time() . $_FILES["userfiles"]['name'] . $this->session->userdata('email');
-            $config['file_name'] = $new_name;
+            $config['upload_path']  = './assets/images/sekolah';
+
             $this->load->library('upload', $config);
 
             if ($this->upload->do_upload('file_image')) {

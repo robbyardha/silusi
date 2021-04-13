@@ -13,54 +13,19 @@ class Sekolah extends CI_Controller
     }
     public function index()
     {
-        $this->form_validation->set_rules(
-            'nama_sekolah',
-            'Nama Sekolah',
-            'required',
-            [
-                'required' => 'Nama Harus diisi'
-            ]
-        );
-        $this->form_validation->set_rules(
-            'alamat_sekolah',
-            'Alamat Sekolah',
-            'required',
-            [
-                'required' => 'Nama Harus diisi'
-            ]
-        );
-        $this->form_validation->set_rules(
-            'notlp_sekolah',
-            'Nomor Telephone Sekolah',
-            'required',
-            [
-                'required' => 'Nama Harus diisi'
-            ]
-        );
-        $this->form_validation->set_rules(
-            'logo_sekolah',
-            'Logo Sekolah',
-            'required',
-            [
-                'required' => 'Nama Harus diisi'
-            ]
-        );
 
-        if ($this->form_validation->run() == FALSE) {
-            $data['sidename'] = $this->session->userdata('nama');
-            $data['current_user'] = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
-            $data['title'] = "Admin - Sekolah";
-            $data['page_title'] = "Sekolah";
-            $data['headertitle'] = "Data Sekolah";
-            $data['sekolah'] = $this->Sekolah_model->getSekolah();
-            $this->load->view('admin/layout/header', $data);
-            $this->load->view('admin/layout/topbar', $data);
-            $this->load->view('admin/layout/sidebar', $data);
-            $this->load->view('admin/content/sekolah/index', $data);
-            $this->load->view('admin/layout/theme');
-            $this->load->view('admin/layout/footer');
-        } else {
-        }
+        $data['sidename'] = $this->session->userdata('nama');
+        $data['current_user'] = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
+        $data['title'] = "Admin - Sekolah";
+        $data['page_title'] = "Sekolah";
+        $data['headertitle'] = "Data Sekolah";
+        $data['sekolah'] = $this->Sekolah_model->getSekolah();
+        $this->load->view('admin/layout/header', $data);
+        $this->load->view('admin/layout/topbar', $data);
+        $this->load->view('admin/layout/sidebar', $data);
+        $this->load->view('admin/content/sekolah/index', $data);
+        $this->load->view('admin/layout/theme');
+        $this->load->view('admin/layout/footer');
     }
 
     public function tambah()
@@ -71,7 +36,7 @@ class Sekolah extends CI_Controller
             'Nama Sekolah',
             'required',
             [
-                'required' => 'Nama Harus diisi'
+                'required' => 'Nama Sekolah Harus diisi'
             ]
         );
         $this->form_validation->set_rules(
@@ -79,7 +44,7 @@ class Sekolah extends CI_Controller
             'Alamat Sekolah',
             'required',
             [
-                'required' => 'Nama Harus diisi'
+                'required' => 'Alamat Harus diisi'
             ]
         );
         $this->form_validation->set_rules(
@@ -87,7 +52,7 @@ class Sekolah extends CI_Controller
             'Nomor Telephone Sekolah',
             'required',
             [
-                'required' => 'Nama Harus diisi'
+                'required' => 'Nomor Tlp Harus diisi'
             ]
         );
         if ($this->form_validation->run() == false) {
@@ -105,12 +70,14 @@ class Sekolah extends CI_Controller
             $this->load->view('admin/layout/footer');
         } else {
             $this->Sekolah_model->tambah();
+            // var_dump($this->db->last_query());
+            // die;
             $this->session->set_flashdata('sekolah', 'Ditambah');
             redirect('admin/sekolah');
         }
     }
 
-    public function ubah($id)
+    public function ubah($id = NULL)
     {
         $this->form_validation->set_rules(
             'nama_sekolah',
