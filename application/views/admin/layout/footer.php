@@ -18,6 +18,16 @@
 <!-- App js -->
 <script src="<?= base_url('assets/') ?>js/app.min.js"></script>
 
+<!-- Datatables -->
+<script src="<?= base_url('assets') ?>/libs/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url('assets') ?>/libs/datatables/dataTables.bootstrap4.js"></script>
+<script src="<?= base_url('assets') ?>/libs/datatables/dataTables.buttons.min.js"></script>
+<script src="<?= base_url('assets') ?>/libs/datatables/buttons.bootstrap4.min.js"></script>
+<script>
+    $('#datatable').DataTable()
+</script>
+
+
 <!-- dropify -->
 <script src="<?= base_url('assets/') ?>libs/fileuploads/js/dropify.min.js"></script>
 <script>
