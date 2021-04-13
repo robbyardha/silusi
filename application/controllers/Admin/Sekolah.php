@@ -54,8 +54,8 @@ class Sekolah extends CI_Controller
             $data['headertitle'] = "Data Sekolah";
             $data['sekolah'] = $this->Sekolah_model->getSekolah();
             $this->load->view('admin/layout/header', $data);
-            $this->load->view('admin/layout/topbar');
-            $this->load->view('admin/layout/sidebar');
+            $this->load->view('admin/layout/topbar', $data);
+            $this->load->view('admin/layout/sidebar', $data);
             $this->load->view('admin/content/sekolah/index', $data);
             $this->load->view('admin/layout/theme');
             $this->load->view('admin/layout/footer');
@@ -98,8 +98,8 @@ class Sekolah extends CI_Controller
             $data['headertitle'] = "Tambah Data Sekolah";
             $data['sekolah'] = $this->Sekolah_model->getSekolah();
             $this->load->view('admin/layout/header', $data);
-            $this->load->view('admin/layout/topbar');
-            $this->load->view('admin/layout/sidebar');
+            $this->load->view('admin/layout/topbar', $data);
+            $this->load->view('admin/layout/sidebar', $data);
             $this->load->view('admin/content/sekolah/tambah', $data);
             $this->load->view('admin/layout/theme');
             $this->load->view('admin/layout/footer');
@@ -110,7 +110,7 @@ class Sekolah extends CI_Controller
         }
     }
 
-    public function ubah($id = '$id')
+    public function ubah($id)
     {
         $this->form_validation->set_rules(
             'nama_sekolah',
@@ -144,8 +144,8 @@ class Sekolah extends CI_Controller
             $data['headertitle'] = "Ubah Data Sekolah";
             $data['sekolah'] = $this->Sekolah_model->getSekolahById($id);
             $this->load->view('admin/layout/header', $data);
-            $this->load->view('admin/layout/topbar');
-            $this->load->view('admin/layout/sidebar');
+            $this->load->view('admin/layout/topbar', $data);
+            $this->load->view('admin/layout/sidebar', $data);
             $this->load->view('admin/content/sekolah/ubah', $data);
             $this->load->view('admin/layout/theme');
             $this->load->view('admin/layout/footer');
@@ -171,8 +171,8 @@ class Sekolah extends CI_Controller
             $data['headertitle'] = "Hapus Data Sekolah";
             $data['sekolah'] = $this->Sekolah_model->getSekolahById($id);
             $this->load->view('admin/layout/header', $data);
-            $this->load->view('admin/layout/topbar');
-            $this->load->view('admin/layout/sidebar');
+            $this->load->view('admin/layout/topbar', $data);
+            $this->load->view('admin/layout/sidebar', $data);
             $this->load->view('admin/content/sekolah/hapus', $data);
             $this->load->view('admin/layout/theme');
             $this->load->view('admin/layout/footer');

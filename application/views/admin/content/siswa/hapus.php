@@ -7,16 +7,16 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card-box">
-                        <h4 class="header-title">Hapus Data Mata Pelajaran <?= $mapel['nama_mapel'] ?> </h4>
+                        <h4 class="header-title">Hapus Data Siswa <?= $siswa['nama'] ?> </h4>
                         <!-- <p class="sub-header">
                             Most common form control, text-based input fields. Includes support for all HTML5 types: <code>text</code>, <code>password</code>, <code>datetime</code>, <code>datetime-local</code>, <code>date</code>, <code>month</code>, <code>time</code>, <code>week</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, <code>tel</code>, and <code>color</code>.
                         </p> -->
                         <div class="row">
                             <div class="col-12">
-                                <h2 class="text-center">Apakah yakin menghapus data <strong class="badge badge-pills badge-danger"><?= $mapel['nama_mapel'] ?></strong>? </h2>
+                                <h2 class="text-center">Apakah yakin menghapus data <strong class="badge badge-pills badge-danger"><?= $siswa['nama'] ?></strong>? </h2>
                                 <div class="p-2">
                                     <form action="" method="POST">
-                                        <input type="hidden" name="id" id="id" value="<?= $mapel['id'] ?>">
+                                        <input type="hidden" name="id" id="id" value="<?= $siswa['id'] ?>">
                                         <div class="pt-1 d-flex justify-content-end">
                                             <a href="<?= base_url('dashboard/home') ?>" class="btn btn-secondary mr-1">Batal</a>
                                             <button type="submit" class="btn btn-danger btn-raised ml-1">Hapus</a>

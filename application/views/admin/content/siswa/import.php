@@ -14,9 +14,9 @@
                         <div class="row">
                             <div class="col-12">
                                 <p>Untuk Format Import Excel dapat didownload melalui button berikut</p>
-                                <a href="<?= base_url('admin/mapel/downloadFormat') ?>" class="btn btn-primary">Download Data</a>
+                                <a href="<?= base_url('admin/siswa/downloadFormat') ?>" class="btn btn-primary">Download Format Data Siswa</a>
                                 <div class="p-2">
-                                    <?php echo form_open_multipart('admin/mapel/import', array('name' => 'spreadsheet')); ?>
+                                    <?php echo form_open_multipart('admin/siswa/import', array('name' => 'spreadsheet')); ?>
                                     <br>
                                     <input type="file" class="dropify" data-height="300" data-allowed-file-extensions="xls xlsx csv" name="upload_file"></input>
                                     <br>

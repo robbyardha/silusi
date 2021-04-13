@@ -5,15 +5,15 @@
 
         <!-- User box -->
         <div class="user-box text-center">
-            <img src="assets/images/users/user-1.jpg" alt="user-img" title="Mat Helme" class="rounded-circle img-thumbnail avatar-md">
+            <img src="<?= base_url('assets/images/profile/') . $current_user['image'] ?>" alt="user-img" title="Ardhacodes" class="rounded-circle img-thumbnail avatar-md">
             <div class="dropdown">
-                <a href="#" class="user-name dropdown-toggle h5 mt-2 mb-1 d-block" data-toggle="dropdown" aria-expanded="false">Nowak Helme</a>
+                <a href="#" class="user-name dropdown-toggle h5 mt-2 mb-1 d-block" data-toggle="dropdown" aria-expanded="false"><?= $current_user['email'] ?></a>
                 <div class="dropdown-menu user-pro-dropdown">
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                         <i class="fe-user mr-1"></i>
-                        <span>My Account</span>
+                        <a href="<?= base_url('admin/profile') ?>"><span>My Account</span></a>
                     </a>
 
                     <!-- item-->
@@ -36,16 +36,21 @@
 
                 </div>
             </div>
-            <p class="text-muted">Admin Head</p>
+            <p class="text-muted"><?= $current_user['nama'] ?></p>
             <ul class="list-inline">
                 <li class="list-inline-item">
-                    <a href="#" class="text-muted">
+                    <a href="<?= base_url('admin/profile') ?>" class="text-muted">
                         <i class="mdi mdi-cog"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="<?= base_url('admin/profile/changepassword') ?>" class="text-muted">
+                        <i class="mdi mdi-key-variant"></i>
                     </a>
                 </li>
 
                 <li class="list-inline-item">
-                    <a href="#">
+                    <a href="<?= base_url('admin/auth/logout') ?>">
                         <i class="mdi mdi-power"></i>
                     </a>
                 </li>
@@ -56,58 +61,66 @@
         <div id="sidebar-menu">
 
             <ul class="metismenu" id="side-menu">
-
-                <li class="menu-title">Navigation</li>
+                <!-- menu dashboard -->
+                <li class="menu-title">Dashboard</li>
 
                 <li>
-                    <a href="index.html">
+                    <a href="<?= base_url('admin/admin') ?>">
                         <i class="mdi mdi-view-dashboard"></i>
                         <span> Dashboard </span>
                     </a>
                 </li>
 
+                <!-- menu master data -->
+                <li class="menu-title">Master Data</li>
                 <li>
                     <a href="javascript: void(0);">
                         <i class="mdi mdi-page-layout-sidebar-left"></i>
-                        <span> Layouts </span>
+                        <span> Master Data </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="layouts-horizontal.html">Horizontal</a></li>
-                        <li><a href="layouts-sidebar-sm.html">Small Sidebar</a></li>
-                        <li><a href="layouts-dark-sidebar.html">Dark Sidebar</a></li>
-                        <li><a href="layouts-dark-topbar.html">Dark Topbar</a></li>
-                        <li><a href="layouts-preloader.html">Preloader</a></li>
-                        <li><a href="layouts-sidebar-collapsed.html">Sidebar Collapsed</a></li>
-                        <li><a href="layouts-boxed.html">Boxed</a></li>
+                        <li><a href="<?= base_url('admin/sekolah') ?>">Sekolah</a></li>
+                        <li><a href="<?= base_url('admin/mapel') ?>">Mata Pelajaran</a></li>
+                        <li><a href="<?= base_url('admin/siswa') ?>">Siswa</a></li>
+                        <li><a href="<?= base_url('admin/pengumuman') ?>">Pengumuman</a></li>
                     </ul>
                 </li>
 
-                <li class="menu-title">Apps</li>
+                <!-- Menu Konten Kelulusan -->
+                <li class="menu-title">Kelulusan</li>
 
                 <li>
-                    <a href="apps-chat.html">
-                        <i class="mdi mdi-forum"></i>
+                    <a href="#">
+                        <i class="mdi mdi-format-font"></i>
+                        <span> Jadwal Pengumuman </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="mdi mdi-view-list"></i>
+                        <span> Import Nilai </span>
+                    </a>
+                </li>
+
+                <!-- Menu Profile -->
+                <li class="menu-title">Profile</li>
+                <li>
+                    <a href="<?= base_url('admin/profile') ?>">
+                        <i class="mdi mdi-face-profile"></i>
                         <span class="badge badge-purple float-right">New</span>
-                        <span> Chat </span>
+                        <span> Profile </span>
                     </a>
                 </li>
-
                 <li>
-                    <a href="calendar.html">
-                        <i class="mdi mdi-calendar"></i>
-                        <span> Calendar </span>
+                    <a href="<?= base_url('admin/profile/changepassword') ?>">
+                        <i class="mdi mdi-key-variant"></i>
+                        <span class="badge badge-purple float-right">New</span>
+                        <span> Change Password </span>
                     </a>
                 </li>
 
-                <li>
-                    <a href="inbox.html">
-                        <i class="mdi mdi-email"></i>
-                        <span> Mail </span>
-                    </a>
-                </li>
-
-                <li class="menu-title">Components</li>
+                <!-- <li class="menu-title">Components</li>
 
                 <li>
                     <a href="ui-typography.html">
@@ -257,7 +270,7 @@
                             </ul>
                         </li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
 
         </div>

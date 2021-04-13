@@ -19,8 +19,8 @@ class Mapel extends CI_Controller
         $data['headertitle'] = "Data Mata Pelajaran";
         $data['mapel'] = $this->Mapel_model->getMapel();
         $this->load->view('admin/layout/header', $data);
-        $this->load->view('admin/layout/topbar');
-        $this->load->view('admin/layout/sidebar');
+        $this->load->view('admin/layout/topbar', $data);
+        $this->load->view('admin/layout/sidebar', $data);
         $this->load->view('admin/content/mapel/index', $data);
         $this->load->view('admin/layout/theme');
         $this->load->view('admin/layout/footer');
@@ -44,8 +44,8 @@ class Mapel extends CI_Controller
             $data['headertitle'] = "Tambah Data Mata Pelajaran";
             $data['mapel'] = $this->Mapel_model->getMapel();
             $this->load->view('admin/layout/header', $data);
-            $this->load->view('admin/layout/topbar');
-            $this->load->view('admin/layout/sidebar');
+            $this->load->view('admin/layout/topbar', $data);
+            $this->load->view('admin/layout/sidebar', $data);
             $this->load->view('admin/content/mapel/tambah', $data);
             $this->load->view('admin/layout/theme');
             $this->load->view('admin/layout/footer');
@@ -74,8 +74,8 @@ class Mapel extends CI_Controller
             $data['headertitle'] = "Ubah Data Mata Pelajaran";
             $data['mapel'] = $this->Mapel_model->getMapelById($id);
             $this->load->view('admin/layout/header', $data);
-            $this->load->view('admin/layout/topbar');
-            $this->load->view('admin/layout/sidebar');
+            $this->load->view('admin/layout/topbar', $data);
+            $this->load->view('admin/layout/sidebar', $data);
             $this->load->view('admin/content/mapel/ubah', $data);
             $this->load->view('admin/layout/theme');
             $this->load->view('admin/layout/footer');
@@ -101,8 +101,8 @@ class Mapel extends CI_Controller
             $data['headertitle'] = "Hapus Data Mata Pelajaran";
             $data['mapel'] = $this->Mapel_model->getMapelById($id);
             $this->load->view('admin/layout/header', $data);
-            $this->load->view('admin/layout/topbar');
-            $this->load->view('admin/layout/sidebar');
+            $this->load->view('admin/layout/topbar', $data);
+            $this->load->view('admin/layout/sidebar', $data);
             $this->load->view('admin/content/mapel/hapus', $data);
             $this->load->view('admin/layout/theme');
             $this->load->view('admin/layout/footer');
@@ -121,8 +121,8 @@ class Mapel extends CI_Controller
         $data['headertitle'] = "Hapus Data Mata Pelajaran";
         $data['mapel'] = $this->Mapel_model->getMapelById($id);
         $this->load->view('admin/layout/header', $data);
-        $this->load->view('admin/layout/topbar');
-        $this->load->view('admin/layout/sidebar');
+        $this->load->view('admin/layout/topbar', $data);
+        $this->load->view('admin/layout/sidebar', $data);
         $this->load->view('admin/content/mapel/import', $data);
         $this->load->view('admin/layout/theme');
         $this->load->view('admin/layout/footer');

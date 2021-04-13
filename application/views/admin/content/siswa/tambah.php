@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card-box">
-                        <h4 class="header-title">Tambah Data Mata Pelajaran</h4>
+                        <h4 class="header-title">Tambah Data Siswa</h4>
                         <!-- <p class="sub-header">
                             Most common form control, text-based input fields. Includes support for all HTML5 types: <code>text</code>, <code>password</code>, <code>datetime</code>, <code>datetime-local</code>, <code>date</code>, <code>month</code>, <code>time</code>, <code>week</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, <code>tel</code>, and <code>color</code>.
                         </p> -->
@@ -17,10 +17,43 @@
                                 <div class="p-2">
                                     <form action="" method="POST">
                                         <div class="form-group row">
-                                            <label class="col-md-2 col-form-label" for="nama_mapel">Mata Pelajaran</label>
+                                            <label class="col-md-2 col-form-label" for="nis">NIS</label>
                                             <div class="col-md-10">
-                                                <input type="text" name="nama_mapel" id="nama_mapel" class="form-control">
-                                                <?= form_error('nama_mapel', '<small class="text-danger">', '</small>') ?>
+                                                <input type="number" name="nis" id="nis" class="form-control">
+                                                <small class="text-muted">NIS Harus berupa angka!</small>
+                                                <?= form_error('nis', '<small class="text-danger">', '</small>') ?>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2 col-form-label" for="nomor_ujian">Nomor Ujian</label>
+                                            <div class="col-md-10">
+                                                <input type="text" name="nomor_ujian" id="nomor_ujian" class="form-control">
+                                                <small class="text-muted">contoh: 2-17-18-2021-2222201</small>
+                                                <?= form_error('nomor_ujian', '<small class="text-danger">', '</small>') ?>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2 col-form-label" for="nama">Nama Siswa</label>
+                                            <div class="col-md-10">
+                                                <input type="text" name="nama" id="nama" class="form-control">
+                                                <small class="text-muted">contoh: Agus</small>
+                                                <?= form_error('nama', '<small class="text-danger">', '</small>') ?>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2 col-form-label" for="tempat_lahir">Tempat Lahir</label>
+                                            <div class="col-md-10">
+                                                <input type="text" name="tempat_lahir" id="tempat_lahir" class="form-control">
+                                                <small class="text-muted">contoh: Sidoarjo</small>
+                                                <?= form_error('tempat_lahir', '<small class="text-danger">', '</small>') ?>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2 col-form-label" for="tgl_lahir">Tanggal Lahir</label>
+                                            <div class="col-md-10">
+                                                <input type="date" name="tgl_lahir" id="tgl_lahir" class="form-control">
+                                                <small class="text-muted">contoh: 12/04/2021</small>
+                                                <?= form_error('tgl_lahir', '<small class="text-danger">', '</small>') ?>
                                             </div>
                                         </div>
 
