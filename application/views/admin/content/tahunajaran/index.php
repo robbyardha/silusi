@@ -19,10 +19,16 @@
                                             <span aria-hidden="true">×</span>
                                         </button>Data <strong>Tahun Ajaran </strong>Berhasil <?= $this->session->flashdata('tahunajaran') ?>
                                     </div>
+                                <?php elseif ($this->session->flashdata('tahunajarankonfirm')) : ?>
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button><strong>Tahun Ajaran <?= $this->session->flashdata('tahunajarankonfirm') ?> </strong>
+                                    </div>
                                 <?php endif ?>
                                 <div class="p-2">
                                     <div class="d-flex justify-content-end mb-3">
-                                        <a href="<?= base_url('admin/tahunajaran/import') ?>" class="btn btn-info waves-effect waves-light mr-1"><i class="fas fa-file-excel mr-1"></i> <span>Import</span> </a>
+                                        <!-- <a href="<?= base_url('admin/tahunajaran/import') ?>" class="btn btn-info waves-effect waves-light mr-1"><i class="fas fa-file-excel mr-1"></i> <span>Import</span> </a> -->
                                         <a href="<?= base_url('admin/tahunajaran/tambah') ?>" class="btn btn-primary">Tambah</a>
                                     </div>
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
@@ -46,7 +52,11 @@
                                                     <td><?= $no++ ?></td>
                                                     <td><?= $th['tahun_ajaran'] ?></td>
                                                     <td>
-                                                        <a href="<?= base_url('admin/tahunajaran/aktifkan/') ?><?= $th['id'] ?> " class="btn btn-info">Aktifkan</a>
+                                                        <?php if ($th['is_active'] == 0) : ?>
+                                                            <a href="<?= base_url('admin/tahunajaran/aktifkan/') ?><?= $th['id'] ?> " class="btn btn-info">Aktifkan</a>
+                                                        <?php elseif ($th['is_active'] == 1) : ?>
+                                                            <strong class="badge badge-pills badge-primary">Sedang Aktif</strong>
+                                                        <?php endif ?>
                                                         <a href="<?= base_url('admin/tahunajaran/ubah/') ?><?= $th['id'] ?> " class="btn btn-success">Ubah</a>
                                                         <a href="<?= base_url('admin/tahunajaran/hapus/') ?><?= $th['id'] ?>" class="btn btn-danger">Hapus</a>
                                                     </td>
