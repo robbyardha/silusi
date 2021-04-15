@@ -86,7 +86,10 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-                2016 - 2020 &copy; Adminto theme by <a href="">Coderthemes</a>
+                <?php
+                date_default_timezone_set('Asia/Jakarta');
+                ?>
+                2021 - <?= date('Y') ?>&copy;Copyright System by : <a href="https://ardhacodes.com" target="_blank">Ardhacodes</a>
             </div>
             <div class="col-md-6">
                 <div class="text-md-right footer-links d-none d-sm-block">

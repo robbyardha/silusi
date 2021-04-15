@@ -93,7 +93,7 @@
                 <li>
                     <a href="#">
                         <i class="mdi mdi-format-font"></i>
-                        <span> Jadwal Pengumuman </span>
+                        <span> Atur Jadwal Pengumuman </span>
                     </a>
                 </li>
                 <li>
