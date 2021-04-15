@@ -6,6 +6,9 @@ class Siswa extends CI_Controller
         parent::__construct();
         $this->load->library('form_validation');
         $this->load->model('Siswa_model');
+        if (!$this->session->userdata('email')) {
+            redirect('admin/auth');
+        }
     }
     public function index()
     {
