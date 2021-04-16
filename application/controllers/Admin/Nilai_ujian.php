@@ -27,4 +27,32 @@ class Nilai_ujian extends CI_Controller
         $this->load->view('admin/layout/theme');
         $this->load->view('admin/layout/footer');
     }
+
+    public function downloadFormat()
+    {
+        $this->load->helper('download');
+        force_download('upload/format_nilai.xlsx', NULL);
+    }
+
+    public function import()
+    {
+        $data['sidename'] = $this->session->userdata('nama');
+        $data['current_user'] = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
+        $data['title'] = "Admin - Nilai Siswa";
+        $data['page_title'] = "Nilai Siswa";
+        $data['headertitle'] = "Data Nilai Siswa";
+        $data['siswa'] = $this->Siswa_model->getSiswa();
+        $data['nilai_siswa'] = $this->Nilai_ujian_model->joinSiswaAndNilai();
+        // var_dump($this->db->last_query());
+        // die;
+        $this->load->view('admin/layout/header', $data);
+        $this->load->view('admin/layout/topbar', $data);
+        $this->load->view('admin/layout/sidebar', $data);
+        $this->load->view('admin/content/nilaisiswa/import', $data);
+        $this->load->view('admin/layout/theme');
+        $this->load->view('admin/layout/footer');
+
+        $this->load->helper('form');
+        $this->Nilai_ujian_model->import($data);
+    }
 }
