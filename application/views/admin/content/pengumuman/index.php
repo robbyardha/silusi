@@ -29,7 +29,7 @@
                                         <?php
                                         date_default_timezone_set('Asia/Jakarta');
                                         $currentdatetime = $p['created_date'];
-                                        $newdate = date('d F Y H:i:s', strtotime($currentdatetime));
+                                        $newdate = date('D, d F Y H:i:s', strtotime($currentdatetime));
                                         ?>
                                         <div class="card text-white bg-purple text-center">
                                             <blockquote class="card-bodyquote mb-0 mb-3">
@@ -42,13 +42,14 @@
                                                     <?php endif ?>
                                                 </p>
                                                 <footer class="blockquote-footer text-white">
-                                                    created by: <?= $p['created_by'] ?> <cite title="Source Title"><?= $newdate ?></cite>
+                                                    created by: <?= $p['created_by'] ?> | <cite title="Source Title"><?= $newdate ?></cite>
                                                 </footer>
                                             </blockquote>
                                             <div class="d-flex justify-content-center mb-3">
-                                                <a href="<?= base_url('admin/pengumuman/detail/') ?>" class="btn btn-rounded btn-info waves-effect waves-light mr-1"><i class="fas fa-newspaper mr-1"></i> <span>Detail</span> </a>
-                                                <a href="<?= base_url('admin/pengumuman/ubah/') ?>" class="btn btn-rounded btn-warning mr-1"><i class="fas fa-pen mr-1"></i> <span>Ubah</span></a>
-                                                <a href="<?= base_url('admin/pengumuman/hapus/') ?>" class="btn btn-rounded btn-danger mr-1"><i class="fas fa-trash mr-1"></i> <span>Hapus</span></a>
+                                                <a href="<?= base_url('admin/pengumuman/detail/') . $p['id'] ?>" class="btn btn-rounded btn-info waves-effect waves-light mr-1"><i class="fas fa-newspaper mr-1"></i> <span>Detail</span> </a>
+                                                <a href="<?= base_url('admin/pengumuman/ubah/') . $p['id'] ?>" class="btn btn-rounded btn-warning mr-1"><i class="fas fa-pen mr-1"></i> <span>Ubah</span></a>
+                                                <!-- <a href="#" data-toggle="modal" data-target="#deleteModalPengumuman" data-id="<?= $p['id'] ?>" class="btn btn-rounded btn-danger mr-1" date><i class="fas fa-trash mr-1"></i> <span>Hapus</span></a> -->
+                                                <a href="<?= base_url('admin/pengumuman/hapus/') . $p['id'] ?>" class="btn btn-rounded btn-danger mr-1" date><i class="fas fa-trash mr-1"></i> <span>Hapus</span></a>
                                             </div>
                                         </div>
                                     <?php endforeach ?>
@@ -58,6 +59,30 @@
                         </div>
                         <!-- end row -->
 
+                        <!-- modal -->
+                        <form action="<?= base_url('admin/pengumuman/hapus') ?>" method="POST">
+                            <div class="modal fade" id="deleteModalPengumuman" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="deleteModalPengumumanLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="deleteModalPengumumanLabel">Hapus Data Pengumuman</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Apakah Anda Yakin akan menghapus data pengumuman dengan judul <strong><?= $pengumuman[0]['judul'] ?></strong>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="hidden" name="id" id="id" value="<?= $pengumuman[0]['id'] ?>">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" type="submit" class="btn btn-danger">Hapus</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- EnD modal delete -->
                     </div> <!-- end card-box -->
                 </div><!-- end col -->
             </div>

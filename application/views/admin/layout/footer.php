@@ -43,6 +43,25 @@
         }
     });
 </script>
+
+<!-- Modal -->
+<script>
+    $('#myModal').on('shown.bs.modal', function() {
+        $('#myInput').trigger('focus')
+    })
+</script>
+<!-- Delete modal -->
+<script>
+    $(document).ready(function() {
+        $("#hapus").click(function() {
+            //Say - $('p').get(0).id - this delete item id
+            //modal.find('#delete_item_id').attr("value",div.data('#delete_item_id'));
+            $("#delete_item_id").val($('p').get());
+            $('#deleteModalPengumuman').modal('show');
+        });
+    });
+</script>
+
 </body>
 
 </html>
