@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card-box">
-                        <h4 class="header-title">Ubah Data Mata Pelajaran</h4>
+                        <h4 class="header-title">Ubah Data Jadwal Pengumuman</h4>
                         <!-- <p class="sub-header">
                             Most common form control, text-based input fields. Includes support for all HTML5 types: <code>text</code>, <code>password</code>, <code>datetime</code>, <code>datetime-local</code>, <code>date</code>, <code>month</code>, <code>time</code>, <code>week</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, <code>tel</code>, and <code>color</code>.
                         </p> -->
@@ -16,12 +16,55 @@
                                 <?= $this->session->flashdata('message') ?>
                                 <div class="p-2">
                                     <form action="" method="POST">
+                                        <input type="hidden" name="id" id="id" class="form-control" value="<?= $jadwal['id'] ?>">
                                         <div class="form-group row">
-                                            <label class="col-md-2 col-form-label" for="nama_mapel">Mata Pelajaran</label>
+                                            <label class="col-md-2 col-form-label" for="nama_jadwal">Nama Jadwal</label>
                                             <div class="col-md-10">
-                                                <input type="hidden" name="id" id="id" class="form-control" value="<?= $mapel['id'] ?>">
-                                                <input type="text" name="nama_mapel" id="nama_mapel" class="form-control" value="<?= $mapel['nama_mapel'] ?>">
-                                                <?= form_error('nama_mapel', '<small class="text-danger">', '</small>') ?>
+                                                <input type="text" name="nama_jadwal" id="nama_jadwal" class="form-control" value="<?= $jadwal['nama_jadwal'] ?>">
+                                                <?= form_error('nama_jadwal', '<small class="text-danger">', '</small>') ?>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-md-2 col-form-label" for="set_awal">Set Awal</label>
+                                            <div class="form-row align-items-center col-8">
+                                                <div class="col-6">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text"><i class="fas fa-calendar"></i></div>
+                                                        </div>
+                                                        <input type="date" class="form-control" name="tanggal_awal" id="inlineFormInputGroup" placeholder="Tanggal Awal" value="<?= $jadwal['tanggal_awal'] ?>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text"><i class="fas fa-clock"></i></div>
+                                                        </div>
+                                                        <input type="time" class="form-control" name="waktu_awal" id="inlineFormInputGroup" placeholder="Waktu Awal" value="<?= $jadwal['jam_awal'] ?>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2 col-form-label" for="set_awal">Set Akhir</label>
+                                            <div class="form-row align-items-center col-8">
+                                                <div class="col-6">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text"><i class="fas fa-calendar"></i></div>
+                                                        </div>
+                                                        <input type="date" class="form-control" name="tanggal_akhir" id="inlineFormInputGroup" placeholder="Tanggal Akhir" value="<?= $jadwal['tanggal_akhir'] ?>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text"><i class="fas fa-clock"></i></div>
+                                                        </div>
+                                                        <input type="time" class="form-control" name="waktu_akhir" id="inlineFormInputGroup" placeholder="Waktu Akhir" value="<?= $jadwal['jam_akhir'] ?>">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
 
