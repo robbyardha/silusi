@@ -81,6 +81,7 @@
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li><a href="<?= base_url('admin/sekolah') ?>">Sekolah</a></li>
+                        <li><a href="<?= base_url('admin/tahunajaran') ?>">Tahun Ajaran</a></li>
                         <li><a href="<?= base_url('admin/mapel') ?>">Mata Pelajaran</a></li>
                         <li><a href="<?= base_url('admin/siswa') ?>">Siswa</a></li>
                         <li><a href="<?= base_url('admin/pengumuman') ?>">Pengumuman</a></li>

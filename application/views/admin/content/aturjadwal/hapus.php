@@ -18,7 +18,7 @@
                                     <form action="" method="POST">
                                         <input type="hidden" name="id" id="id" value="<?= $jadwal['id'] ?>">
                                         <div class="pt-1 d-flex justify-content-end">
-                                            <a href="<?= base_url('dashboard/home') ?>" class="btn btn-secondary mr-1">Batal</a>
+                                            <a href="<?= base_url('admin/jadwal_pengumuman') ?>" class="btn btn-secondary mr-1">Batal</a>
                                             <button type="submit" class="btn btn-danger btn-raised ml-1">Hapus</a>
                                         </div>
                                     </form>

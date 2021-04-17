@@ -21,7 +21,7 @@
                                     <input type="file" class="dropify" data-height="300" data-allowed-file-extensions="xls xlsx csv" name="upload_file"></input>
                                     <br>
                                     <div class="pt-1 d-flex justify-content-end">
-                                        <a href="<?= base_url('dashboard/home') ?>" class="btn btn-secondary mr-1">Batal</a>
+                                        <a href="<?= base_url('admin/siswa') ?>" class="btn btn-secondary mr-1">Batal</a>
                                         <button type="submit" class="btn btn-success btn-raised ml-1">Import</a>
                                     </div>
                                     <?php echo form_close(); ?>

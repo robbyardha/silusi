@@ -50,6 +50,7 @@ class Nilai_ujian_model extends CI_Model
                     'ujian_sekolah' => $sheetData[$i][4],
                     'usp_bks' => $sheetData[$i][5],
                     'avg' => $sheetData[$i][6],
+                    'status' => $sheetData[$i][7],
                 ];
                 array_push($data, $dataBuffer);
             }
@@ -98,12 +99,22 @@ class Nilai_ujian_model extends CI_Model
                     'ujian_sekolah' => $sheetData[$j][4],
                     'usp_bks' => $sheetData[$j][5],
                     'avg' => $sheetData[$j][6],
+                    'status' => $sheetData[$j][7],
                 ];
                 array_push($data, $dataBuffer);
+                var_dump($this->db->last_query());
+                die;
             }
             $this->db->insert_batch('nilai_siswa', $data);
+
             $this->session->set_flashdata('nilai_siswa', 'Diimport');
             redirect('admin/nilai_ujian');
         }
+    }
+
+    public function cari($keyword)
+    {
+        $this->db->like('nis_siswa', $keyword);
+        return $this->db->get('nilai_siswa')->row_array();
     }
 }

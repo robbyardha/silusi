@@ -68,7 +68,7 @@
                                         </div>
 
                                         <div class="pt-1 d-flex justify-content-end">
-                                            <a href="<?= base_url('dashboard/home') ?>" class="btn btn-secondary mr-1">Batal</a>
+                                            <a href="<?= base_url('admin/jadwal_pengumuman') ?>" class="btn btn-secondary mr-1">Batal</a>
                                             <button type="submit" class="btn btn-success btn-raised ml-1">Tambah</a>
                                         </div>
                                     </form>

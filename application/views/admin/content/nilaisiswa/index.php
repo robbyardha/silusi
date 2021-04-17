@@ -36,6 +36,7 @@
                                                 <th>Nilai Ujian Sekolah</th>
                                                 <th>Nilai USP BKS</th>
                                                 <th>Rata Rata</th>
+                                                <th>Status</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -67,6 +68,7 @@
                                                             <?= $ns['avg'] ?>
                                                         <?php endif ?>
                                                     </td>
+                                                    <td><?= $ns['status'] ?></td>
                                                 </tr>
                                             <?php endforeach ?>
                                         </tbody>
