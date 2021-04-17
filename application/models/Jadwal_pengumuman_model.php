@@ -43,5 +43,8 @@ class Jadwal_pengumuman_model extends CI_Model
     }
     public function hapus()
     {
+        $id = htmlspecialchars($this->input->post('id'));
+        $this->db->where('id', $id);
+        $this->db->delete('jadwal_pengumuman');
     }
 }

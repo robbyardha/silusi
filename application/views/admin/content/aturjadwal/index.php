@@ -22,7 +22,6 @@
                                 <?php endif ?>
                                 <div class="p-2">
                                     <div class="d-flex justify-content-end mb-3">
-                                        <a href="<?= base_url('admin/jadwal_pengumuman/import') ?>" class="btn btn-info waves-effect waves-light mr-1"><i class="fas fa-file-excel mr-1"></i> <span>Import</span> </a>
                                         <a href="<?= base_url('admin/jadwal_pengumuman/tambah') ?>" class="btn btn-primary">Tambah</a>
                                     </div>
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
