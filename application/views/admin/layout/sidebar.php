@@ -91,13 +91,13 @@
                 <li class="menu-title">Kelulusan</li>
 
                 <li>
-                    <a href="#">
+                    <a href="<?= base_url('admin/jadwal_pengumuman') ?>">
                         <i class="mdi mdi-format-font"></i>
                         <span> Atur Jadwal Pengumuman </span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?= base_url('admin/nilai_ujian') ?>">
                         <i class="mdi mdi-view-list"></i>
                         <span> Import Nilai </span>
                     </a>

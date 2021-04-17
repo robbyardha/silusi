@@ -7,6 +7,15 @@ class Nilai_ujian_model extends CI_Model
         return $this->db->get('nilai_siswa')->result_array();
     }
 
+    public function getNilaiById($id = null)
+    {
+        if ($id == null) {
+            return $this->db->get('nilai_siswa')->result_array();
+        } else {
+            return $this->db->get_where('nilai_siswa', ['id' => $id])->row_array();
+        }
+    }
+
     public function joinSiswaAndNilai()
     {
         // $this->db->select('siswa.*, siswa.id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, nilai_siswa.siswa_id, nilai_siswa.ujian_sekolah, nilai_siswa.usp_bks, nilai_siswa.avg');
@@ -17,7 +26,40 @@ class Nilai_ujian_model extends CI_Model
         return $query->result_array();
     }
 
-    public function import($data)
+    public function import()
+    {
+        $file_mimes = array('text/x-comma-separated-values', 'text/comma-separated-values', 'application/octet-stream', 'application/vnd.ms-excel', 'application/x-csv', 'text/x-csv', 'text/csv', 'application/csv', 'application/excel', 'application/vnd.msexcel', 'text/plain', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        if (isset($_FILES['upload_file']['name']) && in_array($_FILES['upload_file']['type'], $file_mimes)) {
+            $arr_file = explode('.', $_FILES['upload_file']['name']);
+            $extension = end($arr_file);
+            if ('csv' == $extension) {
+                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Csv();
+            } else {
+                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+            }
+            $spreadsheet = $reader->load($_FILES['upload_file']['tmp_name']);
+            $sheetData = $spreadsheet->getActiveSheet()->toArray();
+            $data = [];
+            for ($i = 1; $i < count($sheetData); $i++) {
+                $dataBuffer = [
+                    // 'id' => $sheetData[$i][0],
+                    'siswa_id' => $sheetData[$i][0],
+                    'nis_siswa' => $sheetData[$i][1],
+                    'nomor_ujian_siswa' => $sheetData[$i][2],
+                    'nama_siswa' => $sheetData[$i][3],
+                    'ujian_sekolah' => $sheetData[$i][4],
+                    'usp_bks' => $sheetData[$i][5],
+                    'avg' => $sheetData[$i][6],
+                ];
+                array_push($data, $dataBuffer);
+            }
+            $this->db->insert_batch('nilai_siswa', $data);
+            $this->session->set_flashdata('nilai_siswa', 'Diimport');
+            redirect('admin/nilai_ujian');
+        }
+    }
+
+    public function import_verify($data)
     {
         // var_dump($data['siswa']);
         // // die;
