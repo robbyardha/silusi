@@ -10,7 +10,7 @@
 
                             use PhpOffice\PhpSpreadsheet\Shared\Date;
 
-                            if ($sekolah[0]['logo_sekolah'] == null) : ?>
+                            if ($sekolah == null) : ?>
                                 <p>Logo Sekolah Belum di Setting</p>
                             <?php else : ?>
                                 <img src="<?= base_url('assets/images/sekolah/' . $sekolah[0]['logo_sekolah']) ?>" height="150px">
@@ -18,7 +18,7 @@
                             <h5 class="mb-2 text-white-50">Welcome To</h5>
                             <h2 class="mb-2">SILUSI</h2>
                             <p class="text-white-50 home-desc font-16">Sistem Informasi Kelulusan Siswa</p>
-                            <?php if ($sekolah[0]['nama_sekolah'] == null) : ?>
+                            <?php if ($sekolah == null) : ?>
                                 <p class="text-white home-desc font-16">Nama Sekolah Belum Disetting!</p>
                             <?php else : ?>
                                 <p class="text-white home-desc font-16"><?= $sekolah[0]['nama_sekolah'] ?></p>
@@ -40,145 +40,153 @@
                                 </div>
                             <?php elseif ($jadwal != null) : ?>
                                 <?php if ($current_time >= $jadwal[0]['tanggal_awal'] . " " . $jadwal[0]['jam_awal'] && $current_time <= $jadwal[0]['tanggal_akhir'] . " " . $jadwal[0]['jam_akhir']) : ?>
-                                    <!-- INI ADALAH FORMNYA -->
-                                    <form class="app-search" action="<?= base_url('home') ?>" method="POST">
-                                        <div class="app-search-box">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" name="keyword" placeholder="Cari berdasarkan Nomor Induk Siswa">
-                                                <div class="input-group-append">
-                                                    <input class="btn btn-primary" type="submit" name="submit">
-                                                    <i class="fe-search"></i>
-                                                    </input>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
 
-                                    <!-- PENGECEKAN KALAU INPUT KOSONG -->
-                                    <?php
-                                    // var_dump($nis['nis_siswa']);
-                                    // die;
-                                    ?>
-                                    <?php if ($nis == null) : ?>
+                                    <?php if ($nilai ==  null) : ?>
                                         <div class="alert alert-danger mt-2" role="alert">
-                                            Keyword Kosong
+                                            Data Nilai Belum diperbaharui
                                         </div>
-                                    <?php elseif ($nis != null) : ?>
-                                        <?php if ($nis['status'] == "Lulus") : ?>
-                                            <div class="alert alert-success mt-2" role="alert">
-                                                <div class="container-fluid">
-                                                    <div class="row ">
-                                                        <div class="col-12 d-flex justify-content-center">
-                                                            <div class="col-2 ">
-                                                                <img src="<?= base_url('assets/images/profile/admin.png') ?>" height="150px">
-                                                            </div>
-                                                            <div class="col-10">
-                                                                <div class="form-group row">
-                                                                    <label class="col-md-2 col-form-label" for="nis">NIS Siswa</label>
-                                                                    <div class="col-md-10">
-                                                                        <input type="text" readonly name="nis_siswa" id="nis_siswa" class="form-control" value="<?= $nis['nis_siswa'] ?>">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-md-2 col-form-label" for="noujian">Nomor Ujian Siswa</label>
-                                                                    <div class="col-md-10">
-                                                                        <input type="text" readonly name="nomor_ujian_siswa" id="nomor_ujian_siswa" class="form-control" value="<?= $nis['nomor_ujian_siswa'] ?>">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-md-2 col-form-label" for="nama">Nama Siswa</label>
-                                                                    <div class="col-md-10">
-                                                                        <input type="text" readonly name="nama_siswa" id="nama_siswa" class="form-control" value="<?= $nis['nama_siswa'] ?>">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-md-2 col-form-label" for="nama">Nilai Siswa</label>
-                                                                    <table class="table table-striped">
-                                                                        <thead>
-                                                                            <tr>
-                                                                                <th scope="col">Ujian Sekolah</th>
-                                                                                <th scope="col">USP-BKS</th>
-                                                                                <th scope="col">Rata - Rata</th>
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td><?= $nis['ujian_sekolah'] ?></td>
-                                                                                <td><?= $nis['usp_bks'] ?></td>
-                                                                                <td><strong><?= $nis['avg'] ?></strong></td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-md-2 col-form-label" for="status">Status</label>
-                                                                    <div class="col-md-10">
-                                                                        <h4>Selamat Kamu telah dinyatakan <?= $nis['status'] ?> !</h4>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                    <?php else : ?>
+                                        <!-- INI ADALAH FORMNYA -->
+                                        <form class="app-search" action="<?= base_url('home') ?>" method="POST">
+                                            <div class="app-search-box">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" name="keyword" placeholder="Cari berdasarkan Nomor Induk Siswa">
+                                                    <div class="input-group-append">
+                                                        <input class="btn btn-primary" type="submit" name="submit">
+                                                        <i class="fe-search"></i>
+                                                        </input>
                                                     </div>
                                                 </div>
                                             </div>
-                                        <?php elseif ($nis['status'] == "Tidak Lulus") : ?>
+                                        </form>
+                                        <?php if ($nis == null) : ?>
                                             <div class="alert alert-danger mt-2" role="alert">
-                                                <div class="container-fluid">
-                                                    <div class="row ">
-                                                        <div class="col-12 d-flex justify-content-center">
-                                                            <div class="col-2 ">
-                                                                <img src="<?= base_url('assets/images/profile/admin.png') ?>" height="150px">
+                                                Keyword Kosong
+                                            </div>
+                                        <?php elseif ($nis != null) : ?>
+                                            <?php if ($nis['status'] == "Lulus") : ?>
+                                                <div class="alert alert-success mt-2" role="alert">
+                                                    <div class="container-fluid">
+                                                        <div class="row ">
+                                                            <div class="col-12 d-flex justify-content-center">
+                                                                <div class="col-2 ">
+                                                                    <img src="<?= base_url('assets/images/profile/admin.png') ?>" height="150px">
+                                                                </div>
+                                                                <div class="col-10">
+                                                                    <div class="form-group row">
+                                                                        <label class="col-md-2 col-form-label" for="nis">NIS Siswa</label>
+                                                                        <div class="col-md-10">
+                                                                            <input type="text" readonly name="nis_siswa" id="nis_siswa" class="form-control" value="<?= $nis['nis_siswa'] ?>">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-md-2 col-form-label" for="noujian">Nomor Ujian Siswa</label>
+                                                                        <div class="col-md-10">
+                                                                            <input type="text" readonly name="nomor_ujian_siswa" id="nomor_ujian_siswa" class="form-control" value="<?= $nis['nomor_ujian_siswa'] ?>">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-md-2 col-form-label" for="nama">Nama Siswa</label>
+                                                                        <div class="col-md-10">
+                                                                            <input type="text" readonly name="nama_siswa" id="nama_siswa" class="form-control" value="<?= $nis['nama_siswa'] ?>">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-md-2 col-form-label" for="nama">Nilai Siswa</label>
+                                                                        <table class="table table-striped">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th scope="col">Ujian Sekolah</th>
+                                                                                    <th scope="col">USP-BKS</th>
+                                                                                    <th scope="col">Rata - Rata</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td><?= $nis['ujian_sekolah'] ?></td>
+                                                                                    <td><?= $nis['usp_bks'] ?></td>
+                                                                                    <td><strong><?= $nis['avg'] ?></strong></td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-md-2 col-form-label" for="status">Status</label>
+                                                                        <div class="col-md-10">
+                                                                            <h4>Selamat Kamu telah dinyatakan <?= $nis['status'] ?> !</h4>
+                                                                        </div>
+                                                                    </div>
+                                                                    <a href="<?= base_url('Home/cetak_skl/') . $nis['nis_siswa'] ?>" class="btn btn-success">Cetak SKL</a>
+                                                                </div>
                                                             </div>
-                                                            <div class="col-10">
-                                                                <div class="form-group row">
-                                                                    <label class="col-md-2 col-form-label" for="nis">NIS Siswa</label>
-                                                                    <div class="col-md-10">
-                                                                        <input type="text" readonly name="nis_siswa" id="nis_siswa" class="form-control" value="<?= $nis['nis_siswa'] ?>">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php elseif ($nis['status'] == "Tidak Lulus") : ?>
+                                                <div class="alert alert-danger mt-2" role="alert">
+                                                    <div class="container-fluid">
+                                                        <div class="row ">
+                                                            <div class="col-12 d-flex justify-content-center">
+                                                                <div class="col-2 ">
+                                                                    <img src="<?= base_url('assets/images/profile/admin.png') ?>" height="150px">
+                                                                </div>
+                                                                <div class="col-10">
+                                                                    <div class="form-group row">
+                                                                        <label class="col-md-2 col-form-label" for="nis">NIS Siswa</label>
+                                                                        <div class="col-md-10">
+                                                                            <input type="text" readonly name="nis_siswa" id="nis_siswa" class="form-control" value="<?= $nis['nis_siswa'] ?>">
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-md-2 col-form-label" for="noujian">Nomor Ujian Siswa</label>
-                                                                    <div class="col-md-10">
-                                                                        <input type="text" readonly name="nomor_ujian_siswa" id="nomor_ujian_siswa" class="form-control" value="<?= $nis['nomor_ujian_siswa'] ?>">
+                                                                    <div class="form-group row">
+                                                                        <label class="col-md-2 col-form-label" for="noujian">Nomor Ujian Siswa</label>
+                                                                        <div class="col-md-10">
+                                                                            <input type="text" readonly name="nomor_ujian_siswa" id="nomor_ujian_siswa" class="form-control" value="<?= $nis['nomor_ujian_siswa'] ?>">
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-md-2 col-form-label" for="nama">Nama Siswa</label>
-                                                                    <div class="col-md-10">
-                                                                        <input type="text" readonly name="nama_siswa" id="nama_siswa" class="form-control" value="<?= $nis['nama_siswa'] ?>">
+                                                                    <div class="form-group row">
+                                                                        <label class="col-md-2 col-form-label" for="nama">Nama Siswa</label>
+                                                                        <div class="col-md-10">
+                                                                            <input type="text" readonly name="nama_siswa" id="nama_siswa" class="form-control" value="<?= $nis['nama_siswa'] ?>">
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-md-2 col-form-label" for="nama">Nilai Siswa</label>
-                                                                    <table class="table table-striped">
-                                                                        <thead>
-                                                                            <tr>
-                                                                                <th scope="col">Ujian Sekolah</th>
-                                                                                <th scope="col">USP-BKS</th>
-                                                                                <th scope="col">Rata - Rata</th>
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td><?= $nis['ujian_sekolah'] ?></td>
-                                                                                <td><?= $nis['usp_bks'] ?></td>
-                                                                                <td><strong><?= $nis['avg'] ?></strong></td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-md-2 col-form-label" for="status">Status</label>
-                                                                    <div class="col-md-10">
-                                                                        <h4>Mohon Maaf saat ini Nilai Kamu belum mencukupi kriteria, kamu dinyatakan <strong><?= $nis['status'] ?> !.</strong>Tetap semangat jangan menyerah!</h4>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-md-2 col-form-label" for="nama">Nilai Siswa</label>
+                                                                        <table class="table table-striped">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th scope="col">Ujian Sekolah</th>
+                                                                                    <th scope="col">USP-BKS</th>
+                                                                                    <th scope="col">Rata - Rata</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td><?= $nis['ujian_sekolah'] ?></td>
+                                                                                    <td><?= $nis['usp_bks'] ?></td>
+                                                                                    <td><strong><?= $nis['avg'] ?></strong></td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-md-2 col-form-label" for="status">Status</label>
+                                                                        <div class="col-md-10">
+                                                                            <h4>Mohon Maaf saat ini Nilai Kamu belum mencukupi kriteria, kamu dinyatakan <strong><?= $nis['status'] ?> !.</strong>Tetap semangat jangan menyerah!</h4>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            <?php endif ?>
                                         <?php endif ?>
+                                        <!-- PENGECEKAN KALAU INPUT KOSONG -->
+                                        <?php
+                                        // var_dump($nis['nis_siswa']);
+                                        // die;
+                                        ?>
+
                                     <?php endif ?>
                                 <?php else : ?>
                                     <div class="alert alert-primary mt-2" role="alert">
