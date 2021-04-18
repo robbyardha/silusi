@@ -13,10 +13,10 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
                 <li class="nav-item active">
-                    <a href="#home" class="nav-link">Home</a>
+                    <a href="<?= base_url('Home') ?>" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#pengumuman" class="nav-link">Pengumuman</a>
+                    <a href="<?= base_url('Pengumumanuser') ?>" class="nav-link">Pengumuman</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a href="#services" class="nav-link">Services</a>

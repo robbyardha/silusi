@@ -17,6 +17,7 @@
                     </ul>
                     <ul class="list-inline social-links mb-4 mt-5">
                         <li class="list-inline-item"><a href="#"><i class="mdi mdi-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="mdi mdi-github"></i></a></li>
                         <li class="list-inline-item"><a href="#"><i class="mdi mdi-twitter"></i></a></li>
                         <li class="list-inline-item"><a href="#"><i class="mdi mdi-instagram"></i></a></li>
                         <li class="list-inline-item"><a href="#"><i class="mdi mdi-google-plus"></i></a></li>

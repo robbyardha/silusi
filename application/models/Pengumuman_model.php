@@ -14,6 +14,16 @@ class Pengumuman_model extends CI_Model
             return $this->db->get_where('pengumuman', ['id' => $id])->row_array();
         }
     }
+    public function getPengumumanByIdOrderby($id = null)
+    {
+        if ($id == null) {
+            $this->db->order_by('created_date', 'DESC');
+            $get = $this->db->get('pengumuman');
+            return $get->result_array();
+        } else {
+            return $this->db->get_where('pengumuman', ['id' => $id])->row_array();
+        }
+    }
 
     public function tambah()
     {
