@@ -12,6 +12,9 @@
 <script src="<?= base_url('assets/') ?>libs/morris-js/morris.min.js"></script>
 <script src="<?= base_url('assets/') ?>libs/raphael/raphael.min.js"></script>
 
+<!-- Chart JS -->
+<script src="<?= base_url('assets/') ?>libs/chart-js/Chart.bundle.min.js"></script>
+
 <!-- Dashboard init js-->
 <script src="<?= base_url('assets/') ?>js/pages/dashboard.init.js"></script>
 
@@ -62,6 +65,39 @@
     });
 </script>
 
+
+<!-- CHART JS -->
+<script type="text/javascript">
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [
+                <?php
+                if (count($nilai) > 0) {
+                    foreach ($nilai as $data) {
+                        echo "'" . $data->provinsi . "',";
+                    }
+                }
+                ?>
+            ],
+            datasets: [{
+                label: 'Jumlah Nilai',
+                backgroundColor: '#ADD8E6',
+                borderColor: '##93C3D2',
+                data: [
+                    <?php
+                    if (count($graph) > 0) {
+                        foreach ($graph as $data) {
+                            echo $data['nama_siswa'] . ", ";
+                        }
+                    }
+                    ?>
+                ]
+            }]
+        },
+    });
+</script>
 </body>
 
 </html>

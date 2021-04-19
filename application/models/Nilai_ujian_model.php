@@ -16,6 +16,23 @@ class Nilai_ujian_model extends CI_Model
         }
     }
 
+    public function count()
+    {
+        $query = $this->db->query('SELECT * FROM nilai_siswa');
+        return $query->num_rows();
+    }
+
+    public function countLulus()
+    {
+        $query = $this->db->query('SELECT * FROM nilai_siswa WHERE status = "Lulus"');
+        return $query->num_rows();
+    }
+    public function countTidakLulus()
+    {
+        $query = $this->db->query('SELECT * FROM nilai_siswa WHERE status = "Tidak Lulus"');
+        return $query->num_rows();
+    }
+
     public function joinSiswaAndNilai()
     {
         // $this->db->select('siswa.*, siswa.id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, nilai_siswa.siswa_id, nilai_siswa.ujian_sekolah, nilai_siswa.usp_bks, nilai_siswa.avg');
