@@ -96,17 +96,75 @@
                                                                         <table class="table table-striped">
                                                                             <thead>
                                                                                 <tr>
-                                                                                    <th scope="col">Ujian Sekolah</th>
-                                                                                    <th scope="col">USP-BKS</th>
+                                                                                    <th scope="col">No</th>
+                                                                                    <th scope="col">Mata Pelajaran</th>
+                                                                                    <th scope="col">Nilai Rapor</th>
+                                                                                    <th scope="col">NUSP (Nilai Ujian Satuan Pendidikan)</th>
+                                                                                    <th scope="col">NSP (Nilai Satuan Pendidikan)</th>
                                                                                     <th scope="col">Rata - Rata</th>
                                                                                 </tr>
                                                                             </thead>
                                                                             <tbody>
                                                                                 <tr>
-                                                                                    <td><?= $nis['ujian_sekolah'] ?></td>
-                                                                                    <td><?= $nis['usp_bks'] ?></td>
-                                                                                    <td><strong><?= $nis['avg'] ?></strong></td>
+                                                                                    <td>1</td>
+                                                                                    <td>Bahasa Indonesia</td>
+                                                                                    <td>85</td>
+                                                                                    <td>96</td>
+                                                                                    <td>98</td>
+                                                                                    <td><strong>94,4</strong></td>
                                                                                 </tr>
+                                                                                <tr>
+                                                                                    <td>1</td>
+                                                                                    <td>Bahasa Indonesia</td>
+                                                                                    <td>85</td>
+                                                                                    <td>96</td>
+                                                                                    <td>98</td>
+                                                                                    <td><strong>94,4</strong></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>1</td>
+                                                                                    <td>Bahasa Indonesia</td>
+                                                                                    <td>85</td>
+                                                                                    <td>96</td>
+                                                                                    <td>98</td>
+                                                                                    <td><strong>94,4</strong></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>1</td>
+                                                                                    <td>Bahasa Indonesia</td>
+                                                                                    <td>85</td>
+                                                                                    <td>96</td>
+                                                                                    <td>98</td>
+                                                                                    <td><strong>94,4</strong></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>1</td>
+                                                                                    <td>Bahasa Indonesia</td>
+                                                                                    <td>85</td>
+                                                                                    <td>96</td>
+                                                                                    <td>98</td>
+                                                                                    <td><strong>94,4</strong></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>1</td>
+                                                                                    <td>Bahasa Indonesia</td>
+                                                                                    <td>85</td>
+                                                                                    <td>96</td>
+                                                                                    <td>98</td>
+                                                                                    <td><strong>94,4</strong></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>1</td>
+                                                                                    <td>Bahasa Indonesia</td>
+                                                                                    <td>85</td>
+                                                                                    <td>96</td>
+                                                                                    <td>98</td>
+                                                                                    <td><strong>94.4</strong></td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                            <tbody>
+                                                                                <td colspan="5"><strong>Rata Rata</strong></td>
+                                                                                <td colspan="1"><Strong>93.3</Strong></td>
                                                                             </tbody>
                                                                         </table>
                                                                     </div>
@@ -116,7 +174,16 @@
                                                                             <h4>Selamat Kamu telah dinyatakan <?= $nis['status'] ?> !</h4>
                                                                         </div>
                                                                     </div>
-                                                                    <a href="<?= base_url('Home/cetak_skl/') . $nis['nis_siswa'] ?>" class="btn btn-success">Cetak SKL</a>
+                                                                    <?php
+                                                                    $status_pembayaran = "Belum Lunas"
+                                                                    ?>
+                                                                    <?php if ($status_pembayaran == "Lunas") : ?>
+                                                                        <a href="<?= base_url('Home/cetak_skl/') . $nis['nis_siswa'] ?>" class="btn btn-success">Cetak SKL</a>
+                                                                    <?php else : ?>
+                                                                        <div class="alert alert-danger" role="alert">
+                                                                            Maaf Kamu tidak bisa mencetak SKL karena Status Pembayaranmu saat ini masih belum Lunas, silahkan lunasi pada Devisi Keuangan!
+                                                                        </div>
+                                                                    <?php endif ?>
                                                                 </div>
                                                             </div>
                                                         </div>
