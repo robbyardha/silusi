@@ -574,6 +574,7 @@ body[data-sidebar=dark].enlarged #wrapper .left-side-menu .nav-third-level li.mm
 .navbar-custom .topnav-menu.topnav-menu-left {
 	margin-left: 6px;
 	display: inline-block
+	
 }
 
 .navbar-custom .topnav-menu>li {
@@ -1252,7 +1253,7 @@ body[data-layout=horizontal] .page-title-box .page-title {
 		padding-left: 0;
 		margin: 0
 	}
-
+	.c
 	.navigation-menu>li .submenu li a {
 		display: block;
 		padding: 9px 25px;
