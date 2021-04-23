@@ -25,18 +25,21 @@
                                         <a href="<?= base_url('admin/nilai_ujian/import') ?>" class="btn btn-info waves-effect waves-light mr-1"><i class="fas fa-file-excel mr-1"></i> <span>Import</span> </a>
                                         <a href="<?= base_url('admin/nilai_ujian/tambah') ?>" class="btn btn-primary">Tambah</a>
                                     </div>
-                                    <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                    <table id="datatable" class="table table-bordered dt-responsive nowrap" style="width: 100%;">
                                         <?php $no = 1; ?>
                                         <thead>
                                             <tr>
                                                 <th>No</th>
                                                 <th>NIS</th>
-                                                <th>Nomor Ujian</th>
                                                 <th>Nama</th>
-                                                <th>Nilai Ujian Sekolah</th>
-                                                <th>Nilai USP BKS</th>
-                                                <th>Rata Rata</th>
-                                                <th>Status</th>
+                                                <th>Mata Pelajaran</th>
+                                                <th>Nilai Rapot</th>
+                                                <th>Nilai NUSP</th>
+                                                <th>Nilai NSP</th>
+                                                <th>Rata-Rata Per Mapel</th>
+                                                <th>Status Kelulusan</th>
+                                                <th>Status Pembayaran</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -44,21 +47,28 @@
                                             <?php foreach ($nilai_siswa as $ns) : ?>
                                                 <tr>
                                                     <td><?= $no++ ?></td>
-                                                    <td><?= $ns['nis_siswa'] ?></td>
-                                                    <td><?= $ns['nomor_ujian_siswa'] ?></td>
-                                                    <td><?= $ns['nama_siswa'] ?></td>
+                                                    <td><?= $ns['nis'] ?></td>
+                                                    <td><?= $ns['nama'] ?></td>
+                                                    <td><?= $ns['nama_mapel'] ?></td>
                                                     <td>
-                                                        <?php if ($ns['ujian_sekolah'] == null) : ?>
+                                                        <?php if ($ns['nilai_rapot'] == null) : ?>
                                                             <p>Data masih kosong</p>
-                                                        <?php elseif ($ns['ujian_sekolah'] != null) : ?>
-                                                            <?= $ns['ujian_sekolah'] ?>
+                                                        <?php elseif ($ns['nilai_rapot'] != null) : ?>
+                                                            <?= $ns['nilai_rapot'] ?>
                                                         <?php endif ?>
                                                     </td>
                                                     <td>
-                                                        <?php if ($ns['usp_bks'] == null) : ?>
+                                                        <?php if ($ns['nusp'] == null) : ?>
                                                             <p>Data masih kosong</p>
-                                                        <?php elseif ($ns['usp_bks'] != null) : ?>
-                                                            <?= $ns['usp_bks'] ?>
+                                                        <?php elseif ($ns['nusp'] != null) : ?>
+                                                            <?= $ns['nusp'] ?>
+                                                        <?php endif ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php if ($ns['nsp'] == null) : ?>
+                                                            <p>Data masih kosong</p>
+                                                        <?php elseif ($ns['nsp'] != null) : ?>
+                                                            <?= $ns['nsp'] ?>
                                                         <?php endif ?>
                                                     </td>
                                                     <td>
@@ -68,7 +78,12 @@
                                                             <?= $ns['avg'] ?>
                                                         <?php endif ?>
                                                     </td>
-                                                    <td><?= $ns['status'] ?></td>
+                                                    <td><?= $ns['status_lulus'] ?></td>
+                                                    <td><?= $ns['status_pembayaran'] ?></td>
+                                                    <td>
+                                                        <a class="btn btn-success" href="<?= base_url('admin/nilai_ujian/ubah/') . $ns['id'] ?>">Ubah</a> | <a class="btn btn-danger" href="<?= base_url('admin/nilai_ujian/hapus/') . $ns['id'] ?>">Hapus</a>>Hapus</a>
+                                                    </td>
+
                                                 </tr>
                                             <?php endforeach ?>
                                         </tbody>

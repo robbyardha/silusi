@@ -24,12 +24,12 @@ class Nilai_ujian_model extends CI_Model
 
     public function countLulus()
     {
-        $query = $this->db->query('SELECT * FROM nilai_siswa WHERE status = "Lulus"');
+        $query = $this->db->query('SELECT * FROM nilai_siswa WHERE status_lulus = "Lulus"');
         return $query->num_rows();
     }
     public function countTidakLulus()
     {
-        $query = $this->db->query('SELECT * FROM nilai_siswa WHERE status = "Tidak Lulus"');
+        $query = $this->db->query('SELECT * FROM nilai_siswa WHERE status_lulus = "Tidak Lulus"');
         return $query->num_rows();
     }
 
@@ -39,6 +39,16 @@ class Nilai_ujian_model extends CI_Model
         $this->db->select('siswa.*, nilai_siswa.siswa_id, nilai_siswa.ujian_sekolah, nilai_siswa.usp_bks, nilai_siswa.avg');
         $this->db->from('siswa');
         $this->db->join('nilai_siswa', 'nilai_siswa.siswa_id=siswa.id', 'LEFT');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    public function joinNilaiSiswaMapel()
+    {
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, mapel.id AS mapel_id, mapel.nama_mapel');
+        $this->db->from('nilai_siswa');
+        $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
+        $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
         $query = $this->db->get();
         return $query->result_array();
     }
@@ -133,5 +143,38 @@ class Nilai_ujian_model extends CI_Model
     {
         $this->db->like('nis_siswa', $keyword);
         return $this->db->get('nilai_siswa')->row_array();
+    }
+
+    public function tambah()
+    {
+        $data = [
+            'siswa_id' => htmlspecialchars($this->input->post('nama_siswa')),
+            'mapel_id' => htmlspecialchars($this->input->post('mapel')),
+            'nilai_rapot' => htmlspecialchars($this->input->post('nilai_rapot')),
+            'nusp' => htmlspecialchars($this->input->post('nusp')),
+            'nsp' => htmlspecialchars($this->input->post('nsp')),
+            'avg' => htmlspecialchars($this->input->post('avg')),
+            'status_lulus' => htmlspecialchars($this->input->post('status_lulus')),
+            'status_pembayaran' => htmlspecialchars($this->input->post('status_pembayaran'))
+
+        ];
+        $this->db->insert('nilai_siswa', $data);
+    }
+
+    public function ubah()
+    {
+        $id = htmlspecialchars($this->input->post('id'));
+        $data = [
+            'siswa_id' => htmlspecialchars($this->input->post('nama_siswa')),
+            'mapel_id' => htmlspecialchars($this->input->post('mapel')),
+            'nilai_rapot' => htmlspecialchars($this->input->post('nilai_rapot')),
+            'nusp' => htmlspecialchars($this->input->post('nusp')),
+            'nsp' => htmlspecialchars($this->input->post('nsp')),
+            'avg' => htmlspecialchars($this->input->post('avg')),
+            'status_lulus' => htmlspecialchars($this->input->post('status_lulus')),
+            'status_pembayaran' => htmlspecialchars($this->input->post('status_pembayaran'))
+        ];
+        $this->db->where('id', $id);
+        $this->db->update('nilai_siswa', $data);
     }
 }

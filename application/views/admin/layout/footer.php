@@ -25,6 +25,7 @@
 <script src="<?= base_url('assets') ?>/libs/datatables/jquery.dataTables.min.js"></script>
 <script src="<?= base_url('assets') ?>/libs/datatables/dataTables.bootstrap4.js"></script>
 <script src="<?= base_url('assets') ?>/libs/datatables/dataTables.buttons.min.js"></script>
+<script src="<?= base_url('assets') ?>/libs/datatables/dataTables.responsive.min.js"></script>
 <script src="<?= base_url('assets') ?>/libs/datatables/buttons.bootstrap4.min.js"></script>
 <script>
     $('#datatable').DataTable()
