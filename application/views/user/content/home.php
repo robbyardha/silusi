@@ -53,7 +53,7 @@
                                                     <input type="text" class="form-control" name="keyword" placeholder="Cari berdasarkan Nomor Induk Siswa">
                                                     <div class="input-group-append">
                                                         <input class="btn btn-primary" type="submit" name="submit">
-                                                        <i class="fe-search"></i>
+                                                        <!-- <i class="fe-search"></i> -->
                                                         </input>
                                                     </div>
                                                 </div>

@@ -8,24 +8,32 @@
                         <div class="home-title text-white text-center">
                             <h2 class="mb-2">PENGUMUMAN</h2>
                         </div>
-                        <?php foreach ($pengumuman as $p) : ?>
+                        <?php if ($pengumuman == null) : ?>
                             <div class="col-xl-12 col-sm-6 text-center">
-                                <div class="services-box p-4 bg-white mt-4">
-                                    <div class="services-img float-left mr-4">
-                                        <img src="images/icons/layers.png" alt="">
-                                    </div>
-                                    <h5><?= $p['judul'] ?></h5>
-                                    <div class="overflow-hidden">
-                                        <p class="text-muted"><?= substr($p['pengumuman'], 0, 75) ?>....</p>
-                                        <small>created by: <?= $p['created_by'] ?></small>
-                                        <br>
-                                        <small>Date Created: <?= $p['created_date'] ?></small>
-                                        <br>
-                                        <a href="<?= base_url('Pengumumanuser/detail/') . $p['id'] ?>" class="text-custom">Read more...</a>
-                                    </div>
+                                <div class="alert alert-danger" role="alert">
+                                    Belum Ada Pengumuman
                                 </div>
                             </div>
-                        <?php endforeach ?>
+                        <?php elseif ($pengumuman != null) : ?>
+                            <?php foreach ($pengumuman as $p) : ?>
+                                <div class="col-xl-12 col-sm-6 text-center">
+                                    <div class="services-box p-4 bg-white mt-4">
+                                        <div class="services-img float-left mr-4">
+                                            <img src="images/icons/layers.png" alt="">
+                                        </div>
+                                        <h5><?= $p['judul'] ?></h5>
+                                        <div class="overflow-hidden">
+                                            <p class="text-muted"><?= substr($p['pengumuman'], 0, 75) ?>....</p>
+                                            <small>created by: <?= $p['created_by'] ?></small>
+                                            <br>
+                                            <small>Date Created: <?= $p['created_date'] ?></small>
+                                            <br>
+                                            <a href="<?= base_url('Pengumumanuser/detail/') . $p['id'] ?>" class="text-custom">Read more...</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach ?>
+                        <?php endif ?>
                     </div>
                 </div>
 

@@ -5,22 +5,25 @@
             <div class="col-xl-12">
                 <div class="text-center">
                     <div class="footer-logo mb-3">
-                        <img src="images/logo-light.png" alt="" height="20">
+                        <img src="<?= base_url('assets/landingusers-assets/arcodes.png') ?>" alt="" height="55">
                     </div>
-                    <ul class="list-inline footer-list text-center mt-5">
+                    <!-- <ul class="list-inline footer-list text-center mt-5">
                         <li class="list-inline-item"><a href="#">Home</a></li>
                         <li class="list-inline-item"><a href="#">About</a></li>
                         <li class="list-inline-item"><a href="#">Services</a></li>
                         <li class="list-inline-item"><a href="#">Clients</a></li>
                         <li class="list-inline-item"><a href="#">Pricing</a></li>
                         <li class="list-inline-item"><a href="#">Contact</a></li>
-                    </ul>
+                    </ul> -->
                     <ul class="list-inline social-links mb-4 mt-5">
-                        <li class="list-inline-item"><a href="#"><i class="mdi mdi-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="mdi mdi-github"></i></a></li>
+                        <li class="list-inline-item"><a href="https://ardhacodes.com/"><i class="mdi mdi-web"></i></a></li>
+                        <li class="list-inline-item"><a href="mailto:robby@ardhacodes.com"><i class="mdi mdi-email"></i></a></li>
+                        <li class="list-inline-item"><a href="https://github.com/robbyardha"><i class="mdi mdi-github"></i></a></li>
+                        <li class="list-inline-item"><a href="www.linkedin.com/in/robby-firmansyah-ardha-b381bb134"><i class="mdi mdi-linkedin"></i></a></li>
+                        <!-- <li class="list-inline-item"><a href="#"><i class="mdi mdi-facebook"></i></a></li>
                         <li class="list-inline-item"><a href="#"><i class="mdi mdi-twitter"></i></a></li>
                         <li class="list-inline-item"><a href="#"><i class="mdi mdi-instagram"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="mdi mdi-google-plus"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="mdi mdi-google-plus"></i></a></li> -->
                     </ul>
                     <p class="text-white-50 mb-4">2020 - <?= date('Y') ?> © Ardhacodes. Design by <a href="https://ardhacodes.com" target="_blank" class="text-white-50">Ardhacodes</a> </p>
 
