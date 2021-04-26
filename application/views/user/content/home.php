@@ -84,7 +84,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row">
-                                                                        <label class="col-md-3 text-left col-form-label" for="noujian">Nomor Ujian Siswa :</label>
+                                                                        <label class="col-md-3 text-left col-form-label" for="noujian">NISN :</label>
                                                                         <div class="col-md-8">
                                                                             <input type="text" readonly name="nomor_ujian_siswa" id="nomor_ujian_siswa" class="form-control" value="<?= $nis['nomor_ujian'] ?>">
                                                                         </div>
@@ -151,7 +151,7 @@
                                                                                         $sum_avg_ipa = $nilai_mapel[0]['nsp'] + $nilai_mapel[1]['nsp'] + $nilai_mapel[2]['nsp'] + $nilai_mapel[3]['nsp'] + $nilai_mapel[4]['nsp'] + $nilai_mapel[5]['nsp'] + $nilai_mapel[6]['nsp'] + $nilai_mapel[7]['nsp'] + $nilai_mapel[8]['nsp'] + $nilai_mapel[9]['nsp'] + $nilai_mapel[10]['nsp'] + $nilai_mapel[11]['nsp'] + $nilai_mapel[12]['nsp'] + $nilai_mapel[13]['nsp'] +  $nilai_mapel[18]['nsp'];
                                                                                         $count_mapel_ipa = 15;
                                                                                         $result = $sum_avg_ipa / $count_mapel_ipa;
-                                                                                    } elseif ($nilai_mapel['kelas'] == "IPS") {
+                                                                                    } elseif ($nilai_mapel[0]['kelas'] == "IPS") {
                                                                                         $sum_avg_ips = $nilai_mapel[0]['nsp'] + $nilai_mapel[1]['nsp'] + $nilai_mapel[2]['nsp'] + $nilai_mapel[3]['nsp'] + $nilai_mapel[4]['nsp'] + $nilai_mapel[5]['nsp'] + $nilai_mapel[6]['nsp'] + $nilai_mapel[7]['nsp'] + $nilai_mapel[8]['nsp'] + $nilai_mapel[9]['nsp'] + $nilai_mapel[14]['nsp'] + $nilai_mapel[15]['nsp'] + $nilai_mapel[16]['nsp'] + $nilai_mapel[17]['nsp'] + $nilai_mapel[18]['nsp'];
                                                                                         $count_mapel_ips = 15;
                                                                                         $result = $sum_avg_ips / $count_mapel_ips;
