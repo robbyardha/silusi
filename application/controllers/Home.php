@@ -24,6 +24,8 @@ class Home extends CI_Controller
         $data['jadwal'] = $this->Jadwal_pengumuman_model->getAturJadwal();
         $data['nilai'] = $this->Nilai_ujian_model->getNilai();
         $data['nilai_mapel'] = $this->Nilai_ujian_model->nilai_mapel($keyword);
+        // var_dump($this->db->last_query());
+        // die;
         $this->load->view('user/layout/header', $data);
         $this->load->view('user/layout/navbar');
         $this->load->view('user/content/home', $data);

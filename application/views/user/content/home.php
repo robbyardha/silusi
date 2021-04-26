@@ -61,7 +61,7 @@
                                         </form>
                                         <?php if ($nis == null) : ?>
                                             <div class="alert alert-danger mt-2" role="alert">
-                                                Keyword Kosong
+                                                Keyword Kosong / NIS tidak ditemukan
                                             </div>
                                         <?php elseif ($nis != null) : ?>
                                             <?php if ($nis['status_lulus'] == "Lulus") : ?>
@@ -73,6 +73,10 @@
                                                                     <img src="<?= base_url('assets/images/profile/admin.png') ?>" height="150px">
                                                                 </div>
                                                                 <div class="col-11">
+                                                                    <h2>Selamat Kamu Dinyatakan <?= $nis['status_lulus'] ?>!
+                                                                        <h4>Berikut Adalah Detail Informasi Kamu</h4>
+                                                                    </h2>
+                                                                    <br>
                                                                     <div class="form-group row">
                                                                         <label class="col-md-3 text-left col-form-label" for="nis">NIS Siswa :</label>
                                                                         <div class="col-md-8">
@@ -111,7 +115,6 @@
                                                                                     <th scope="col">Nilai Rapor</th>
                                                                                     <th scope="col">NUSP (Nilai Ujian Satuan Pendidikan)</th>
                                                                                     <th scope="col">NSP (Nilai Satuan Pendidikan)</th>
-                                                                                    <th scope="col">Rata - Rata</th>
                                                                                 </tr>
                                                                             </thead>
                                                                             <tbody>
@@ -125,7 +128,6 @@
                                                                                         <td><?= $np['nilai_rapot'] ?></td>
                                                                                         <td><?= $np['nusp'] ?></td>
                                                                                         <td><?= $np['nsp'] ?></td>
-                                                                                        <td><strong><?= $np['avg'] ?></strong></td>
                                                                                     </tr>
 
                                                                             </tbody>
@@ -135,15 +137,29 @@
                                                                         // die;
                                                                         ?>
                                                                         <tbody>
-                                                                            <td colspan="5"><strong>Rata Rata</strong></td>
+                                                                            <td colspan="4"><strong>Rata Rata</strong></td>
                                                                             <td colspan="1"><Strong>
                                                                                     <?php
+                                                                                    // var_dump($nilai_mapel[0]['kelas']);
+                                                                                    // die;
                                                                                     //Menjumlah semua nilai dan dibagi (average)
-                                                                                    $sum_avg = $nilai_mapel[0]['avg'] + $nilai_mapel[1]['avg'] + $nilai_mapel[2]['avg'] + $nilai_mapel[3]['avg'];
-                                                                                    //echo ($sum_avg);
-                                                                                    $count_mapel = count($nilai_mapel);
-                                                                                    $result = $sum_avg / $count_mapel;
-                                                                                    echo ($result);
+                                                                                    // $sum_avg = $nilai_mapel[0]['nsp'] + $nilai_mapel[1]['nsp'] + $nilai_mapel[2]['nsp'] + $nilai_mapel[3]['nsp'] + $nilai_mapel[4]['nsp'] + $nilai_mapel[5]['nsp'] + $nilai_mapel[6]['nsp'] + $nilai_mapel[7]['nsp'] + $nilai_mapel[8]['nsp'] + $nilai_mapel[9]['nsp'] + $nilai_mapel[10]['nsp'] + $nilai_mapel[11]['nsp'] + $nilai_mapel[12]['nsp'] + $nilai_mapel[13]['nsp'] + $nilai_mapel[14]['nsp'] + $nilai_mapel[15]['nsp'] + $nilai_mapel[16]['nsp'] + $nilai_mapel[17]['nsp'] + $nilai_mapel[18]['nsp'];
+                                                                                    //echo ($sum_nsp);
+                                                                                    // $count_mapel = count($nilai_mapel);
+                                                                                    // $result = $sum_avg / $count_mapel;
+                                                                                    if ($nilai_mapel[0]['kelas'] == "IPA") {
+                                                                                        $sum_avg_ipa = $nilai_mapel[0]['nsp'] + $nilai_mapel[1]['nsp'] + $nilai_mapel[2]['nsp'] + $nilai_mapel[3]['nsp'] + $nilai_mapel[4]['nsp'] + $nilai_mapel[5]['nsp'] + $nilai_mapel[6]['nsp'] + $nilai_mapel[7]['nsp'] + $nilai_mapel[8]['nsp'] + $nilai_mapel[9]['nsp'] + $nilai_mapel[10]['nsp'] + $nilai_mapel[11]['nsp'] + $nilai_mapel[12]['nsp'] + $nilai_mapel[13]['nsp'] +  $nilai_mapel[18]['nsp'];
+                                                                                        $count_mapel_ipa = 15;
+                                                                                        $result = $sum_avg_ipa / $count_mapel_ipa;
+                                                                                    } elseif ($nilai_mapel['kelas'] == "IPS") {
+                                                                                        $sum_avg_ips = $nilai_mapel[0]['nsp'] + $nilai_mapel[1]['nsp'] + $nilai_mapel[2]['nsp'] + $nilai_mapel[3]['nsp'] + $nilai_mapel[4]['nsp'] + $nilai_mapel[5]['nsp'] + $nilai_mapel[6]['nsp'] + $nilai_mapel[7]['nsp'] + $nilai_mapel[8]['nsp'] + $nilai_mapel[9]['nsp'] + $nilai_mapel[14]['nsp'] + $nilai_mapel[15]['nsp'] + $nilai_mapel[16]['nsp'] + $nilai_mapel[17]['nsp'] + $nilai_mapel[18]['nsp'];
+                                                                                        $count_mapel_ips = 15;
+                                                                                        $result = $sum_avg_ips / $count_mapel_ips;
+                                                                                    }
+                                                                                    // echo (ceil($result, 3));
+                                                                                    // echo (floor($result, 3));
+                                                                                    // echo (round($result, 3));
+                                                                                    echo (number_format($result, 2));
                                                                                     ?>
 
                                                                                 </Strong></td>

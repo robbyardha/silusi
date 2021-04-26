@@ -48,12 +48,21 @@
                                                 <?= form_error('tempat_lahir', '<small class="text-danger">', '</small>') ?>
                                             </div>
                                         </div>
+
                                         <div class="form-group row">
                                             <label class="col-md-2 col-form-label" for="tgl_lahir">Tanggal Lahir</label>
                                             <div class="col-md-10">
                                                 <input type="date" name="tgl_lahir" id="tgl_lahir" class="form-control">
                                                 <small class="text-muted">contoh: 12/04/2021</small>
                                                 <?= form_error('tgl_lahir', '<small class="text-danger">', '</small>') ?>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2 col-form-label" for="kelas">Kelas</label>
+                                            <div class="col-md-10">
+                                                <input type="text" name="kelas" id="kelas" class="form-control">
+                                                <small class="text-muted">contoh: IPA</small>
+                                                <?= form_error('kelas', '<small class="text-danger">', '</small>') ?>
                                             </div>
                                         </div>
 

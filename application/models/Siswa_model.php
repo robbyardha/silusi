@@ -24,6 +24,7 @@ class Siswa_model extends CI_Model
             'nama' => htmlspecialchars($this->input->post('nama')),
             'tempat_lahir' => htmlspecialchars($this->input->post('tempat_lahir')),
             'tgl_lahir' => htmlspecialchars($this->input->post('tgl_lahir')),
+            'kelas' => htmlspecialchars($this->input->post('kelas')),
         ];
         $this->db->insert('siswa', $data);
     }
@@ -37,6 +38,7 @@ class Siswa_model extends CI_Model
             'nama' => htmlspecialchars($this->input->post('nama')),
             'tempat_lahir' => htmlspecialchars($this->input->post('tempat_lahir')),
             'tgl_lahir' => htmlspecialchars($this->input->post('tgl_lahir')),
+            'kelas' => htmlspecialchars($this->input->post('kelas')),
 
         ];
         $this->db->where('id', $id);
@@ -72,6 +74,7 @@ class Siswa_model extends CI_Model
                     'nama' => $sheetData[$i][3],
                     'tempat_lahir' => $sheetData[$i][4],
                     'tgl_lahir' => $sheetData[$i][5],
+                    'kelas' => $sheetData[$i][6],
                 ];
                 array_push($data, $dataBuffer);
             }

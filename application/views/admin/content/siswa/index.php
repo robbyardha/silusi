@@ -34,6 +34,7 @@
                                                 <th>Nomor Ujian</th>
                                                 <th>Nama</th>
                                                 <th>Tempat, Tgl Lahir</th>
+                                                <th>Kelas</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -51,6 +52,7 @@
                                                     <td><?= $s['nomor_ujian'] ?></td>
                                                     <td><?= $s['nama'] ?></td>
                                                     <td><?= $s['tempat_lahir'] ?>, <?= $newdate ?></td>
+                                                    <td><?= $s['kelas'] ?></td>
                                                     <td>
                                                         <a href="<?= base_url('admin/siswa/ubah/') ?><?= $s['id'] ?> " class="btn btn-success">Ubah</a>
                                                         <a href="<?= base_url('admin/siswa/hapus/') ?><?= $s['id'] ?>" class="btn btn-danger">Hapus</a>

@@ -210,6 +210,7 @@ class Nilai_ujian extends CI_Controller
         force_download('upload/format_nilai.xlsx', NULL);
     }
 
+    //Testing
     public function import()
     {
         $data['sidename'] = $this->session->userdata('nama');
@@ -218,7 +219,7 @@ class Nilai_ujian extends CI_Controller
         $data['page_title'] = "Nilai Siswa";
         $data['headertitle'] = "Data Nilai Siswa";
         $data['siswa'] = $this->Siswa_model->getSiswa();
-        $data['nilai_siswa'] = $this->Nilai_ujian_model->joinSiswaAndNilai();
+        $data['nilai_siswa'] = $this->Nilai_ujian_model->joinNilaiSiswaMapel();
         // $data['nilai_siswa'] = $this->Nilai_ujian_model->joinSiswaAndNilai();
         // var_dump($this->db->last_query());
         // die;
@@ -230,7 +231,7 @@ class Nilai_ujian extends CI_Controller
         $this->load->view('admin/layout/footer');
 
         $this->load->helper('form');
-        $this->Nilai_ujian_model->import();
+        $this->Nilai_ujian_model->import_verify($data);
     }
 
     public function import_verify()

@@ -1,0 +1,11 @@
+https://www.kelasexcel.id/2016/05/cara-membuat-nomor-urut-otomatis.html
+
+https://www.kelasexcel.id/2017/07/cara-membuat-nomor-seri-berulang.html
+
+//Rumus Untuk Berhenti Setiap 1-15 ulangi lagi 1-15
+// 15 Itu dari Jumlag Mapel
+=MOD(ROW()-2;15)+1
+
+
+//Rumus Pengulangan Row diangka 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+=INT((ROW(C3160)-2)/15)+1

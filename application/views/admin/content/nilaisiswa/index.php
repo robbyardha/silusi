@@ -81,7 +81,7 @@
                                                     <td><?= $ns['status_lulus'] ?></td>
                                                     <td><?= $ns['status_pembayaran'] ?></td>
                                                     <td>
-                                                        <a class="btn btn-success" href="<?= base_url('admin/nilai_ujian/ubah/') . $ns['id'] ?>">Ubah</a> | <a class="btn btn-danger" href="<?= base_url('admin/nilai_ujian/hapus/') . $ns['id'] ?>">Hapus</a>>Hapus</a>
+                                                        <a class="btn btn-success" href="<?= base_url('admin/nilai_ujian/ubah/') . $ns['id'] ?>">Ubah</a> | <a class="btn btn-danger" href="<?= base_url('admin/nilai_ujian/hapus/') . $ns['id'] ?>">Hapus</a></a>
                                                     </td>
 
                                                 </tr>
