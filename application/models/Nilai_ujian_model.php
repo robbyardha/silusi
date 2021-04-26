@@ -43,7 +43,7 @@ class Nilai_ujian_model extends CI_Model
         return $query->result_array();
     }
 
-    public function joinNilaiSiswaMapel()
+    public function joinNilaiSiswaMapel($id = null)
     {
         $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, mapel.id AS mapel_id, mapel.nama_mapel');
         $this->db->from('nilai_siswa');
@@ -51,6 +51,16 @@ class Nilai_ujian_model extends CI_Model
         $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
         $query = $this->db->get();
         return $query->result_array();
+    }
+    public function joinNilaiSiswaMapelGetWhere($id = null)
+    {
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, mapel.id AS mapel_id, mapel.nama_mapel');
+        $this->db->from('nilai_siswa');
+        $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
+        $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
+        $this->db->where('nilai_siswa.id', $id);
+        $query = $this->db->get();
+        return $query->row_array();
     }
 
     public function import()
@@ -139,10 +149,30 @@ class Nilai_ujian_model extends CI_Model
         }
     }
 
+    // public function cari($keyword)
+    // {
+
+    //     $this->db->like('nis_siswa', $keyword);
+    //     return $this->db->get('nilai_siswa')->row_array();
+    // }
     public function cari($keyword)
     {
-        $this->db->like('nis_siswa', $keyword);
-        return $this->db->get('nilai_siswa')->row_array();
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, mapel.id AS mapel_id, mapel.nama_mapel');
+        $this->db->from('nilai_siswa');
+        $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
+        $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
+        $this->db->like('nis', $keyword);
+        return $this->db->get()->row_array();
+    }
+
+    public function nilai_mapel($keyword)
+    {
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, mapel.id AS mapel_id, mapel.nama_mapel');
+        $this->db->from('nilai_siswa');
+        $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
+        $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
+        $this->db->like('nis', $keyword);
+        return $this->db->get()->result_array();
     }
 
     public function tambah()
@@ -176,5 +206,14 @@ class Nilai_ujian_model extends CI_Model
         ];
         $this->db->where('id', $id);
         $this->db->update('nilai_siswa', $data);
+    }
+
+    public function hapus()
+    {
+        $id = htmlspecialchars($this->input->post('id'));
+        $this->db->where('id', $id);
+        $this->db->delete('nilai_siswa');
+        // var_dump($this->db->last_query());
+        // die;
     }
 }

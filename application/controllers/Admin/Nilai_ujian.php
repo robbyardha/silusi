@@ -168,6 +168,42 @@ class Nilai_ujian extends CI_Controller
         }
     }
 
+    public function hapus($id = null)
+    {
+        $this->form_validation->set_rules(
+            'id',
+            'ID',
+            'required'
+        );
+
+        if ($this->form_validation->run() == FALSE) {
+            $data['sidename'] = $this->session->userdata('nama');
+            $data['current_user'] = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
+            $data['title'] = "Admin - Nilai Siswa";
+            $data['page_title'] = "Nilai Siswa";
+            $data['headertitle'] = "Data Nilai Siswa";
+            $data['siswa'] = $this->Siswa_model->getSiswa();
+            $data['mapel'] = $this->Mapel_model->getMapel();
+            // $data['nilai_siswa'] = $this->Nilai_ujian_model->getNilai();
+            // $data['nilai_siswa'] = $this->Nilai_ujian_model->getNilaiById($id);
+            // $data['nilai_siswa'] = $this->Nilai_ujian_model->joinNilaiSiswaMapel($id);
+            $data['nilai_siswa'] = $this->Nilai_ujian_model->joinNilaiSiswaMapelGetWhere($id);
+            // $data['nilai_siswa'] = $this->Nilai_ujian_model->joinNilaiSiswaMapel();
+            // var_dump($this->db->last_query());
+            // die;
+            $this->load->view('admin/layout/header', $data);
+            $this->load->view('admin/layout/topbar', $data);
+            $this->load->view('admin/layout/sidebar', $data);
+            $this->load->view('admin/content/nilaisiswa/hapus', $data);
+            $this->load->view('admin/layout/theme');
+            $this->load->view('admin/layout/footer');
+        } else {
+            $this->Nilai_ujian_model->hapus();
+            $this->session->set_flashdata('nilai_siswa', 'Dihapus');
+            redirect('admin/nilai_ujian');
+        }
+    }
+
     public function downloadFormat()
     {
         $this->load->helper('download');
