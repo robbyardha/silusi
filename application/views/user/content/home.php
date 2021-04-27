@@ -254,7 +254,7 @@
                                     <?php endif ?>
                                 <?php else : ?>
                                     <div class="alert alert-primary mt-2" role="alert">
-                                        Terimakasih telah berpartisipasi. Pengumuman saat ini sudah ditutup!
+                                        Pengumuman Saat Ini masih <strong>Ditutup</strong>.Silahkan Melihat Tab Pengumuman untuk melihat detail Informasi Pengumuman Kelulusan!
                                     </div>
                                 <?php endif ?>
                             <?php endif ?>
