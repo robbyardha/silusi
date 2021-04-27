@@ -12,11 +12,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
-                <li class="nav-item active">
-                    <a href="<?= base_url('Home') ?>" class="nav-link">Home</a>
+                <li class="nav-item <?php if ($this->uri->segment(1) == "Home") {
+                                        echo "active";
+                                    } ?>">
+                    <a href="<?= base_url('Home') ?>" class="nav-link ">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a href="<?= base_url('Pengumumanuser') ?>" class="nav-link">Pengumuman</a>
+                <li class="nav-item <?php if ($this->uri->segment(1) == "Pengumumanuser") {
+                                        echo "active";
+                                    } ?>">
+                    <a href="<?= base_url('Pengumumanuser') ?>" class="nav-link ">Pengumuman</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a href="#services" class="nav-link">Services</a>
