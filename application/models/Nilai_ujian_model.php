@@ -24,12 +24,12 @@ class Nilai_ujian_model extends CI_Model
 
     public function countLulus()
     {
-        $query = $this->db->query('SELECT * FROM nilai_siswa WHERE status = "Lulus"');
+        $query = $this->db->query('SELECT * FROM nilai_siswa WHERE status_lulus = "Lulus"');
         return $query->num_rows();
     }
     public function countTidakLulus()
     {
-        $query = $this->db->query('SELECT * FROM nilai_siswa WHERE status = "Tidak Lulus"');
+        $query = $this->db->query('SELECT * FROM nilai_siswa WHERE status_lulus = "Tidak Lulus"');
         return $query->num_rows();
     }
 
@@ -41,6 +41,26 @@ class Nilai_ujian_model extends CI_Model
         $this->db->join('nilai_siswa', 'nilai_siswa.siswa_id=siswa.id', 'LEFT');
         $query = $this->db->get();
         return $query->result_array();
+    }
+
+    public function joinNilaiSiswaMapel($id = null)
+    {
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel');
+        $this->db->from('nilai_siswa');
+        $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
+        $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    public function joinNilaiSiswaMapelGetWhere($id = null)
+    {
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir,siswa.status_keuangan, mapel.id AS mapel_id, mapel.nama_mapel');
+        $this->db->from('nilai_siswa');
+        $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
+        $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
+        $this->db->where('nilai_siswa.id', $id);
+        $query = $this->db->get();
+        return $query->row_array();
     }
 
     public function import()
@@ -77,22 +97,12 @@ class Nilai_ujian_model extends CI_Model
         }
     }
 
-    public function import_verify($data)
+    public function import_verify($data = null)
     {
         // var_dump($data['siswa']);
-        // // die;
-        // var_dump($data['nilai_siswa'][0]['nis']);
-        // die;
-        // // die;
-        // var_dump($data['nilai_siswa'][0]['nis']);
+        // var_dump($data['nilai_siswa']);
         // die;
 
-        for ($i = 1; $i < count($data['nilai_siswa']); $i++) {
-            var_dump($data['nilai_siswa'][$i]);
-            die;
-        }
-
-        // $this->db->empty_table('tb_absen');
         $file_mimes = array('text/x-comma-separated-values', 'text/comma-separated-values', 'application/octet-stream', 'application/vnd.ms-excel', 'application/x-csv', 'text/x-csv', 'text/csv', 'application/csv', 'application/excel', 'application/vnd.msexcel', 'text/plain', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         if (isset($_FILES['upload_file']['name']) && in_array($_FILES['upload_file']['type'], $file_mimes)) {
             $arr_file = explode('.', $_FILES['upload_file']['name']);
@@ -105,33 +115,90 @@ class Nilai_ujian_model extends CI_Model
             $spreadsheet = $reader->load($_FILES['upload_file']['tmp_name']);
             $sheetData = $spreadsheet->getActiveSheet()->toArray();
             $data = [];
-
-
-            for ($j = 1; $j < count($sheetData); $j++) {
+            for ($i = 1; $i < count($sheetData); $i++) {
                 $dataBuffer = [
-                    // 'id' => $sheetData[$j][0],
-                    'nis' => $sheetData[$j][1],
-                    'nomor_ujian' => $sheetData[$j][2],
-                    'nama' => $sheetData[$j][3],
-                    'ujian_sekolah' => $sheetData[$j][4],
-                    'usp_bks' => $sheetData[$j][5],
-                    'avg' => $sheetData[$j][6],
-                    'status' => $sheetData[$j][7],
+                    // 'id' => $sheetData[$i][0],
+                    'siswa_id' => $sheetData[$i][1],
+                    'mapel_id' => $sheetData[$i][2],
+                    'nilai_rapot' => $sheetData[$i][3],
+                    'nusp' => $sheetData[$i][4],
+                    'nsp' => $sheetData[$i][5],
+                    'avg' => $sheetData[$i][6],
+                    'status_lulus' => $sheetData[$i][7],
                 ];
                 array_push($data, $dataBuffer);
-                var_dump($this->db->last_query());
-                die;
             }
             $this->db->insert_batch('nilai_siswa', $data);
-
             $this->session->set_flashdata('nilai_siswa', 'Diimport');
             redirect('admin/nilai_ujian');
         }
     }
 
+    // public function cari($keyword)
+    // {
+
+    //     $this->db->like('nis_siswa', $keyword);
+    //     return $this->db->get('nilai_siswa')->row_array();
+    // }
     public function cari($keyword)
     {
-        $this->db->like('nis_siswa', $keyword);
-        return $this->db->get('nilai_siswa')->row_array();
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir,siswa.status_keuangan, mapel.id AS mapel_id, mapel.nama_mapel');
+        $this->db->from('nilai_siswa');
+        $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
+        $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
+        $this->db->like('nis', $keyword);
+        return $this->db->get()->row_array();
+    }
+
+    public function nilai_mapel($keyword)
+    {
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel');
+        $this->db->from('nilai_siswa');
+        $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
+        $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
+        $this->db->like('nis', $keyword);
+        return $this->db->get()->result_array();
+        // var_dump($this->db->last_query());
+        // die;
+    }
+
+    public function tambah()
+    {
+        $data = [
+            'siswa_id' => htmlspecialchars($this->input->post('nama_siswa')),
+            'mapel_id' => htmlspecialchars($this->input->post('mapel')),
+            'nilai_rapot' => htmlspecialchars($this->input->post('nilai_rapot')),
+            'nusp' => htmlspecialchars($this->input->post('nusp')),
+            'nsp' => htmlspecialchars($this->input->post('nsp')),
+            'avg' => htmlspecialchars($this->input->post('avg')),
+            'status_lulus' => htmlspecialchars($this->input->post('status_lulus')),
+
+        ];
+        $this->db->insert('nilai_siswa', $data);
+    }
+
+    public function ubah()
+    {
+        $id = htmlspecialchars($this->input->post('id'));
+        $data = [
+            'siswa_id' => htmlspecialchars($this->input->post('nama_siswa')),
+            'mapel_id' => htmlspecialchars($this->input->post('mapel')),
+            'nilai_rapot' => htmlspecialchars($this->input->post('nilai_rapot')),
+            'nusp' => htmlspecialchars($this->input->post('nusp')),
+            'nsp' => htmlspecialchars($this->input->post('nsp')),
+            'avg' => htmlspecialchars($this->input->post('avg')),
+            'status_lulus' => htmlspecialchars($this->input->post('status_lulus')),
+        ];
+        $this->db->where('id', $id);
+        $this->db->update('nilai_siswa', $data);
+    }
+
+    public function hapus()
+    {
+        $id = htmlspecialchars($this->input->post('id'));
+        $this->db->where('id', $id);
+        $this->db->delete('nilai_siswa');
+        // var_dump($this->db->last_query());
+        // die;
     }
 }

@@ -6,8 +6,8 @@
                 <div class="col-md-8 col-lg-6 col-xl-5">
                     <div class="text-center">
                         <a href="#" class="logo">
-                            <img src="<?= base_url('assets/') ?>images/logo-light.png" alt="" height="22" class="logo-light mx-auto">
-                            <img src="<?= base_url('assets/') ?>images/logo-dark.png" alt="" height="22" class="logo-dark mx-auto">
+                            <img src="<?= base_url('assets/') ?>images/arcodes.png" alt="" height="55" class="logo-light mx-auto">
+                            <img src="<?= base_url('assets/') ?>images/arcodes.png" alt="" height="85" class="logo-dark mx-auto">
                         </a>
                     </div>
                     <div class="card mt-4">

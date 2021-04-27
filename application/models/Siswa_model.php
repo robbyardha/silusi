@@ -16,6 +16,17 @@ class Siswa_model extends CI_Model
         }
     }
 
+    public function countLunas()
+    {
+        $query = $this->db->query('SELECT * FROM siswa WHERE status_keuangan = "Lunas"');
+        return $query->num_rows();
+    }
+    public function countBelumLunas()
+    {
+        $query = $this->db->query('SELECT * FROM siswa WHERE status_keuangan = "Belum Lunas"');
+        return $query->num_rows();
+    }
+
     public function tambah()
     {
         $data = [
@@ -24,6 +35,8 @@ class Siswa_model extends CI_Model
             'nama' => htmlspecialchars($this->input->post('nama')),
             'tempat_lahir' => htmlspecialchars($this->input->post('tempat_lahir')),
             'tgl_lahir' => htmlspecialchars($this->input->post('tgl_lahir')),
+            'kelas' => htmlspecialchars($this->input->post('kelas')),
+            'status_keuangan' => htmlspecialchars($this->input->post('status_keuangan')),
         ];
         $this->db->insert('siswa', $data);
     }
@@ -37,6 +50,8 @@ class Siswa_model extends CI_Model
             'nama' => htmlspecialchars($this->input->post('nama')),
             'tempat_lahir' => htmlspecialchars($this->input->post('tempat_lahir')),
             'tgl_lahir' => htmlspecialchars($this->input->post('tgl_lahir')),
+            'kelas' => htmlspecialchars($this->input->post('kelas')),
+            'status_keuangan' => htmlspecialchars($this->input->post('status_keuangan')),
 
         ];
         $this->db->where('id', $id);
@@ -72,6 +87,8 @@ class Siswa_model extends CI_Model
                     'nama' => $sheetData[$i][3],
                     'tempat_lahir' => $sheetData[$i][4],
                     'tgl_lahir' => $sheetData[$i][5],
+                    'kelas' => $sheetData[$i][6],
+                    'status_keuangan' => $sheetData[$i][7]
                 ];
                 array_push($data, $dataBuffer);
             }

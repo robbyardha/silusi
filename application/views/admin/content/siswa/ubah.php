@@ -57,6 +57,29 @@
                                                 <?= form_error('tgl_lahir', '<small class="text-danger">', '</small>') ?>
                                             </div>
                                         </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2 col-form-label" for="kelas">Kelas</label>
+                                            <div class="col-md-10">
+                                                <input type="text" name="kelas" id="kelas" class="form-control" value="<?= $siswa['kelas'] ?>">
+                                                <small class="text-muted">contoh: IPA</small>
+                                                <?= form_error('kelas', '<small class="text-danger">', '</small>') ?>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2 col-form-label" for="status_keuangan">Status Keuangan</label>
+                                            <div class="col-md-10">
+                                                <select class="form-control" name="status_keuangan" id="status_keuangan">
+                                                    <?php if ($siswa['status_keuangan'] == "Lunas") : ?>
+                                                        <option value="Lunas" selected>Lunas</option>
+                                                        <option value="Belum Lunas">Belum Lunas</option>
+                                                    <?php elseif ($siswa['status_keuangan'] == "Belum Lunas") : ?>
+                                                        <option value="Belum Lunas" selected>Belum Lunas</option>
+                                                        <option value="Lunas">Lunas</option>
+                                                    <?php endif ?>
+                                                </select>
+                                                <?= form_error('status_keuangan', '<small class="text-danger">', '</small>') ?>
+                                            </div>
+                                        </div>
 
                                         <div class="pt-1 d-flex justify-content-end">
                                             <a href="<?= base_url('admin/siswa') ?>" class="btn btn-secondary mr-1">Batal</a>

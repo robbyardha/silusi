@@ -69,6 +69,14 @@ class Siswa extends CI_Controller
                 'required' => 'Tanggal Lahir harus diisi'
             ]
         );
+        $this->form_validation->set_rules(
+            'status_keuangan',
+            'Status Keuangan',
+            'required',
+            [
+                'required' => 'Status Keuangan harus diisi'
+            ]
+        );
 
         if ($this->form_validation->run() == FALSE) {
             $data['sidename'] = $this->session->userdata('nama');
@@ -131,6 +139,14 @@ class Siswa extends CI_Controller
             'required',
             [
                 'required' => 'Tanggal Lahir harus diisi'
+            ]
+        );
+        $this->form_validation->set_rules(
+            'status_keuangan',
+            'Status Keuangan',
+            'required',
+            [
+                'required' => 'Status Keuangan harus diisi'
             ]
         );
         if ($this->form_validation->run() == FALSE) {

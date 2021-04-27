@@ -9,6 +9,7 @@ class Admin extends CI_Controller
             redirect('admin/auth');
         }
         $this->load->model('Nilai_ujian_model');
+        $this->load->model('Siswa_model');
     }
     public function index()
     {
@@ -20,6 +21,8 @@ class Admin extends CI_Controller
         $data['nilai_count'] = $this->Nilai_ujian_model->count();
         $data['nilai_countlulus'] = $this->Nilai_ujian_model->countLulus();
         $data['nilai_counttidaklulus'] = $this->Nilai_ujian_model->countTidakLulus();
+        $data['lunas'] = $this->Siswa_model->countLunas();
+        $data['belumlunas'] = $this->Siswa_model->countBelumLunas();
         // var_dump($data['nilai_count']);
         // die;
         $this->load->view('admin/layout/header', $data);
