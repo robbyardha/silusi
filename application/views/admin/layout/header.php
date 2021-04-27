@@ -26,6 +26,8 @@
     <link href="<?= base_url('assets') ?>/libs/datatables/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
     <!-- Multi Item Selection examples -->
     <link href="<?= base_url('assets') ?>/libs/datatables/select.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <!-- Load Select 2 -->
+    <link href="<?= base_url('assets') ?>/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>

@@ -70,7 +70,8 @@
                                                         <div class="row ">
                                                             <div class="col-12 d-flex justify-content-center mt-5">
                                                                 <div class="col-3 mr-4 pr-5">
-                                                                    <img src="<?= base_url('assets/images/profile/admin.png') ?>" height="150px">
+                                                                    <!-- <img src="<?= base_url('assets/images/profile/admin.png') ?>" height="150px"> -->
+                                                                    <img src="<?= base_url('assets/images/profile/blank_profile.png') ?>" class="img-thumbnail" height="150px">
                                                                 </div>
                                                                 <div class="col-11">
                                                                     <h2>Selamat Kamu Dinyatakan <?= $nis['status_lulus'] ?>!
@@ -172,7 +173,8 @@
                                                                             <h4>Selamat Kamu telah dinyatakan <?= $nis['status_lulus'] ?> !</h4>
                                                                         </div>
                                                                     </div>
-                                                                    <?php if ($nis['status_pembayaran'] == "Lunas") : ?>
+
+                                                                    <?php if ($nis['status_keuangan'] == "Lunas") : ?>
                                                                         <a href="<?= base_url('Home/cetak_skl/') . $nis['nis'] ?>" class="btn btn-success">Cetak SKL</a>
                                                                     <?php else : ?>
                                                                         <div class="alert alert-danger" role="alert">

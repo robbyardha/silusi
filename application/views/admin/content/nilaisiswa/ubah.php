@@ -61,22 +61,22 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="number" class="form-control col-5" name="nilai_rapot" value="<?= $nilai_siswa['nilai_rapot'] ?>">
+                                                                <input type="number" class="form-control col-5" id="nilai_rapot" name="nilai_rapot" value="<?= $nilai_siswa['nilai_rapot'] ?>" onkeyup="getAverage();">
                                                                 <br>
                                                                 <?= form_error('nilai_rapot', '<small class="text-danger">', '</small>') ?>
                                                             </td>
                                                             <td>
-                                                                <input type="number" class="form-control col-5" name="nusp" value="<?= $nilai_siswa['nusp'] ?>">
+                                                                <input type="number" class="form-control col-5" id="nusp" name="nusp" value="<?= $nilai_siswa['nusp'] ?>" onkeyup="getAverage();">
                                                                 <br>
                                                                 <?= form_error('nusp', '<small class="text-danger">', '</small>') ?>
                                                             </td>
                                                             <td>
-                                                                <input type="number" class="form-control col-5" name="nsp" value="<?= $nilai_siswa['nsp'] ?>">
+                                                                <input type="number" class="form-control col-5" id="nsp" name="nsp" value="<?= $nilai_siswa['nsp'] ?>" onkeyup="getAverage();">
                                                                 <br>
                                                                 <?= form_error('nsp', '<small class="text-danger">', '</small>') ?>
                                                             </td>
                                                             <td>
-                                                                <input type="number" class="form-control col-5" name="avg" value="<?= $nilai_siswa['avg'] ?>">
+                                                                <input type="number" readonly class="form-control col-6" id="avg" name="avg" value="<?= $nilai_siswa['avg'] ?>">
                                                                 <br>
                                                                 <?= form_error('avg', '<small class="text-danger">', '</small>') ?>
                                                             </td>
@@ -100,22 +100,7 @@
                                                 <?= form_error('status_lulus', '<small class="text-danger">', '</small>') ?>
                                             </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-2 col-form-label" for="status_pembayaran">Status Pembayaran</label>
-                                            <div class="col-md-10">
-                                                <select class="form-control" id="status_pembayaran" name="status_pembayaran">
-                                                    <?php if ($nilai_siswa['status_pembayaran'] == "Lunas") : ?>
-                                                        <option value="Lunas" selected>Lunas</option>
-                                                        <option value="Belum Lunas">Belum Lunas</option>
-                                                    <?php elseif ($nilai_siswa['status_pembayaran'] == "Belum Lunas") : ?>
-                                                        <option value="Lunas">Lunas</option>
-                                                        <option value="Belum Lunas" selected>Belum Lunas</option>
-                                                    <?php endif ?>
 
-                                                </select>
-                                                <?= form_error('status_pembayaran', '<small class="text-danger">', '</small>') ?>
-                                            </div>
-                                        </div>
                                         <div class="pt-1 d-flex justify-content-end">
                                             <a href="<?= base_url('admin/nilai_ujian') ?>" class="btn btn-secondary mr-1">Batal</a>
                                             <button type="submit" class="btn btn-success btn-raised ml-1">Ubah</a>

@@ -68,11 +68,7 @@ class Nilai_ujian extends CI_Controller
             'Status Lulus',
             'required'
         );
-        $this->form_validation->set_rules(
-            'status_pembayaran',
-            'Status Pembayaran',
-            'required'
-        );
+
 
         if ($this->form_validation->run() == FALSE) {
             $data['sidename'] = $this->session->userdata('nama');
@@ -136,11 +132,7 @@ class Nilai_ujian extends CI_Controller
             'Status Lulus',
             'required'
         );
-        $this->form_validation->set_rules(
-            'status_pembayaran',
-            'Status Pembayaran',
-            'required'
-        );
+
 
         if ($this->form_validation->run() == FALSE) {
             $data['sidename'] = $this->session->userdata('nama');

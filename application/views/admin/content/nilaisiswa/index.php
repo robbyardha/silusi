@@ -38,7 +38,6 @@
                                                 <th>Nilai NSP</th>
                                                 <th>Rata-Rata Per Mapel</th>
                                                 <th>Status Kelulusan</th>
-                                                <th>Status Pembayaran</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -79,7 +78,6 @@
                                                         <?php endif ?>
                                                     </td>
                                                     <td><?= $ns['status_lulus'] ?></td>
-                                                    <td><?= $ns['status_pembayaran'] ?></td>
                                                     <td>
                                                         <a class="btn btn-success" href="<?= base_url('admin/nilai_ujian/ubah/') . $ns['id'] ?>">Ubah</a> | <a class="btn btn-danger" href="<?= base_url('admin/nilai_ujian/hapus/') . $ns['id'] ?>">Hapus</a></a>
                                                     </td>

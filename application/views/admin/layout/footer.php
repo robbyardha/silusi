@@ -31,6 +31,14 @@
     $('#datatable').DataTable()
 </script>
 
+<!-- SELECT2 -->
+<script src="<?= base_url('assets/') ?>libs/select2/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.classselect2').select2();
+    });
+</script>
+
 
 <!-- dropify -->
 <script src="<?= base_url('assets/') ?>libs/fileuploads/js/dropify.min.js"></script>
@@ -99,6 +107,27 @@
         },
     });
 </script>
+
+<script type="text/javascript">
+    function getAverage() {
+        var nilai_rapot = document.getElementById('nilai_rapot').value;
+        var nusp = document.getElementById('nusp').value;
+        var nsp = document.getElementById('nsp').value;
+        var total;
+        var avg;
+
+        if (nilai_rapot != "" && nusp != "" && nsp != "") {
+            total = parseInt(nilai_rapot) + parseInt(nusp) + parseInt(nsp);
+            avg = total / 3
+
+            // document.getElementById('avg').value = Math.round(avg);
+            // document.getElementById('avg').value = avg.toFixed(0);
+            document.getElementById('avg').value = avg.toFixed(2);
+        }
+
+    }
+</script>
+
 </body>
 
 </html>

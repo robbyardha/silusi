@@ -65,6 +65,16 @@
                                                 <?= form_error('kelas', '<small class="text-danger">', '</small>') ?>
                                             </div>
                                         </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2 col-form-label" for="status_keuangan">Status Keuangan</label>
+                                            <div class="col-md-10">
+                                                <select class="form-control" name="status_keuangan" id="status_keuangan">
+                                                    <option value="Lunas">Lunas</option>
+                                                    <option value="Belum Lunas">Belum Lunas</option>
+                                                </select>
+                                                <?= form_error('status_keuangan', '<small class="text-danger">', '</small>') ?>
+                                            </div>
+                                        </div>
 
                                         <div class="pt-1 d-flex justify-content-end">
                                             <a href="<?= base_url('admin/siswa') ?>" class="btn btn-secondary mr-1">Batal</a>
