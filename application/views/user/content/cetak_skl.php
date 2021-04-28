@@ -131,8 +131,10 @@
         }
 
         .hr-width {
-            background-color: #000000;
             width: 15cm;
+            height: 1px;
+            border-style: solid;
+            background-color: #000000;
         }
     </style>
 
@@ -151,7 +153,7 @@
             $tmp_lulus = "Taman";
             ?>
             SURAT KETERANGAN LULUS
-            <hr class="hr-width">
+            <div class="hr-width d-flex mx-auto align-self-center"></div>
             Nomor : <?= $nomor_surat ?>
         </div>
         <?php
@@ -268,7 +270,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <div class="square float-md-right mt-4"></div>
+                        <div class="square float-md-right mt-4">
+                            <p class="text-center mt-5">3X4</p>
+                        </div>
                     </div>
 
                     <div class="col">
