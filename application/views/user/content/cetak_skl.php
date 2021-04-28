@@ -110,7 +110,26 @@
         .margintop {
             margin-top: 1cm;
         }
+
+        #watermark {
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            /** The width and height may change 
+                    according to the dimensions of your letterhead
+                **/
+            width: 21.59cm;
+            height: 35.56cm;
+
+            /** Your watermark should be behind every content**/
+            z-index: -1000;
+            opacity: 0.5;
+        }
     </style>
+    <div id="watermark">
+        <img src="<?= "assets/images/ttdpakarif.png" ?>" height="100%" width="100%" />
+    </div>
+
     <div class="margintop"></div>
     <div class="cetak-skl">
         <div class="col-cetak-skl">
@@ -248,7 +267,7 @@
                             <!-- <img src="https://localhost/silusi/assets/images/exattd.png" alt="" srcset=""> -->
                             <!-- <img src="<?php echo $_SERVER["DOCUMENT_ROOT"] . '/silusi/assets/images/exattd.png'; ?>" alt="" srcset=""> -->
                             <!-- <img src="https://localhost/silusi/assets/images/exattd.png" alt="" srcset=""> -->
-                            <img src="<?= "assets/images/exattd.png" ?>" height="55px" alt="" srcset="">
+                            <img src="<?= "assets/images/ttdpakarif.png" ?>" height="55px" alt="" srcset="">
                             <br>
                             <p>
                                 <u><strong>Drs. Zainal Arif Fakhrudi</strong></u>
