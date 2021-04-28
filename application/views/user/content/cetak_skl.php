@@ -132,8 +132,8 @@
 
         .hr-width {
             width: 15cm;
-            height: 1px;
-            border-style: solid;
+            border-style: 2px solid;
+            height: 2px;
             background-color: #000000;
         }
     </style>
