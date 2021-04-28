@@ -248,7 +248,7 @@
                             <!-- <img src="https://localhost/silusi/assets/images/exattd.png" alt="" srcset=""> -->
                             <!-- <img src="<?php echo $_SERVER["DOCUMENT_ROOT"] . '/silusi/assets/images/exattd.png'; ?>" alt="" srcset=""> -->
                             <!-- <img src="https://localhost/silusi/assets/images/exattd.png" alt="" srcset=""> -->
-                            <br>
+                            <img src="<?= "assets/images/exattd.png" ?>" height="55px" alt="" srcset="">
                             <br>
                             <p>
                                 <u><strong>Drs. Zainal Arif Fakhrudi</strong></u>

@@ -42,14 +42,18 @@ class Home extends CI_Controller
         $data['jadwal'] = $this->Jadwal_pengumuman_model->getAturJadwal();
         $data['nilai'] = $this->Nilai_ujian_model->getNilaiById($nis_siswa);
         $data['nilai_mapel'] = $this->Nilai_ujian_model->nilai_mapel($nis_siswa);
-        $this->load->library('pdf');
-        $custom_paper_f4 = array(0, 0, 2100, 3300);
+        // $this->load->library('pdf');
+        // $this->pdf->setPaper('legal', 'potrait');
+        // $this->pdf->filename = "SKL_Arcds.pdf";
+        // $this->pdf->load_view('user/content/cetak_skl', $data);
+        // $custom_paper_f4 = array(0, 0, 2100, 3300);
         // $this->pdf->setPaper($custom_paper_f4, 'potrait');
-        $this->pdf->setPaper('legal', 'potrait');
         // $this->pdf->setPaper('A4', 'potrait');
-        $this->pdf->filename = "SKL_Arcds.pdf";
-        $this->pdf->load_view('user/content/cetak_skl', $data);
         // $this->pdf->load_view('user/content/cetak_skl', $data);
         // $this->load->view('user/content/cetak_skl', $data);
+        $this->load->library('pdflib');
+        $this->pdflib->setFileName('Nama_file.pdf');
+        $this->pdflib->setPaper('legal', 'potrait');
+        $this->pdflib->loadView('user/content/cetak_skl', $data);
     }
 }
