@@ -1,0 +1,98 @@
+hr {
+	display: block;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: inset;
+	width: 50%;
+	border-width: 2px;
+}
+
+.tablename {
+	font-family: Arial;
+	font-size: 12pt;
+	width: 400px;
+
+}
+
+.tabledata {
+	width: 500px;
+	size: 0px;
+	margin-left: 2cm;
+	margin-top: 1cm;
+	text-align: center;
+	font-family: arial;
+	font-size: 10pt;
+}
+
+.box1 {
+	height: 4cm;
+	width: 3cm;
+	right: 1600px;
+	position: absolute;
+	margin-top: 50px;
+
+
+}
+
+.boxttd {
+	width: 200px;
+	text-align: right;
+	margin-left: 550px;
+	margin-top: 52px;
+}
+
+p {
+	text-align: left;
+	margin-left: 20px;
+}
+
+.raport th {
+	border: 1px solid #000;
+}
+
+.raport td {
+	border: 1px solid #000;
+	font-weight: normal;
+}
+
+.khusus td {
+	text-align: center;
+	border: 2px solid #000;
+}
+
+.khusus th {
+	border: 2px solid #000;
+}
+
+td {
+	height: 30px;
+}
+
+.pagebreak {
+	page-break-after: always;
+}
+
+.pagebreak {
+	page-break-after: always;
+}
+
+.header td {
+	padding: 0px;
+	height: 25px;
+}
+
+.square {
+	height: 4cm;
+	width: 3cm;
+	border-style: solid;
+	background-color: #FFFFFF;
+}
+
+.hr-width {
+	width: 15cm;
+	border-style: 2px solid;
+	height: 2px;
+	background-color: #000000;
+}

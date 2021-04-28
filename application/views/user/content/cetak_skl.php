@@ -3,181 +3,147 @@
 
 <head>
     <meta charset="utf-8" />
-    <title><?= $title ?></title>
+    <title>Cetak SKL - <?= $nilai_mapel[0]['nis'] ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Sistem Informasi Kelulusan | SILUSI | ARDHACODES.COM" name="description" />
     <meta content="ARDHACODES" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="<?= base_url('assets/landingusers-assets/') ?>images/arcodes.ico">
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="<?= base_url('assets/landingusers-assets/') ?>css/bootstrap.min.css" type="text/css">
-
-    <!--Material Icon -->
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/landingusers-assets/') ?>css/materialdesignicons.min.css" />
-    <link href="<?= base_url('assets/') ?>css/icons.min.css" rel="stylesheet" type="text/css" />
-    <!--pe-7 Icon -->
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/landingusers-assets/') ?>css/pe-icon-7-stroke.css" />
-
-    <!-- Magnific-popup -->
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/landingusers-assets/') ?>css/magnific-popup.css">
-
-    <!-- Custom  sCss -->
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/landingusers-assets/') ?>css/style.css" />
+    <link rel="stylesheet" type="text/css" href="<?= base_url('application/views/user/content') ?>/cetak_skl.css" />
 
 </head>
 
+
 <body>
-
-    <style type="text/css">
-        @media print {
-            input.noPrint {
-                display: none;
-            }
+    <style>
+        .cetak-skl {
+            width: 850px;
+            padding: 7px;
         }
 
-        hr {
-            display: block;
-            margin-top: 0.5em;
-            margin-bottom: 0.5em;
-            margin-left: auto;
-            margin-right: auto;
-            border-style: inset;
-            width: 50%;
-            border-width: 2px;
-        }
-
-        .tablename {
-            font-family: Arial;
-            font-size: 12pt;
-            width: 400px;
-
-        }
-
-        .tabledata {
-            width: 500px;
-            size: 0px;
-            margin-left: 2cm;
-            margin-top: 1cm;
-            text-align: center;
+        .col-cetak-skl {
+            width: 735px;
             font-family: arial;
-            font-size: 10pt;
+            font-weight: bold;
+            font-size: 15pt;
+            text-align: center;
         }
 
-        .box1 {
-            height: 4cm;
-            width: 3cm;
-            right: 1600px;
-            position: absolute;
-            margin-top: 50px;
-
-
+        .head-hr {
+            width: 10cm;
+            align-items: center;
         }
 
-        .boxttd {
-            width: 200px;
-            text-align: right;
-            margin-left: 550px;
-            margin-top: 52px;
+        .pernyataan {
+            width: 700px;
+            font-family: arial;
+            font-size: 12pt;
+            text-align: left;
+            margin-left: 20px
         }
 
-        p {
+        .item-pernyataan {
+            width: 700px;
+            font-family: arial;
+            font-size: 12pt;
+            text-align: left;
+            margin-left: 10px;
+            ;
+        }
+
+        .menerangkan {
+            width: 850px;
+            font-family: arial;
+            font-size: 12pt;
             text-align: left;
             margin-left: 20px;
         }
 
-        .raport th {
-            border: 1px solid #000;
+        .table-data-diri {
+            width: 850px;
+            font-family: arial;
+            font-size: 12pt;
+            text-align: left;
+            margin-left: 40px;
         }
 
-        .raport td {
-            border: 1px solid #000;
-            font-weight: normal;
+        .sbgbrkt {
+            width: 700;
+            font-family: arial;
+            font-size: 12pt;
+            text-align: left;
         }
 
-        .khusus td {
-            text-align: center;
-            border: 2px solid #000;
-        }
-
-        .khusus th {
-            border: 2px solid #000;
-        }
-
-        td {
-            height: 30px;
-        }
-
-        .pagebreak {
-            page-break-after: always;
-        }
-
-        .pagebreak {
-            page-break-after: always;
-        }
-
-        .header td {
-            padding: 0px;
-            height: 25px;
-        }
-
-        .square {
+        .foto {
             height: 4cm;
             width: 3cm;
             border-style: solid;
             background-color: #FFFFFF;
         }
 
-        .hr-width {
-            width: 15cm;
-            border-style: 2px solid;
-            height: 2px;
-            background-color: #000000;
+
+        .ttdbox {
+            width: 500px;
+            float: right;
+            margin-top: 1cm;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Create two equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 300px;
+            /* Should be removed. Only for demonstration */
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .margintop {
+            margin-top: 1cm;
         }
     </style>
-
-
-
-
-
-
-
-    <!-- <form><input class="noPrint" type="button" value="Print" onclick="window.print()"></form> -->
-    <div class="cetak-skl" style='width: 850px;padding:7px;'>
-        <div style='width: 850px;font-family:arial;font-weight:bold;font-size:15pt;text-align:center;'>
+    <div class="margintop"></div>
+    <div class="cetak-skl">
+        <div class="col-cetak-skl">
             <?php
             $nomor_surat = "255/KET/IV.4/SMAM.1/F/2021";
             $tgl_lulus = "03 Mei 2021";
             $tmp_lulus = "Taman";
             ?>
             SURAT KETERANGAN LULUS
-            <div class="hr-width d-flex mx-auto align-self-center"></div>
+            <hr class="head-hr">
             Nomor : <?= $nomor_surat ?>
         </div>
         <?php
         $tgl = $nilai_mapel[0]['tgl_lahir'];
-        $data = date("d F Y", strtotime($tgl));
+        $new_date = date("d F Y", strtotime($tgl));
         ?>
 
-        <!--<div style='margin-top:27px;text-align:right;'>-->
         <br>
-        <div style='width: 850px;font-family:arial;font-size:11pt;text-align:left;margin-left:20px'>
+        <div class="pernyataan">
             Kepala SMA Muhammadiyah 1 Taman - Sidoarjo selaku ketua penyelenggara Ujian Sekolah Tahun Pelajaran 2020/2021 berdasarkan :
         </div>
-        <div style='width: 850px;font-family:arial;font-size:11pt;text-align:left;margin-left: 40px;;'><br>
-            1. Ketuntasan dari seluruh program pembelajaran kurikulum 2013 <br><br>
-            2. kriteria kelulusan dari satuan pendidikan sesuai dengan peraturan perundang undangan <br><br>
-            3. Rapat Pleno Dewan Penduduk Tentang Kelulusan dan pengumuman kelulusan pada tanggal <strong><?= $tgl_lulus ?></strong><br>
-            <br>
+        <div class="item-pernyataan">
+            <ol>
+                <li>Ketuntasan dari seluruh program pembelajaran kurikulum 2013</li>
+                <li>kriteria kelulusan dari satuan pendidikan sesuai dengan peraturan perundang undangan</li>
+                <li>Rapat Pleno Dewan Penduduk Tentang Kelulusan dan pengumuman kelulusan pada tanggal <strong><?= $tgl_lulus ?></strong></li>
+            </ol>
         </div>
-        <div style='width: 850px;font-family:arial;font-size:11pt;text-align:left;margin-left:20px;'>
+        <div class="menerangkan">
             Menerangkan Bahwa :
         </div>
-        <div style='width: 850px;font-family:arial;font-size:11pt;text-align:left;margin-left:40px;'>
-            <table class="tablename">
-
+        <div class="table-data-diri">
+            <table>
                 <tr>
                     <td>Nama </td>
                     <td>:</td>
@@ -196,7 +162,7 @@
                 <tr>
                     <td>Tempat, Tanggal Lahir </td>
                     <td>:</td>
-                    <td><?= $nilai_mapel[0]['tempat_lahir'] ?>, <?= $data ?><br></td>
+                    <td><?= $nilai_mapel[0]['tempat_lahir'] ?>, <?= $new_date ?><br></td>
                 </tr>
                 <tr>
                     <td>Peminatan </td>
@@ -208,25 +174,23 @@
                     <td>:</td>
                     <td><?= $nilai_mapel[0]['status_lulus'] ?></td>
                 </tr>
-
             </table>
             <br>
-            <div style='width: 700;font-family:arial;font-size:11pt;text-align:left;margin-left:16px;'>
+            <div class="sbgbrkt">
                 Dengan Nilai Sebagai Berikut
             </div>
             <?php
             $no = 1;
             ?>
-            <table class="tabledata" border='1' cellspadding='2' cellspacing='0'>
+            <table border='1' cellspadding='2' cellspacing='0' width="70%">
 
-                <thead>
+                <tr>
                     <th><strong>No</strong></th>
                     <th><strong>Nama Mata Pelajaran </strong></th>
                     <th><strong>Nilai raport</strong></th>
                     <th><strong>NUSP</strong></th>
                     <th><strong>NSP</strong></th>
-
-                </thead>
+                </tr>
                 <tbody>
                     <?php foreach ($nilai_mapel as $nm) : ?>
 
@@ -259,60 +223,44 @@
                                 ?></strong></td>
 
                     </tr>
-
                 </tbody>
             </table>
 
-
-            <div class="box1">
-
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="square float-md-right mt-4">
-                            <p class="text-center mt-5">3X4</p>
-                        </div>
+            <div class="row">
+                <div class="column">
+                    <div class="foto" style="float: right;margin-top:1cm">
+                        <p>3X4</p>
                     </div>
 
-                    <div class="col">
-                        <div class="ttd mt-4">
-                            <?= $tmp_lulus ?>, <?= $tgl_lulus ?>
+                </div>
+                <div class="column">
+                    <div>
+                        <div class="ttdbox">
+                            Taman, 03 Mei 2021
                             <br>
-                            Kepala sekolah
+                            Kepala Sekolah
                             <br>
                             <br>
+                            <?php
+                            // var_dump($_SERVER["DOCUMENT_ROOT"]);
+                            // die;
+                            ?>
+                            <!-- <img src="https://localhost/silusi/assets/images/exattd.png" alt="" srcset=""> -->
+                            <!-- <img src="<?php echo $_SERVER["DOCUMENT_ROOT"] . '/silusi/assets/images/exattd.png'; ?>" alt="" srcset=""> -->
+                            <!-- <img src="https://localhost/silusi/assets/images/exattd.png" alt="" srcset=""> -->
                             <br>
                             <br>
-
-                            <u><strong>Drs. Zainal Arif Fakhrudi</strong></u>
-                            <br>
-                            NBM.767.792
+                            <p>
+                                <u><strong>Drs. Zainal Arif Fakhrudi</strong></u>
+                                <br>
+                                NBM.767.792
+                            </p>
                         </div>
+                        <div style="clear:both"></div>
                     </div>
                 </div>
-
-
-
-
             </div>
-
-
-
-            <!-- javascript -->
-            <script src="<?= base_url('assets/landingusers-assets/') ?>js/jquery.min.js"></script>
-            <script src="<?= base_url('assets/landingusers-assets/') ?>js/bootstrap.bundle.min.js"></script>
-            <script src="<?= base_url('assets/landingusers-assets/') ?>js/jquery.easing.min.js"></script>
-            <script src="<?= base_url('assets/landingusers-assets/') ?>js/scrollspy.min.js"></script>
-
-            <!-- Magnific Popup -->
-            <script src="<?= base_url('assets/landingusers-assets/') ?>js/jquery.magnific-popup.min.js"></script>
-
-            <!-- counter js -->
-            <script src="<?= base_url('assets/landingusers-assets/') ?>js/counter.int.js"></script>
-
-            <!-- custom js -->
-            <script src="<?= base_url('assets/landingusers-assets/') ?>js/app.js"></script>
+        </div>
 </body>
 
 </html>

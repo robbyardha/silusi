@@ -22,9 +22,6 @@
                                     } ?>">
                     <a href="<?= base_url('Pengumumanuser') ?>" class="nav-link ">Pengumuman</a>
                 </li>
-                <li class="nav-item">
-                    <a href="<?= base_url('user/content/cetak_skl')?> " class="nav-link">Services</a>
-                </li>
                 <!--<li class="nav-item">
                     <a href="#demo" class="nav-link">Demos</a>
                 </li>

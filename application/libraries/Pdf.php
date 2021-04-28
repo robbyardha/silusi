@@ -1,6 +1,16 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
-
-//require_once 'dompdf/autoload.inc.php';
+/**
+ * CodeIgniter DomPDF Library
+ *
+ * Generate PDF's from HTML in CodeIgniter
+ *
+ * @packge        CodeIgniter
+ * @subpackage        Libraries
+ * @category        Libraries
+ * @author        Ardianta Pargo
+ * @license        MIT License
+ * @link        https://github.com/ardianta/codeigniter-dompdf
+ */
 
 use Dompdf\Dompdf;
 
@@ -37,7 +47,7 @@ class Pdf extends Dompdf
     public function load_view($view, $data = array())
     {
         $html = $this->ci()->load->view($view, $data, TRUE);
-        $this->loadHtml($html);
+        $this->load_html($html);
         // Render the PDF
         $this->render();
         // Output the generated PDF to Browser
