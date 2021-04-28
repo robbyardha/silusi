@@ -187,7 +187,7 @@
                 <tr>
                     <th><strong>No</strong></th>
                     <th><strong>Nama Mata Pelajaran </strong></th>
-                    <th><strong>Nilai raport</strong></th>
+                    <th><strong>NR (Nilai Rata-Rata Rapot)</strong></th>
                     <th><strong>NUSP</strong></th>
                     <th><strong>NSP</strong></th>
                 </tr>

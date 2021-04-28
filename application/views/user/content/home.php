@@ -113,7 +113,7 @@
                                                                                 <tr>
                                                                                     <th scope="col">No</th>
                                                                                     <th scope="col">Mata Pelajaran</th>
-                                                                                    <th scope="col">Nilai Rapor</th>
+                                                                                    <th scope="col">NR (Nilai Rata-Rata Rapot)</th>
                                                                                     <th scope="col">NUSP (Nilai Ujian Satuan Pendidikan)</th>
                                                                                     <th scope="col">NSP (Nilai Satuan Pendidikan)</th>
                                                                                 </tr>
