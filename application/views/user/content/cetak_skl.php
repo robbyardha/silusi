@@ -71,14 +71,19 @@
             width: 3cm;
             right: 1600px;
             position: absolute;
-            background-color: black;
             margin-top: 50px;
-            border-style: solid;
+            
 
         }
-
-        .box1 .a {
-            margin-top: 2cm;
+        .boxttd{
+            width:200px;
+            text-align:right;
+            margin-left:550px;
+            margin-top: 52px;
+        }
+        p{
+            text-align:left;
+            margin-left: 20px;
         }
 
         .raport th {
@@ -123,9 +128,9 @@
 
 
 
-    <form><input class="noPrint" type="button" value="Print" onclick="window.print()"></form>
-    <div class="cetak-skl" style='width: 700px;padding:7px;'>
-        <div style='width: 700px;font-family:arial;font-weight:bold;font-size:15pt;text-align:center;'>
+<form><input class="noPrint" type="button" value="Print" onclick="window.print()"></form>
+    <div class="cetak-skl" style='width: 850px;padding:7px;'>
+        <div style='width: 850px;font-family:arial;font-weight:bold;font-size:15pt;text-align:center;'>
             SURAT KETERANGAN LULUS
             <hr>
             Nomor : 375/KET/IV.4/SMAM.1/f/2021
@@ -137,19 +142,19 @@
 
         <!--<div style='margin-top:27px;text-align:right;'>-->
         <br>
-        <div style='width: 700;font-family:arial;font-size:11pt;text-align:left;'>
+        <div style='width: 850px;font-family:arial;font-size:11pt;text-align:left;margin-left:20px'>
             Kepala SMA Muhammadiyah 1 Taman - Sidoarjo selaku ketua penyelenggara Ujian Sekolah Tahun Pelajaran 2020/2021 berdasarkan :
-        </div><br>
-        <div style='width: 700;font-family:arial;font-size:11pt;text-align:left;margin-left: 19px;;'>
+        </div>
+        <div style='width: 850px;font-family:arial;font-size:11pt;text-align:left;margin-left: 40px;;'><br>
             1. Ketuntasan dari seluruh program pembelajaran kurikulum 2013 <br><br>
             2. kriteria kelulusan dari satuan pendidikan sesuai dengan peraturan perundang undangan <br><br>
-            3. Rapat Pleno Dewan Penduduk Tentang Kelulusan dan pengumuman kelulusan pada tanggal <strong>3 Mei 2021</dtrong><br>
+            3. Rapat Pleno Dewan Penduduk Tentang Kelulusan dan pengumuman kelulusan pada tanggal <strong>3 Mei 2021</strong><br>
                 <br>
         </div>
-        <div style='width: 700;font-family:arial;font-size:11pt;text-align:left;'>
+        <div style='width: 850px;font-family:arial;font-size:11pt;text-align:left;margin-left:20px;'>
             Menerangkan Bahwa :
         </div>
-        <div style='width: 700;font-family:arial;font-size:11pt;text-align:left;margin-left:20px;'>
+        <div style='width: 850px;font-family:arial;font-size:11pt;text-align:left;margin-left:40px;'>
             <table class="tablename">
 
                 <tr>
@@ -185,7 +190,7 @@
 
             </table>
             <br>
-            <div style='width: 700;font-family:arial;font-size:11pt;text-align:left;'>
+            <div style='width: 700;font-family:arial;font-size:11pt;text-align:left;margin-left:16px;'>
                 Dengan Nilai Sebagai Berikut
             </div>
             <?php
@@ -194,11 +199,11 @@
             <table class="tabledata" border='1' cellspadding='2' cellspacing='0'>
 
                 <thead>
-                    <th>No</th>
-                    <th>Nama Mapel </th>
-                    <th>Nilai raport</th>
-                    <th>NUSP</th>
-                    <th>NSP</th>
+                    <th><strong>No</strong></th>
+                    <th><strong>Nama Mata Pelajaran  </strong></th>
+                    <th><strong>Nilai raport</strong></th>
+                    <th><strong>NUSP</strong></th>
+                    <th><strong>NSP</strong></th>
 
                 </thead>
                 <tbody>
@@ -233,21 +238,30 @@
                                 ?></strong></td>
 
                     </tr>
-                    <!--<?php var_dump($nilai_mapel);
-                        die; ?>-->
+                    
                 </tbody>
             </table>
-            <div class="box1">
+            <div class="box1" >
 
-                <a>
-                    <center><br><br> Pas Foto 3 x 4 Cm</center>
-                </a>
+        <a><center><br><br> Pas Foto 3 x 4 Cm</center></a>
 
-            </div>
+    </div>
+    <div class="boxttd">
+        Taman, 3 mei 2021<br>
+        Kepala sekolah<br>
+        <br>
+        <br>
+        <br>
+
+        <p><u><strong>Drs. Zainal Arif Fakhrudi</strong></u>
+        <br>
+        NBM.767.792<p>
+    </div>
 
 
 
         </div>
+
 
 
         <!-- javascript -->

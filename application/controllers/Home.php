@@ -45,6 +45,6 @@ class Home extends CI_Controller
         $this->load->view('user/layout/header', $data);
         $this->load->view('user/layout/navbar');
         $this->load->view('user/content/cetak_skl', $data);
-        $this->load->view('user/layout/footer');
+        //$this->load->view('user/layout/footer');
     }
 }
