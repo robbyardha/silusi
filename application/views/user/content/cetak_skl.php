@@ -36,7 +36,7 @@
         .pernyataan {
             width: 700px;
             font-family: arial;
-            font-size: 12pt;
+            font-size: 11pt;
             text-align: left;
             margin-left: 20px
         }
@@ -53,7 +53,7 @@
         .menerangkan {
             width: 850px;
             font-family: arial;
-            font-size: 12pt;
+            font-size: 11pt;
             text-align: left;
             margin-left: 20px;
         }
@@ -61,7 +61,7 @@
         .table-data-diri {
             width: 850px;
             font-family: arial;
-            font-size: 12pt;
+            font-size: 11pt;
             text-align: left;
             margin-left: 40px;
         }
@@ -78,6 +78,8 @@
             width: 3cm;
             border-style: solid;
             background-color: #FFFFFF;
+            float: right;
+            margin-top: 1cm;
         }
 
 
@@ -113,24 +115,39 @@
 
         #watermark {
             position: fixed;
+
             bottom: 0px;
             left: 0px;
-            /** The width and height may change 
-                    according to the dimensions of your letterhead
-                **/
+
             width: 21.59cm;
+            /* width: 21.59cm; */
             height: 35.56cm;
 
-            /** Your watermark should be behind every content**/
-            z-index: -1000;
+            z-index: -1500;
             opacity: 0.5;
+            /* margin-right: 10cm; */
+        }
+
+        .bg-watermark {
+            /* position: absolute; */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            margin-top: 1.3cm;
+            margin-right: 15cm;
+            padding-right: 50cm;
         }
     </style>
     <div id="watermark">
-        <img src="<?= "assets/images/ttdpakarif.png" ?>" height="100%" width="100%" />
+        <img class="bg-watermark" src="<?= "assets/images/legalletter.jpg" ?>" height="100%" width="100%" />
     </div>
 
-    <div class="margintop"></div>
+    <div class="margintop">
+        <br>
+        <br>
+        <br>
+    </div>
     <div class="cetak-skl">
         <div class="col-cetak-skl">
             <?php
@@ -147,7 +164,6 @@
         $new_date = date("d F Y", strtotime($tgl));
         ?>
 
-        <br>
         <div class="pernyataan">
             Kepala SMA Muhammadiyah 1 Taman - Sidoarjo selaku ketua penyelenggara Ujian Sekolah Tahun Pelajaran 2020/2021 berdasarkan :
         </div>
@@ -194,10 +210,8 @@
                     <td><?= $nilai_mapel[0]['status_lulus'] ?></td>
                 </tr>
             </table>
+            Dengan Nilai Sebagai Berikut
             <br>
-            <div class="sbgbrkt">
-                Dengan Nilai Sebagai Berikut
-            </div>
             <?php
             $no = 1;
             ?>
@@ -222,8 +236,6 @@
                         </tr>
 
                     <?php endforeach ?>
-
-
                     <tr>
                         <td colspan="4"><strong>Rata Rata</strong></td>
                         <td colspan="1"><Strong>
@@ -240,14 +252,13 @@
 
                                 echo (number_format($result, 2));
                                 ?></strong></td>
-
                     </tr>
                 </tbody>
             </table>
 
             <div class="row">
                 <div class="column">
-                    <div class="foto" style="float: right;margin-top:1cm">
+                    <div class="foto">
                         <p>3X4</p>
                     </div>
 

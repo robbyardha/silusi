@@ -32,6 +32,9 @@ class PDFlib extends Dompdf
         $html = $this->ci->load->view($viewFile, $data, true);
         $this->loadHtml($html);
         $this->render();
+        $canvas = $this->getCanvas();
+        $w = $canvas->get_width();
+        $h = $canvas->get_height();
         $this->stream($this->filename, ['Attachment' => 0]);
     }
 }
