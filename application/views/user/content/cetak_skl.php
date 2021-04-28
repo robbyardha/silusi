@@ -72,17 +72,19 @@
             right: 1600px;
             position: absolute;
             margin-top: 50px;
-            
+
 
         }
-        .boxttd{
-            width:200px;
-            text-align:right;
-            margin-left:550px;
+
+        .boxttd {
+            width: 200px;
+            text-align: right;
+            margin-left: 550px;
             margin-top: 52px;
         }
-        p{
-            text-align:left;
+
+        p {
+            text-align: left;
             margin-left: 20px;
         }
 
@@ -120,6 +122,18 @@
             padding: 0px;
             height: 25px;
         }
+
+        .square {
+            height: 4cm;
+            width: 3cm;
+            border-style: solid;
+            background-color: #FFFFFF;
+        }
+
+        .hr-width {
+            background-color: #000000;
+            width: 15cm;
+        }
     </style>
 
 
@@ -128,12 +142,17 @@
 
 
 
-<form><input class="noPrint" type="button" value="Print" onclick="window.print()"></form>
+    <!-- <form><input class="noPrint" type="button" value="Print" onclick="window.print()"></form> -->
     <div class="cetak-skl" style='width: 850px;padding:7px;'>
         <div style='width: 850px;font-family:arial;font-weight:bold;font-size:15pt;text-align:center;'>
+            <?php
+            $nomor_surat = "255/KET/IV.4/SMAM.1/F/2021";
+            $tgl_lulus = "03 Mei 2021";
+            $tmp_lulus = "Taman";
+            ?>
             SURAT KETERANGAN LULUS
-            <hr>
-            Nomor : 375/KET/IV.4/SMAM.1/f/2021
+            <hr class="hr-width">
+            Nomor : <?= $nomor_surat ?>
         </div>
         <?php
         $tgl = $nilai_mapel[0]['tgl_lahir'];
@@ -148,8 +167,8 @@
         <div style='width: 850px;font-family:arial;font-size:11pt;text-align:left;margin-left: 40px;;'><br>
             1. Ketuntasan dari seluruh program pembelajaran kurikulum 2013 <br><br>
             2. kriteria kelulusan dari satuan pendidikan sesuai dengan peraturan perundang undangan <br><br>
-            3. Rapat Pleno Dewan Penduduk Tentang Kelulusan dan pengumuman kelulusan pada tanggal <strong>3 Mei 2021</strong><br>
-                <br>
+            3. Rapat Pleno Dewan Penduduk Tentang Kelulusan dan pengumuman kelulusan pada tanggal <strong><?= $tgl_lulus ?></strong><br>
+            <br>
         </div>
         <div style='width: 850px;font-family:arial;font-size:11pt;text-align:left;margin-left:20px;'>
             Menerangkan Bahwa :
@@ -200,7 +219,7 @@
 
                 <thead>
                     <th><strong>No</strong></th>
-                    <th><strong>Nama Mata Pelajaran  </strong></th>
+                    <th><strong>Nama Mata Pelajaran </strong></th>
                     <th><strong>Nilai raport</strong></th>
                     <th><strong>NUSP</strong></th>
                     <th><strong>NSP</strong></th>
@@ -238,46 +257,58 @@
                                 ?></strong></td>
 
                     </tr>
-                    
+
                 </tbody>
             </table>
-            <div class="box1" >
-
-        <a><center><br><br> Pas Foto 3 x 4 Cm</center></a>
-
-    </div>
-    <div class="boxttd">
-        Taman, 3 mei 2021<br>
-        Kepala sekolah<br>
-        <br>
-        <br>
-        <br>
-
-        <p><u><strong>Drs. Zainal Arif Fakhrudi</strong></u>
-        <br>
-        NBM.767.792<p>
-    </div>
 
 
+            <div class="box1">
 
-        </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="square float-md-right mt-4"></div>
+                    </div>
+
+                    <div class="col">
+                        <div class="ttd mt-4">
+                            <?= $tmp_lulus ?>, <?= $tgl_lulus ?>
+                            <br>
+                            Kepala sekolah
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+                            <u><strong>Drs. Zainal Arif Fakhrudi</strong></u>
+                            <br>
+                            NBM.767.792
+                        </div>
+                    </div>
+                </div>
 
 
 
-        <!-- javascript -->
-        <script src="<?= base_url('assets/landingusers-assets/') ?>js/jquery.min.js"></script>
-        <script src="<?= base_url('assets/landingusers-assets/') ?>js/bootstrap.bundle.min.js"></script>
-        <script src="<?= base_url('assets/landingusers-assets/') ?>js/jquery.easing.min.js"></script>
-        <script src="<?= base_url('assets/landingusers-assets/') ?>js/scrollspy.min.js"></script>
 
-        <!-- Magnific Popup -->
-        <script src="<?= base_url('assets/landingusers-assets/') ?>js/jquery.magnific-popup.min.js"></script>
+            </div>
 
-        <!-- counter js -->
-        <script src="<?= base_url('assets/landingusers-assets/') ?>js/counter.int.js"></script>
 
-        <!-- custom js -->
-        <script src="<?= base_url('assets/landingusers-assets/') ?>js/app.js"></script>
+
+            <!-- javascript -->
+            <script src="<?= base_url('assets/landingusers-assets/') ?>js/jquery.min.js"></script>
+            <script src="<?= base_url('assets/landingusers-assets/') ?>js/bootstrap.bundle.min.js"></script>
+            <script src="<?= base_url('assets/landingusers-assets/') ?>js/jquery.easing.min.js"></script>
+            <script src="<?= base_url('assets/landingusers-assets/') ?>js/scrollspy.min.js"></script>
+
+            <!-- Magnific Popup -->
+            <script src="<?= base_url('assets/landingusers-assets/') ?>js/jquery.magnific-popup.min.js"></script>
+
+            <!-- counter js -->
+            <script src="<?= base_url('assets/landingusers-assets/') ?>js/counter.int.js"></script>
+
+            <!-- custom js -->
+            <script src="<?= base_url('assets/landingusers-assets/') ?>js/app.js"></script>
 </body>
 
 </html>
