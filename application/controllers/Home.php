@@ -24,6 +24,10 @@ class Home extends CI_Controller
         $data['jadwal'] = $this->Jadwal_pengumuman_model->getAturJadwal();
         $data['nilai'] = $this->Nilai_ujian_model->getNilai();
         $data['nilai_mapel'] = $this->Nilai_ujian_model->nilai_mapel($keyword);
+        $data['nilai_sum'] = $this->Nilai_ujian_model->nilai_sum($keyword);
+        $data['getnumrowsmapel'] = $this->Nilai_ujian_model->getNumRowsMapel($keyword);
+        var_dump($data['getnumrowsmapel']);
+        die;
         // var_dump($data['nilai_mapel']);
         // die;
         // var_dump($this->db->last_query());
@@ -42,6 +46,10 @@ class Home extends CI_Controller
         $data['jadwal'] = $this->Jadwal_pengumuman_model->getAturJadwal();
         $data['nilai'] = $this->Nilai_ujian_model->getNilaiById($nis_siswa);
         $data['nilai_mapel'] = $this->Nilai_ujian_model->nilai_mapel($nis_siswa);
+        $data['nilai_sum'] = $this->Nilai_ujian_model->nilai_sum($keyword);
+        $data['getnumrowsmapel'] = $this->Nilai_ujian_model->getNumRowsMapel($keyword);
+        // var_dump($data['nilai_sum']);
+        // die;
         // $this->load->library('pdf');
         // $this->pdf->setPaper('legal', 'potrait');
         // $this->pdf->filename = "SKL_Arcds.pdf";
