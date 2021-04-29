@@ -150,14 +150,16 @@
                                                                                     //echo ($sum_nsp);
                                                                                     // $count_mapel = count($nilai_mapel);
                                                                                     // $result = $sum_avg / $count_mapel;
+                                                                                    // var
                                                                                     if ($nilai_mapel[0]['kelas'] == "IPA") {
                                                                                         $sum_avg_ipa = $nilai_sum[0]['SUM(nsp)'];
                                                                                         // $sum_avg_ipa = $nilai_mapel[0]['nsp'] + $nilai_mapel[1]['nsp'] + $nilai_mapel[2]['nsp'] + $nilai_mapel[3]['nsp'] + $nilai_mapel[4]['nsp'] + $nilai_mapel[5]['nsp'] + $nilai_mapel[6]['nsp'] + $nilai_mapel[7]['nsp'] + $nilai_mapel[8]['nsp'] + $nilai_mapel[9]['nsp'] + $nilai_mapel[10]['nsp'] + $nilai_mapel[11]['nsp'] + $nilai_mapel[12]['nsp'] + $nilai_mapel[13]['nsp'] +  $nilai_mapel[18]['nsp'];
-                                                                                        $count_mapel_ipa = 19;
+                                                                                        $count_mapel_ipa = $getnumrowsmapel;
                                                                                         $result = $sum_avg_ipa / $count_mapel_ipa;
                                                                                     } elseif ($nilai_mapel[0]['kelas'] == "IPS") {
-                                                                                        $sum_avg_ips = $nilai_mapel[0]['nsp'] + $nilai_mapel[1]['nsp'] + $nilai_mapel[2]['nsp'] + $nilai_mapel[3]['nsp'] + $nilai_mapel[4]['nsp'] + $nilai_mapel[5]['nsp'] + $nilai_mapel[6]['nsp'] + $nilai_mapel[7]['nsp'] + $nilai_mapel[8]['nsp'] + $nilai_mapel[9]['nsp'] + $nilai_mapel[14]['nsp'] + $nilai_mapel[15]['nsp'] + $nilai_mapel[16]['nsp'] + $nilai_mapel[17]['nsp'] + $nilai_mapel[18]['nsp'];
-                                                                                        $count_mapel_ips = 15;
+                                                                                        // $sum_avg_ips = $nilai_mapel[0]['nsp'] + $nilai_mapel[1]['nsp'] + $nilai_mapel[2]['nsp'] + $nilai_mapel[3]['nsp'] + $nilai_mapel[4]['nsp'] + $nilai_mapel[5]['nsp'] + $nilai_mapel[6]['nsp'] + $nilai_mapel[7]['nsp'] + $nilai_mapel[8]['nsp'] + $nilai_mapel[9]['nsp'] + $nilai_mapel[14]['nsp'] + $nilai_mapel[15]['nsp'] + $nilai_mapel[16]['nsp'] + $nilai_mapel[17]['nsp'] + $nilai_mapel[18]['nsp'];
+                                                                                        $sum_avg_ips =  $nilai_sum[0]['SUM(nsp)'];
+                                                                                        $count_mapel_ips = $getnumrowsmapel;
                                                                                         $result = $sum_avg_ips / $count_mapel_ips;
                                                                                     }
                                                                                     // echo (ceil($result, 3));

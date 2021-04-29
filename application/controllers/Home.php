@@ -26,8 +26,8 @@ class Home extends CI_Controller
         $data['nilai_mapel'] = $this->Nilai_ujian_model->nilai_mapel($keyword);
         $data['nilai_sum'] = $this->Nilai_ujian_model->nilai_sum($keyword);
         $data['getnumrowsmapel'] = $this->Nilai_ujian_model->getNumRowsMapel($keyword);
-        var_dump($data['getnumrowsmapel']);
-        die;
+        // var_dump($data['getnumrowsmapel']);
+        // die;
         // var_dump($data['nilai_mapel']);
         // die;
         // var_dump($this->db->last_query());
