@@ -36,7 +36,7 @@
         .pernyataan {
             width: 700px;
             font-family: arial;
-            font-size: 11pt;
+            font-size: 12pt;
             text-align: left;
             margin-left: 20px
         }
@@ -53,7 +53,7 @@
         .menerangkan {
             width: 850px;
             font-family: arial;
-            font-size: 11pt;
+            font-size: 12pt;
             text-align: left;
             margin-left: 20px;
         }
@@ -61,7 +61,7 @@
         .table-data-diri {
             width: 850px;
             font-family: arial;
-            font-size: 11pt;
+            font-size: 12pt;
             text-align: left;
             margin-left: 40px;
         }
@@ -97,8 +97,10 @@
         .column {
             float: left;
             width: 50%;
-            padding: 10px;
-            height: 300px;
+            height: 100px;
+            padding-right: 10px;
+            /* padding: 10px; */
+            /* height: 300px; */
             /* Should be removed. Only for demonstration */
         }
 
@@ -119,9 +121,9 @@
             bottom: 0px;
             left: 0px;
 
-            width: 21.59cm;
+            width: 21cm;
             /* width: 21.59cm; */
-            height: 35.56cm;
+            height: 33cm;
 
             z-index: -1500;
             opacity: 0.5;
@@ -144,7 +146,6 @@
     </div>
 
     <div class="margintop">
-        <br>
         <br>
         <br>
     </div>
@@ -240,16 +241,22 @@
                         <td colspan="4"><strong>Rata Rata</strong></td>
                         <td colspan="1"><Strong>
                                 <?php
+                                // var_dump($nilai_sum);
+                                // die;
                                 if ($nilai_mapel[0]['kelas'] == "IPA") {
-                                    $sum_avg_ipa = $nilai_mapel[0]['nsp'] + $nilai_mapel[1]['nsp'] + $nilai_mapel[2]['nsp'] + $nilai_mapel[3]['nsp'] + $nilai_mapel[4]['nsp'] + $nilai_mapel[5]['nsp'] + $nilai_mapel[6]['nsp'] + $nilai_mapel[7]['nsp'] + $nilai_mapel[8]['nsp'] + $nilai_mapel[9]['nsp'] + $nilai_mapel[10]['nsp'] + $nilai_mapel[11]['nsp'] + $nilai_mapel[12]['nsp'] + $nilai_mapel[13]['nsp'] +  $nilai_mapel[18]['nsp'];
-                                    $count_mapel_ipa = 15;
+                                    $sum_avg_ipa = $nilai_sum[0]['SUM(nsp)'];
+                                    // $sum_avg_ipa = $nilai_mapel[0]['nsp'] + $nilai_mapel[1]['nsp'] + $nilai_mapel[2]['nsp'] + $nilai_mapel[3]['nsp'] + $nilai_mapel[4]['nsp'] + $nilai_mapel[5]['nsp'] + $nilai_mapel[6]['nsp'] + $nilai_mapel[7]['nsp'] + $nilai_mapel[8]['nsp'] + $nilai_mapel[9]['nsp'] + $nilai_mapel[10]['nsp'] + $nilai_mapel[11]['nsp'] + $nilai_mapel[12]['nsp'] + $nilai_mapel[13]['nsp'] +  $nilai_mapel[18]['nsp'];
+                                    $count_mapel_ipa = $getnumrowsmapel;
                                     $result = $sum_avg_ipa / $count_mapel_ipa;
                                 } elseif ($nilai_mapel[0]['kelas'] == "IPS") {
-                                    $sum_avg_ips = $nilai_mapel[0]['nsp'] + $nilai_mapel[1]['nsp'] + $nilai_mapel[2]['nsp'] + $nilai_mapel[3]['nsp'] + $nilai_mapel[4]['nsp'] + $nilai_mapel[5]['nsp'] + $nilai_mapel[6]['nsp'] + $nilai_mapel[7]['nsp'] + $nilai_mapel[8]['nsp'] + $nilai_mapel[9]['nsp'] + $nilai_mapel[14]['nsp'] + $nilai_mapel[15]['nsp'] + $nilai_mapel[16]['nsp'] + $nilai_mapel[17]['nsp'] + $nilai_mapel[18]['nsp'];
-                                    $count_mapel_ips = 15;
+                                    // $sum_avg_ips = $nilai_mapel[0]['nsp'] + $nilai_mapel[1]['nsp'] + $nilai_mapel[2]['nsp'] + $nilai_mapel[3]['nsp'] + $nilai_mapel[4]['nsp'] + $nilai_mapel[5]['nsp'] + $nilai_mapel[6]['nsp'] + $nilai_mapel[7]['nsp'] + $nilai_mapel[8]['nsp'] + $nilai_mapel[9]['nsp'] + $nilai_mapel[14]['nsp'] + $nilai_mapel[15]['nsp'] + $nilai_mapel[16]['nsp'] + $nilai_mapel[17]['nsp'] + $nilai_mapel[18]['nsp'];
+                                    $sum_avg_ips =  $nilai_sum[0]['SUM(nsp)'];
+                                    $count_mapel_ips = $getnumrowsmapel;
                                     $result = $sum_avg_ips / $count_mapel_ips;
                                 }
-
+                                // echo (ceil($result, 3));
+                                // echo (floor($result, 3));
+                                // echo (round($result, 3));
                                 echo (number_format($result, 2));
                                 ?></strong></td>
                     </tr>
@@ -257,7 +264,7 @@
             </table>
 
             <div class="row">
-                <div class="column">
+                <div class="column" style="margin-right: 1.2cm;">
                     <div class="foto">
                         <p>3X4</p>
                     </div>

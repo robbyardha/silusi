@@ -38,7 +38,7 @@ class Home extends CI_Controller
         $this->load->view('user/layout/footer');
     }
 
-    public function cetak_skl($nis_siswa = null, $keyword = null)
+    public function cetak_skl($nis_siswa = null)
     {
         $data['title'] = "SILUSI - Landing";
         $data['sekolah'] = $this->Sekolah_model->getSekolah();
@@ -46,8 +46,8 @@ class Home extends CI_Controller
         $data['jadwal'] = $this->Jadwal_pengumuman_model->getAturJadwal();
         $data['nilai'] = $this->Nilai_ujian_model->getNilaiById($nis_siswa);
         $data['nilai_mapel'] = $this->Nilai_ujian_model->nilai_mapel($nis_siswa);
-        $data['nilai_sum'] = $this->Nilai_ujian_model->nilai_sum($keyword);
-        $data['getnumrowsmapel'] = $this->Nilai_ujian_model->getNumRowsMapel($keyword);
+        $data['nilai_sum'] = $this->Nilai_ujian_model->nilai_sum($nis_siswa);
+        $data['getnumrowsmapel'] = $this->Nilai_ujian_model->getNumRowsMapel($nis_siswa);
         // var_dump($data['nilai_sum']);
         // die;
         // $this->load->library('pdf');
@@ -60,8 +60,8 @@ class Home extends CI_Controller
         // $this->pdf->load_view('user/content/cetak_skl', $data);
         // $this->load->view('user/content/cetak_skl', $data);
         $this->load->library('pdflib');
-        $this->pdflib->setFileName('Nama_file.pdf');
-        $this->pdflib->setPaper('legal', 'potrait');
+        $this->pdflib->setFileName('Surat Keterangan Lulus2021.pdf');
+        $this->pdflib->setPaper('folio', 'potrait');
         $this->pdflib->loadView('user/content/cetak_skl', $data);
     }
 }
