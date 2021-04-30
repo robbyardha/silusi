@@ -74,8 +74,8 @@
                                                                     <img src="<?= base_url('assets/images/profile/blank_profile.png') ?>" class="img-thumbnail" height="150px">
                                                                 </div>
                                                                 <div class="col-11">
-                                                                    <h2>Selamat Kamu Dinyatakan <?= $nis['status_lulus'] ?>!
-                                                                        <h4>Berikut Adalah Detail Informasi Kamu</h4>
+                                                                    <h2>Selamat Ananda Dinyatakan <?= $nis['status_lulus'] ?>!
+                                                                        <h4>Berikut Adalah Detail Informasi Ananda</h4>
                                                                     </h2>
                                                                     <br>
                                                                     <div class="form-group row">
@@ -175,7 +175,7 @@
                                                                     <div class="form-group row">
                                                                         <label class="col-md-2 col-form-label" for="status">Status</label>
                                                                         <div class="col-md-10">
-                                                                            <h4>Selamat Kamu telah dinyatakan <?= $nis['status_lulus'] ?> !</h4>
+                                                                            <h4>Selamat Ananda telah dinyatakan <?= $nis['status_lulus'] ?> !</h4>
                                                                         </div>
                                                                     </div>
 
@@ -183,7 +183,7 @@
                                                                         <a href="<?= base_url('Home/cetak_skl/') . $nis['nis'] ?>" class="btn btn-success">Cetak SKL</a>
                                                                     <?php else : ?>
                                                                         <div class="alert alert-danger" role="alert">
-                                                                            Maaf Kamu tidak bisa mencetak SKL karena Status Pembayaranmu saat ini masih belum Lunas, silahkan lunasi pada Devisi Keuangan!
+                                                                            Maaf Ananda tidak bisa mencetak SKL karena Status Pembayaranmu saat ini masih belum Lunas, silahkan lunasi pada Devisi Keuangan!
                                                                         </div>
                                                                     <?php endif ?>
                                                                 </div>
@@ -240,7 +240,7 @@
                                                                     <div class="form-group row">
                                                                         <label class="col-md-2 col-form-label" for="status">Status</label>
                                                                         <div class="col-md-10">
-                                                                            <h4>Mohon Maaf saat ini Nilai Kamu belum mencukupi kriteria, kamu dinyatakan <strong><?= $nis['status'] ?> !.</strong>Tetap semangat jangan menyerah!</h4>
+                                                                            <h4>Mohon Maaf saat ini Nilai Ananda belum mencukupi kriteria, Ananda dinyatakan <strong><?= $nis['status'] ?> !.</strong>Tetap semangat jangan menyerah!</h4>
                                                                         </div>
                                                                     </div>
                                                                 </div>

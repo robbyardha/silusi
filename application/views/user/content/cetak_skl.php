@@ -172,7 +172,7 @@
             <ol>
                 <li>Ketuntasan dari seluruh program pembelajaran kurikulum 2013</li>
                 <li>kriteria kelulusan dari satuan pendidikan sesuai dengan peraturan perundang undangan</li>
-                <li>Rapat Pleno Dewan Penduduk Tentang Kelulusan dan pengumuman kelulusan pada tanggal <strong><?= $tgl_lulus ?></strong></li>
+                <li>Rapat Pleno Dewan Guru Tentang Kelulusan dan pengumuman kelulusan pada tanggal <strong><?= $tgl_lulus ?></strong></li>
             </ol>
         </div>
         <div class="menerangkan">
