@@ -31,6 +31,7 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>Nama Mapel</th>
+                                                <th>Kelompok Mapel</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -40,6 +41,7 @@
                                                 <tr>
                                                     <td><?= $no++ ?></td>
                                                     <td><?= $m['nama_mapel'] ?></td>
+                                                    <td><?= $m['kelompok_mapel'] ?></td>
                                                     <td>
                                                         <a href="<?= base_url('admin/mapel/ubah/') ?><?= $m['id'] ?> " class="btn btn-success">Ubah</a>
                                                         <a href="<?= base_url('admin/mapel/hapus/') ?><?= $m['id'] ?>" class="btn btn-danger">Hapus</a>

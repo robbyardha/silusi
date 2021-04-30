@@ -24,7 +24,40 @@
                                                 <?= form_error('nama_mapel', '<small class="text-danger">', '</small>') ?>
                                             </div>
                                         </div>
-
+                                        <div class="form-group row">
+                                            <label class="col-md-2 col-form-label" for="kelompok">Kelompok</label>
+                                            <div class="col-md-10">
+                                                <select name="kelompok" id="kelompok" class="form-control">
+                                                    <?php if ($mapel['kelompok_mapel'] == "Kelompok A Umum") : ?>
+                                                        <option value="Kelompok A Umum" selected>Kelompok A Umum</option>
+                                                        <option value="Kelompok B Umum">Kelompok B Umum</option>
+                                                        <option value="Kelompok C Peminatan dan Lintas Minat">Kelompok C Peminatan dan Lintas Minat</option>
+                                                        <option value="Lintas Minat">Lintas Minat</option>
+                                                    <?php elseif ($mapel['kelompok_mapel'] == "Kelompok B Umum") : ?>
+                                                        <option value="Kelompok B Umum" selected>Kelompok B Umum</option>
+                                                        <option value="Kelompok A Umum">Kelompok A Umum</option>
+                                                        <option value="Kelompok C Peminatan dan Lintas Minat">Kelompok C Peminatan dan Lintas Minat</option>
+                                                        <option value="Lintas Minat">Lintas Minat</option>
+                                                    <?php elseif ($mapel['kelompok_mapel'] == "Kelompok C Peminatan dan Lintas Minat") : ?>
+                                                        <option value="Kelompok C Peminatan dan Lintas Minat" selected>Kelompok C Peminatan dan Lintas Minat</option>
+                                                        <option value="Kelompok A Umum">Kelompok A Umum</option>
+                                                        <option value="Kelompok B Umum">Kelompok B Umum</option>
+                                                        <option value="Lintas Minat">Lintas Minat</option>
+                                                    <?php elseif ($mapel['kelompok_mapel'] == "Lintas Minat") : ?>
+                                                        <option value="Lintas Minat" selected>Lintas Minat</option>
+                                                        <option value="Kelompok A Umum">Kelompok A Umum</option>
+                                                        <option value="Kelompok B Umum">Kelompok B Umum</option>
+                                                        <option value="Kelompok C Peminatan dan Lintas Minat">Kelompok C Peminatan dan Lintas Minat</option>
+                                                    <?php else : ?>
+                                                        <option value="Kelompok A Umum">Kelompok A Umum</option>
+                                                        <option value="Kelompok B Umum">Kelompok B Umum</option>
+                                                        <option value="Kelompok C Peminatan dan Lintas Minat">Kelompok C Peminatan dan Lintas Minat</option>
+                                                        <option value="Lintas Minat">Lintas Minat</option>
+                                                    <?php endif ?>
+                                                </select>
+                                                <?= form_error('kelompok', '<small class="text-danger">', '</small>') ?>
+                                            </div>
+                                        </div>
                                         <div class="pt-1 d-flex justify-content-end">
                                             <a href="<?= base_url('admin/mapel') ?>" class="btn btn-secondary mr-1">Batal</a>
                                             <button type="submit" class="btn btn-success btn-raised ml-1">Ubah</a>

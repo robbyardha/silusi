@@ -23,6 +23,18 @@
                                                 <?= form_error('nama_mapel', '<small class="text-danger">', '</small>') ?>
                                             </div>
                                         </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2 col-form-label" for="kelompok">Kelompok</label>
+                                            <div class="col-md-10">
+                                                <select name="kelompok" id="kelompok" class="form-control">
+                                                    <option value="Kelompok A Umum">Kelompok A Umum</option>
+                                                    <option value="Kelompok B Umum">Kelompok B Umum</option>
+                                                    <option value="Kelompok C Peminatan dan Lintas Minat">Kelompok C Peminatan dan Lintas Minat</option>
+                                                    <option value="Lintas Minat">Lintas Minat</option>
+                                                </select>
+                                                <?= form_error('kelompok', '<small class="text-danger">', '</small>') ?>
+                                            </div>
+                                        </div>
 
                                         <div class="pt-1 d-flex justify-content-end">
                                             <a href="<?= base_url('admin/mapel') ?>" class="btn btn-secondary mr-1">Batal</a>

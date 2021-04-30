@@ -19,7 +19,8 @@ class Mapel_model extends CI_Model
     public function tambah()
     {
         $data = [
-            'nama_mapel' => htmlspecialchars($this->input->post('nama_mapel'))
+            'nama_mapel' => htmlspecialchars($this->input->post('nama_mapel')),
+            'kelompok_mapel' => htmlspecialchars($this->input->post('kelompok'))
         ];
         $this->db->insert('mapel', $data);
     }
@@ -28,14 +29,18 @@ class Mapel_model extends CI_Model
     {
         $id = htmlspecialchars($this->input->post('id'));
         $nama_mapel = htmlspecialchars($this->input->post('nama_mapel'));
+        $kelompok_mapel = htmlspecialchars($this->input->post('kelompok'));
         $this->db->set('nama_mapel', $nama_mapel);
-        $this->db->update('mapel', ['id' => $id]);
+        $this->db->set('kelompok_mapel', $kelompok_mapel);
+        $this->db->where('id', $id);
+        $this->db->update('mapel');
     }
 
     public function hapus()
     {
         $id = htmlspecialchars($this->input->post('id'));
-        $this->db->delete('mapel', ['id' => $id]);
+        $this->db->where('id', $id);
+        $this->db->delete('mapel');
     }
 
     public function importExcel()
@@ -57,6 +62,7 @@ class Mapel_model extends CI_Model
                 $dataBuffer = [
                     // 'id' => $sheetData[$i][0],
                     'nama_mapel' => $sheetData[$i][1],
+                    'kelompok_mapel' => $sheetData[$i][2],
                 ];
                 array_push($data, $dataBuffer);
             }

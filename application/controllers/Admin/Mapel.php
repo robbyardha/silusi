@@ -36,6 +36,14 @@ class Mapel extends CI_Controller
                 'required' => 'Mata Pelajaran Harus diisi'
             ]
         );
+        $this->form_validation->set_rules(
+            'kelompok',
+            'Kelompok Mata Pelajaran',
+            'required',
+            [
+                'required' => 'Kelompok Mata Pelajaran Harus diisi'
+            ]
+        );
         if ($this->form_validation->run() == FALSE) {
             $data['sidename'] = $this->session->userdata('nama');
             $data['current_user'] = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
