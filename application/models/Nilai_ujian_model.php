@@ -173,6 +173,17 @@ class Nilai_ujian_model extends CI_Model
         // var_dump($this->db->last_query());
         // die;
     }
+    public function nilai_sum_nusp($keyword)
+    {
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, SUM(nusp)');
+        $this->db->from('nilai_siswa');
+        $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
+        $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
+        $this->db->like('nis', $keyword);
+        return $this->db->get()->result_array();
+        // var_dump($this->db->last_query());
+        // die;
+    }
 
     public function getNumRowsMapel($keyword)
     {

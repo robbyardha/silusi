@@ -98,7 +98,7 @@
             float: left;
             width: 50%;
             height: 100px;
-            padding-right: 1px;
+            padding-right: 10px;
             /* padding: 10px; */
             /* height: 300px; */
             /* Should be removed. Only for demonstration */
@@ -122,7 +122,6 @@
             left: 0px;
 
             width: 21cm;
-            background-position: center;
             /* width: 21.59cm; */
             height: 33cm;
 
@@ -222,7 +221,9 @@
                 <tr>
                     <th><strong>No</strong></th>
                     <th><strong>Nama Mata Pelajaran </strong></th>
+                    <th><strong>NR (Nilai Rata-Rata Rapot)</strong></th>
                     <th><strong>NUSP</strong></th>
+                    <th><strong>NSP</strong></th>
                 </tr>
                 <tbody>
                     <?php foreach ($nilai_mapel as $nm) : ?>
@@ -230,24 +231,26 @@
                         <tr>
                             <td><?= $no++ ?></td>
                             <td><?= $nm['nama_mapel'] ?></td>
+                            <td><?= $nm['nilai_rapot'] ?></td>
                             <td><?= $nm['nusp'] ?></td>
+                            <td><?= $nm['nsp'] ?></td>
                         </tr>
 
                     <?php endforeach ?>
                     <tr>
-                        <td colspan="2"><strong>Rata Rata</strong></td>
+                        <td colspan="4"><strong>Rata Rata</strong></td>
                         <td colspan="1"><Strong>
                                 <?php
                                 // var_dump($nilai_sum);
                                 // die;
                                 if ($nilai_mapel[0]['kelas'] == "IPA") {
-                                    $sum_avg_ipa = $nilai_sum_nusp[0]['SUM(nusp)'];
+                                    $sum_avg_ipa = $nilai_sum[0]['SUM(nsp)'];
                                     // $sum_avg_ipa = $nilai_mapel[0]['nsp'] + $nilai_mapel[1]['nsp'] + $nilai_mapel[2]['nsp'] + $nilai_mapel[3]['nsp'] + $nilai_mapel[4]['nsp'] + $nilai_mapel[5]['nsp'] + $nilai_mapel[6]['nsp'] + $nilai_mapel[7]['nsp'] + $nilai_mapel[8]['nsp'] + $nilai_mapel[9]['nsp'] + $nilai_mapel[10]['nsp'] + $nilai_mapel[11]['nsp'] + $nilai_mapel[12]['nsp'] + $nilai_mapel[13]['nsp'] +  $nilai_mapel[18]['nsp'];
                                     $count_mapel_ipa = $getnumrowsmapel;
                                     $result = $sum_avg_ipa / $count_mapel_ipa;
                                 } elseif ($nilai_mapel[0]['kelas'] == "IPS") {
                                     // $sum_avg_ips = $nilai_mapel[0]['nsp'] + $nilai_mapel[1]['nsp'] + $nilai_mapel[2]['nsp'] + $nilai_mapel[3]['nsp'] + $nilai_mapel[4]['nsp'] + $nilai_mapel[5]['nsp'] + $nilai_mapel[6]['nsp'] + $nilai_mapel[7]['nsp'] + $nilai_mapel[8]['nsp'] + $nilai_mapel[9]['nsp'] + $nilai_mapel[14]['nsp'] + $nilai_mapel[15]['nsp'] + $nilai_mapel[16]['nsp'] + $nilai_mapel[17]['nsp'] + $nilai_mapel[18]['nsp'];
-                                    $sum_avg_ips =  $nilai_sum_nusp[0]['SUM(nusp)'];
+                                    $sum_avg_ips =  $nilai_sum[0]['SUM(nsp)'];
                                     $count_mapel_ips = $getnumrowsmapel;
                                     $result = $sum_avg_ips / $count_mapel_ips;
                                 }
@@ -263,7 +266,7 @@
             <div class="row">
                 <div class="column" style="margin-right: 1.2cm;">
                     <div class="foto">
-                        <p>3X4 <br> Berwarna</p>
+                        <p>3X4</p>
                     </div>
 
                 </div>
@@ -285,7 +288,7 @@
                             <img src="<?= "assets/images/ttdpakarif.png" ?>" height="55px" alt="" srcset="">
                             <br>
                             <p>
-                                <u><strong>Drs. Zainal Arif Fakhrudi, M.M.</strong></u>
+                                <u><strong>Drs. Zainal Arif Fakhrudi</strong></u>
                                 <br>
                                 NBM.767.792
                             </p>

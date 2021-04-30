@@ -183,7 +183,7 @@
                                                                         <a href="<?= base_url('Home/cetak_skl/') . $nis['nis'] ?>" class="btn btn-success">Cetak SKL</a>
                                                                     <?php else : ?>
                                                                         <div class="alert alert-danger" role="alert">
-                                                                            Maaf Ananda tidak bisa mencetak SKL karena Status Pembayaranmu saat ini masih belum Lunas, silahkan lunasi pada Devisi Keuangan!
+                                                                            Maaf ananda belum bisa mencetak SKL, silahkan menghubungi wali kelas
                                                                         </div>
                                                                     <?php endif ?>
                                                                 </div>
