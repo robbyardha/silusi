@@ -38,7 +38,8 @@ class Tahunajaran_model extends CI_Model
     public function hapus()
     {
         $id = htmlspecialchars($this->input->post('id'));
-        $this->db->delete('tahun_ajaran', ['id' => $id]);
+        $this->db->where('id', $id);
+        $this->db->delete('tahun_ajaran');
     }
 
     public function aktifkan()

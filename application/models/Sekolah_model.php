@@ -78,6 +78,9 @@ class Sekolah_model extends CI_Model
     public function hapus()
     {
         $id = $this->input->post('id', TRUE);
-        $this->db->delete('sekolah', ['id' => $id]);
+        $this->db->where('id', $id);
+        $this->db->delete('sekolah');
+        // var_dump($this->db->last_query());
+        // die;
     }
 }

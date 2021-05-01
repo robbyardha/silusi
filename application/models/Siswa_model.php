@@ -61,7 +61,8 @@ class Siswa_model extends CI_Model
     public function hapus()
     {
         $id = htmlspecialchars($this->input->post('id'));
-        $this->db->delete('siswa', ['id' => $id]);
+        $this->db->where('id', $id);
+        $this->db->delete('siswa');
     }
 
     public function import()
