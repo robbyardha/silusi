@@ -75,7 +75,7 @@
                                                                 </div>
                                                                 <div class="col-11">
                                                                     <h2>Selamat Ananda Dinyatakan <?= $nis['status_lulus'] ?>!
-                                                                        <h4>Berikut Adalah Detail Informasi Ananda</h4>
+                                                                        <h4>Berikut Adalah Detail Informasinya</h4>
                                                                     </h2>
                                                                     <br>
                                                                     <div class="form-group row">
@@ -175,7 +175,7 @@
                                                                     <div class="form-group row">
                                                                         <label class="col-md-2 col-form-label" for="status">Status</label>
                                                                         <div class="col-md-10">
-                                                                            <h4>Selamat Ananda telah dinyatakan <?= $nis['status_lulus'] ?> !</h4>
+                                                                            <h4>Selamat Ananda telah dinyatakan <?= $nis['status_lulus'] ?></h4>
                                                                         </div>
                                                                     </div>
 
