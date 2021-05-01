@@ -24,7 +24,7 @@
             width: 735px;
             font-family: arial;
             font-weight: bold;
-            font-size: 14pt;
+            font-size: 15pt;
             text-align: center;
         }
 
@@ -36,7 +36,7 @@
         .pernyataan {
             width: 700px;
             font-family: arial;
-            font-size: 11pt;
+            font-size: 12pt;
             text-align: left;
             margin-left: 20px
         }
@@ -44,7 +44,7 @@
         .item-pernyataan {
             width: 700px;
             font-family: arial;
-            font-size: 11pt;
+            font-size: 12pt;
             text-align: left;
             margin-left: 10px;
             ;
@@ -53,7 +53,7 @@
         .menerangkan {
             width: 850px;
             font-family: arial;
-            font-size: 11pt;
+            font-size: 12pt;
             text-align: left;
             margin-left: 20px;
         }
@@ -61,7 +61,7 @@
         .table-data-diri {
             width: 850px;
             font-family: arial;
-            font-size: 11pt;
+            font-size: 12pt;
             text-align: left;
             margin-left: 40px;
         }
@@ -69,7 +69,7 @@
         .sbgbrkt {
             width: 700;
             font-family: arial;
-            font-size: 11pt;
+            font-size: 12pt;
             text-align: left;
         }
 
@@ -149,7 +149,6 @@
     <div class="margintop">
         <br>
         <br>
-        <br>
     </div>
     <div class="cetak-skl">
         <div class="col-cetak-skl">
@@ -226,50 +225,14 @@
                     <th><strong>NUSP</strong></th>
                 </tr>
                 <tbody>
-                    <tr>
-                        <td colspan="3"><?= $kelompokaumum[0]['kelompok_mapel'] ?></td>
-                    </tr>
-                    <?php foreach ($kelompokaumum as $aumum) : ?>
+                    <?php foreach ($nilai_mapel as $nm) : ?>
 
                         <tr>
                             <td><?= $no++ ?></td>
-                            <td><?= $aumum['nama_mapel'] ?></td>
-                            <td><?= $aumum['nusp'] ?></td>
+                            <td><?= $nm['nama_mapel'] ?></td>
+                            <td><?= $nm['nusp'] ?></td>
                         </tr>
-                    <?php endforeach ?>
-                    <tr>
-                        <td colspan="3">Kelompok B Umum</td>
-                    </tr>
-                    <?php foreach ($kelompokbumum as $bumum) : ?>
 
-                        <tr>
-                            <td><?= $no++ ?></td>
-                            <td><?= $bumum['nama_mapel'] ?></td>
-                            <td><?= $bumum['nusp'] ?></td>
-                        </tr>
-                    <?php endforeach ?>
-                    <tr>
-                        <td colspan="3">Kelompok C Peminatan dan Lintas Minat</td>
-                    </tr>
-
-                    <?php foreach ($kelompokcpeminatan as $cminat) : ?>
-
-                        <tr>
-                            <td><?= $no++ ?></td>
-                            <td><?= $cminat['nama_mapel'] ?></td>
-                            <td><?= $cminat['nusp'] ?></td>
-                        </tr>
-                    <?php endforeach ?>
-                    <tr>
-                        <td colspan="3">Kelompok Lintas Minat</td>
-                    </tr>
-                    <?php foreach ($kelompoklintasminat as $lintasminat) : ?>
-
-                        <tr>
-                            <td><?= $no++ ?></td>
-                            <td><?= $lintasminat['nama_mapel'] ?></td>
-                            <td><?= $lintasminat['nusp'] ?></td>
-                        </tr>
                     <?php endforeach ?>
                     <tr>
                         <td colspan="2"><strong>Rata Rata</strong></td>

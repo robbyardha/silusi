@@ -193,8 +193,56 @@ class Nilai_ujian_model extends CI_Model
         $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
         $this->db->like('nis', $keyword);
         return $this->db->get()->num_rows();
-        var_dump($this->db->last_query());
-        die;
+        // var_dump($this->db->last_query());
+        // die;
+    }
+    public function getKelompokMapelUmumA($keyword)
+    {
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
+        $this->db->from('nilai_siswa');
+        $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
+        $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
+        $this->db->like('nis', $keyword);
+        $this->db->where('mapel.kelompok_mapel = "Kelompok A Umum"');
+        return $this->db->get()->result_array();
+        // var_dump($this->db->last_query());
+        // die;
+    }
+    public function getKelompokMapelUmumB($keyword)
+    {
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
+        $this->db->from('nilai_siswa');
+        $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
+        $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
+        $this->db->like('nis', $keyword);
+        $this->db->where('mapel.kelompok_mapel = "Kelompok B Umum"');
+        return $this->db->get()->result_array();
+        // var_dump($this->db->last_query());
+        // die;
+    }
+    public function getKelompokMapelPeminatanC($keyword)
+    {
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
+        $this->db->from('nilai_siswa');
+        $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
+        $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
+        $this->db->like('nis', $keyword);
+        $this->db->where('mapel.kelompok_mapel = "Kelompok C Peminatan dan Lintas Minat"');
+        return $this->db->get()->result_array();
+        // var_dump($this->db->last_query());
+        // die;
+    }
+    public function getKelompokMapelLintasMinat($keyword)
+    {
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
+        $this->db->from('nilai_siswa');
+        $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
+        $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
+        $this->db->like('nis', $keyword);
+        $this->db->where('mapel.kelompok_mapel = "Lintas Minat"');
+        return $this->db->get()->result_array();
+        // var_dump($this->db->last_query());
+        // die;
     }
 
     public function tambah()
