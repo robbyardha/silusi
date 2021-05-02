@@ -8,6 +8,7 @@ class Home extends CI_Controller
         $this->load->model('Sekolah_model');
         $this->load->model('Pengumuman_model');
         $this->load->model('Jadwal_pengumuman_model');
+        $this->load->model('Visitor_model');
         $this->load->library('session');
     }
     public function index($keyword = null)
@@ -21,6 +22,7 @@ class Home extends CI_Controller
             $this->session->mark_as_temp('keyword', 60);
             // var_dump($this->session->mark_as_temp('keyword', 60));
             // die;
+            $this->Visitor_model->add_visitor();
         } else {
         }
 

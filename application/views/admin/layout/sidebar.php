@@ -104,6 +104,15 @@
                     </a>
                 </li>
 
+                <!-- Menu Visitor -->
+                <li class="menu-title">Visitor</li>
+                <li>
+                    <a href="<?= base_url('admin/visitor') ?>">
+                        <i class="mdi mdi-track-light"></i>
+                        <span class="badge badge-purple float-right">New</span>
+                        <span> Visitor </span>
+                    </a>
+                </li>
                 <!-- Menu Profile -->
                 <li class="menu-title">Profile</li>
                 <li>
