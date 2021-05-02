@@ -22,7 +22,7 @@ class Home extends CI_Controller
             $this->session->mark_as_temp('keyword', 60);
             // var_dump($this->session->mark_as_temp('keyword', 60));
             // die;
-            $this->Visitor_model->add_visitor();
+            // $this->Visitor_model->add_visitor();
         } else {
         }
 
