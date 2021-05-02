@@ -142,6 +142,19 @@
             padding-right: 50cm;
         }
     </style>
+    <script>
+        $(document).ready(function() {
+            window.setInterval(function() {
+                var sisawaktu = $("#waktu").html();
+                sisawaktu = eval(sisawaktu);
+                if (sisawaktu == 0) {
+                    location.href = "<?= base_url('Home') ?>";
+                } else {
+                    $("#waktu").html(sisawaktu - 1);
+                }
+            }, 2000);
+        });
+    </script>
     <div id="watermark">
         <img class="bg-watermark" src="<?= "assets/images/legalletter.jpg" ?>" height="100%" width="100%" />
     </div>

@@ -8,6 +8,7 @@ class Home extends CI_Controller
         $this->load->model('Sekolah_model');
         $this->load->model('Pengumuman_model');
         $this->load->model('Jadwal_pengumuman_model');
+        $this->load->library('session');
     }
     public function index($keyword = null)
     {
@@ -15,6 +16,11 @@ class Home extends CI_Controller
         if ($this->input->post('keyword') != null) {
             $keyword = $this->input->post('keyword');
             $data['nis'] =  $this->Nilai_ujian_model->cari($keyword);
+            $this->session->set_userdata('keyword', $keyword);
+            // 'item' will be erased after 300 seconds
+            $this->session->mark_as_temp('keyword', 60);
+            // var_dump($this->session->mark_as_temp('keyword', 60));
+            // die;
         } else {
         }
 
@@ -40,6 +46,15 @@ class Home extends CI_Controller
 
     public function cetak_skl($nis_siswa = null)
     {
+        if (!$this->session->userdata('keyword')) {
+            redirect('Home');
+        }
+        if ($this->session->mark_as_temp('keyword', 60) == false) {
+            $this->session->unset_userdata('keyword');
+            $this->session->sess_destroy();
+            redirect('Home');
+        }
+
         $data['title'] = "SILUSI - Landing";
         $data['sekolah'] = $this->Sekolah_model->getSekolah();
         $data['pengumuman'] = $this->Pengumuman_model->getPengumuman();
