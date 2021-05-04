@@ -141,6 +141,10 @@
             margin-right: 15cm;
             padding-right: 50cm;
         }
+
+        .kel-center {
+            text-align: center;
+        }
     </style>
     <script>
         $(document).ready(function() {
@@ -240,53 +244,53 @@
                 </tr>
                 <tbody>
                     <tr>
-                        <td colspan="3"><?= $kelompokaumum[0]['kelompok_mapel'] ?></td>
+                        <td colspan="3" class="kel-center"><?= $kelompokaumum[0]['kelompok_mapel'] ?></td>
                     </tr>
                     <?php foreach ($kelompokaumum as $aumum) : ?>
 
                         <tr>
-                            <td><?= $no++ ?></td>
+                            <td class="kel-center"><?= $no++ ?></td>
                             <td><?= $aumum['nama_mapel'] ?></td>
-                            <td><?= $aumum['nusp'] ?></td>
+                            <td class="kel-center"><?= $aumum['nusp'] ?></td>
                         </tr>
                     <?php endforeach ?>
                     <tr>
-                        <td colspan="3">Kelompok B Umum</td>
+                        <td colspan="3" class="kel-center">Kelompok B Umum</td>
                     </tr>
                     <?php foreach ($kelompokbumum as $bumum) : ?>
 
                         <tr>
-                            <td><?= $no++ ?></td>
+                            <td class="kel-center"><?= $no++ ?></td>
                             <td><?= $bumum['nama_mapel'] ?></td>
-                            <td><?= $bumum['nusp'] ?></td>
+                            <td class="kel-center"><?= $bumum['nusp'] ?></td>
                         </tr>
                     <?php endforeach ?>
                     <tr>
-                        <td colspan="3">Kelompok C Peminatan dan Lintas Minat</td>
+                        <td colspan="3" class="kel-center">Kelompok C Peminatan dan Lintas Minat</td>
                     </tr>
 
                     <?php foreach ($kelompokcpeminatan as $cminat) : ?>
 
                         <tr>
-                            <td><?= $no++ ?></td>
+                            <td class="kel-center"><?= $no++ ?></td>
                             <td><?= $cminat['nama_mapel'] ?></td>
-                            <td><?= $cminat['nusp'] ?></td>
+                            <td class="kel-center"><?= $cminat['nusp'] ?></td>
                         </tr>
                     <?php endforeach ?>
                     <tr>
-                        <td colspan="3">Kelompok Lintas Minat</td>
+                        <td colspan="3" class="kel-center">Kelompok Lintas Minat</td>
                     </tr>
                     <?php foreach ($kelompoklintasminat as $lintasminat) : ?>
 
                         <tr>
-                            <td><?= $no++ ?></td>
+                            <td class="kel-center"><?= $no++ ?></td>
                             <td><?= $lintasminat['nama_mapel'] ?></td>
-                            <td><?= $lintasminat['nusp'] ?></td>
+                            <td class="kel-center"><?= $lintasminat['nusp'] ?></td>
                         </tr>
                     <?php endforeach ?>
                     <tr>
                         <td colspan="2"><strong>Rata Rata</strong></td>
-                        <td colspan="1"><Strong>
+                        <td colspan="1" class="kel-center"><Strong>
                                 <?php
                                 // var_dump($nilai_sum);
                                 // die;
