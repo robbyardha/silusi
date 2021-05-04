@@ -183,7 +183,7 @@
                                                                         <a href="<?= base_url('Home/cetak_skl/') . $nis['nis'] ?>" class="btn btn-success">Cetak SKL</a>
                                                                     <?php else : ?>
                                                                         <div class="alert alert-danger" role="alert">
-                                                                            Maaf ananda belum bisa mencetak SKL, silahkan menghubungi wali kelas
+                                                                            Maaf masih belum bisa mencetak SKL karena ada persyaratan administrasi yang harus dipenuhi. SIlahkan menghubungi Wali Kelas masing-masing.
                                                                         </div>
                                                                     <?php endif ?>
                                                                 </div>
