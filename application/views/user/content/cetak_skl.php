@@ -182,7 +182,7 @@
     <div class="cetak-skl">
         <div class="col-cetak-skl">
             <?php
-            $nomor_surat = "255/KET/IV.4/SMAM.1/F/2021";
+            $nomor_surat = "255/KET/IV.4/SMAM.1/F/2022";
             $tgl_lulus = "03 Mei 2021";
             $tmp_lulus = "Taman";
             ?>
@@ -196,7 +196,7 @@
         ?>
 
         <div class="pernyataan">
-            Kepala SMA Muhammadiyah 1 Taman - Sidoarjo selaku ketua penyelenggara Ujian Sekolah Tahun Pelajaran 2020/2021 berdasarkan :
+            Kepala SMA Muhammadiyah 1 Taman - Sidoarjo selaku ketua penyelenggara Ujian Sekolah Tahun Pelajaran 2021/2022 berdasarkan :
         </div>
         <div class="item-pernyataan">
             <ol>
@@ -348,7 +348,7 @@
                 <div class="column">
                     <div>
                         <div class="ttdbox">
-                            Taman, 03 Mei 2021
+                            Taman, 05 Mei 2021
                             <br>
                             Kepala Sekolah
                             <br>
@@ -360,7 +360,7 @@
                             <!-- <img src="https://localhost/silusi/assets/images/exattd.png" alt="" srcset=""> -->
                             <!-- <img src="<?php echo $_SERVER["DOCUMENT_ROOT"] . '/silusi/assets/images/exattd.png'; ?>" alt="" srcset=""> -->
                             <!-- <img src="https://localhost/silusi/assets/images/exattd.png" alt="" srcset=""> -->
-                            <img src="<?= "assets/images/ttdpakarif.png" ?>" height="55px" alt="" srcset="">
+                            <!-- <img src="<?= "assets/images/ttdpakarif.png" ?>" height="55px" alt="" srcset=""> -->
                             <br>
                             <p>
                                 <u><strong>Drs. Zainal Arif Fakhrudi, M.M.</strong></u>
