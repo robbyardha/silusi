@@ -41,23 +41,13 @@
             margin-left: 20px
         }
 
-        .berlaku {
-            width: 700px;
-            font-family: arial;
-            font-size: 11pt;
-            text-align: justify;
-            margin-left: 20px;
-            margin-top: 3cm;
-            margin-right: 20px;
-        }
-
         .item-pernyataan {
             width: 700px;
             font-family: arial;
             font-size: 11pt;
             text-align: left;
             margin-left: 10px;
-
+            ;
         }
 
         .menerangkan {
@@ -128,13 +118,13 @@
         #watermark {
             position: fixed;
 
-            bottom: -3px;
-            left: -50px;
+            bottom: 0px;
+            left: 0px;
 
             width: 21cm;
             background-position: center;
             /* width: 21.59cm; */
-            height: 29, 7cm;
+            height: 33cm;
 
             z-index: -1500;
             /* opacity: 0.5; */
@@ -147,10 +137,9 @@
             background-repeat: no-repeat;
             background-size: cover;
             height: 100%;
-            margin-top: 1rem;
-            margin-right: 1rem;
-            padding-bottom: 1rem;
-
+            margin-top: 1.3cm;
+            margin-right: 15cm;
+            padding-right: 50cm;
         }
 
         .kel-center {
@@ -171,7 +160,7 @@
         });
     </script>
     <div id="watermark">
-        <img class="bg-watermark" src="<?= "assets/images/kopa4.jpg" ?>" height="100%" width="100%" />
+        <img class="bg-watermark" src="<?= "assets/images/legalletter.jpg" ?>" height="100%" width="100%" />
     </div>
 
     <div class="margintop">
@@ -324,19 +313,6 @@
                     </tr>
                 </tbody>
             </table>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="berlaku">
-                Surat Keterangan Lulus ini bersifat sementara hingga diterbitkannya ijazah.
-                <br>
-                Demikian Surat Keterangan Lulus ini diberikan agar dapat digunakan sebagaimana mestinya.
-                <br>
-                Apabila dikemudian hari terdapat kesalahan, maka akan dilakukan perbaikan.
-            </div>
 
             <div class="row">
                 <div class="column" style="margin-right: 1.2cm;">

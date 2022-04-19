@@ -86,7 +86,10 @@ class Home extends CI_Controller
         $this->load->library('pdflib');
         $times = time();
         $this->pdflib->setFileName("Surat Keterangan Lulus2021_$times.pdf");
-        $this->pdflib->setPaper('folio', 'potrait');
+        // $paper_size = array(0, 0, 595.28, 841.89);
+        // $this->pdflib->setPaper($paper_size);
+        $this->pdflib->setPaper('A4', 'potrait');
+        // $this->pdflib->setPaper('folio', 'potrait');
         $this->pdflib->loadView('user/content/cetak_skl', $data);
     }
 }
