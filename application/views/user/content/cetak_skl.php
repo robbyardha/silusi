@@ -24,7 +24,7 @@
             width: 735px;
             font-family: arial;
             font-weight: bold;
-            font-size: 14pt;
+            font-size: 12pt;
             text-align: center;
         }
 
@@ -183,7 +183,7 @@
         <div class="col-cetak-skl">
             <?php
             $nomor_surat = "255/KET/IV.4/SMAM.1/F/2022";
-            $tgl_lulus = "03 Mei 2021";
+            $tgl_lulus = "05 Mei 2022";
             $tmp_lulus = "Taman";
             ?>
             SURAT KETERANGAN LULUS
