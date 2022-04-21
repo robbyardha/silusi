@@ -103,7 +103,7 @@
                                                                             $current = $nis['tgl_lahir'];
                                                                             $newdate = date('d F Y', strtotime($current));
                                                                             ?>
-                                                                            <input type="text" readonly name="ttl" id="ttl" class="form-control" value="<?= $nis['tempat_lahir'] ?>, <?= $newdate ?>">
+                                                                            <input type="text" readonly name="ttl" id="ttl" class="form-control" value="<?= $nis['tempat_lahir'] ?>, <?= $nis['tanggal'] ?> <?= $nis['bulan'] ?> <?= $nis['tahun'] ?>">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row">

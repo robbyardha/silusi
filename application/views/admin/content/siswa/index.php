@@ -52,7 +52,7 @@
                                                     <td><?= $s['nis'] ?></td>
                                                     <td><?= $s['nomor_ujian'] ?></td>
                                                     <td><?= $s['nama'] ?></td>
-                                                    <td><?= $s['tempat_lahir'] ?>, <?= $newdate ?></td>
+                                                    <td><?= $s['tempat_lahir'] ?>, <?= $s['tanggal'] ?> <?= $s['bulan'] ?> <?= $s['tahun'] ?> </td>
                                                     <td><?= $s['kelas'] ?></td>
                                                     <td><?= $s['status_keuangan'] ?></td>
                                                     <td>
