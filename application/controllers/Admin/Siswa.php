@@ -62,11 +62,43 @@ class Siswa extends CI_Controller
             ]
         );
         $this->form_validation->set_rules(
+            'tanggal',
+            'Tanggal',
+            'required',
+            [
+                'required' => 'Tanggal harus diisi'
+            ]
+        );
+        $this->form_validation->set_rules(
+            'bulan',
+            'Bulan',
+            'required',
+            [
+                'required' => 'Bulan harus diisi'
+            ]
+        );
+        $this->form_validation->set_rules(
+            'tahun',
+            'Tahun',
+            'required',
+            [
+                'required' => 'Tahun harus diisi'
+            ]
+        );
+        $this->form_validation->set_rules(
             'tgl_lahir',
             'Tanggal Lahir',
             'required',
             [
                 'required' => 'Tanggal Lahir harus diisi'
+            ]
+        );
+        $this->form_validation->set_rules(
+            'kelas',
+            'Kelas',
+            'required',
+            [
+                'required' => 'Kelas harus diisi'
             ]
         );
         $this->form_validation->set_rules(
@@ -134,11 +166,43 @@ class Siswa extends CI_Controller
             ]
         );
         $this->form_validation->set_rules(
+            'tanggal',
+            'Tanggal',
+            'required',
+            [
+                'required' => 'Tanggal harus diisi'
+            ]
+        );
+        $this->form_validation->set_rules(
+            'bulan',
+            'Bulan',
+            'required',
+            [
+                'required' => 'Bulan harus diisi'
+            ]
+        );
+        $this->form_validation->set_rules(
+            'tahun',
+            'Tahun',
+            'required',
+            [
+                'required' => 'Tahun harus diisi'
+            ]
+        );
+        $this->form_validation->set_rules(
             'tgl_lahir',
             'Tanggal Lahir',
             'required',
             [
                 'required' => 'Tanggal Lahir harus diisi'
+            ]
+        );
+        $this->form_validation->set_rules(
+            'kelas',
+            'Kelas',
+            'required',
+            [
+                'required' => 'Kelas harus diisi'
             ]
         );
         $this->form_validation->set_rules(
@@ -218,6 +282,6 @@ class Siswa extends CI_Controller
     public function downloadFormat()
     {
         $this->load->helper('download');
-        force_download('upload/format_siswa.xlsx', NULL);
+        force_download('upload/format_siswa_baru.xlsx', NULL);
     }
 }

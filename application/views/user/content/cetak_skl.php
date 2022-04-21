@@ -228,7 +228,15 @@
                 <tr>
                     <td>Tempat, Tanggal Lahir </td>
                     <td>:</td>
-                    <td><?= $nilai_mapel[0]['tempat_lahir'] ?>, <?= $new_date ?><br></td>
+                    <td><?= $nilai_mapel[0]['tempat_lahir'] ?>, <?= $nilai_mapel[0]['tanggal'] ?> <?= $nilai_mapel[0]['bulan'] ?> <?= $nilai_mapel[0]['tahun'] ?><br></td>
+                    <!-- 
+                        menggunakan tanggal lama 
+                        format bahasa inggris
+                        
+                        <td><? //= $nilai_mapel[0]['tempat_lahir'] 
+                            ?>, <? //= $new_date 
+                                ?><br></td>
+                     -->
                 </tr>
                 <tr>
                     <td>Peminatan </td>

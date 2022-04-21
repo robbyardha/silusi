@@ -45,7 +45,7 @@ class Nilai_ujian_model extends CI_Model
 
     public function joinNilaiSiswaMapel($id = null)
     {
-        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tanggal, siswa.bulan, siswa.tahun, siswa.tgl_lahir, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
         $this->db->from('nilai_siswa');
         $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
         $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
@@ -54,7 +54,7 @@ class Nilai_ujian_model extends CI_Model
     }
     public function joinNilaiSiswaMapelGetWhere($id = null)
     {
-        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir,siswa.status_keuangan, mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tanggal, siswa.bulan, siswa.tahun, siswa.tgl_lahir,siswa.status_keuangan, mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
         $this->db->from('nilai_siswa');
         $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
         $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
@@ -152,7 +152,7 @@ class Nilai_ujian_model extends CI_Model
 
     public function nilai_mapel($keyword)
     {
-        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tanggal, siswa.bulan, siswa.tahun, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
         $this->db->from('nilai_siswa');
         $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
         $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
@@ -164,7 +164,7 @@ class Nilai_ujian_model extends CI_Model
 
     public function nilai_sum($keyword)
     {
-        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel, SUM(nsp)');
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tanggal, siswa.bulan, siswa.tahun, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel, SUM(nsp)');
         $this->db->from('nilai_siswa');
         $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
         $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
@@ -175,7 +175,7 @@ class Nilai_ujian_model extends CI_Model
     }
     public function nilai_sum_nusp($keyword)
     {
-        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel, SUM(nusp)');
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tanggal, siswa.bulan, siswa.tahun, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel, SUM(nusp)');
         $this->db->from('nilai_siswa');
         $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
         $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
@@ -187,7 +187,7 @@ class Nilai_ujian_model extends CI_Model
 
     public function getNumRowsMapel($keyword)
     {
-        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tanggal, siswa.bulan, siswa.tahun, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
         $this->db->from('nilai_siswa');
         $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
         $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
@@ -198,7 +198,7 @@ class Nilai_ujian_model extends CI_Model
     }
     public function getKelompokMapelUmumA($keyword)
     {
-        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tanggal, siswa.bulan, siswa.tahun, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
         $this->db->from('nilai_siswa');
         $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
         $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
@@ -210,7 +210,7 @@ class Nilai_ujian_model extends CI_Model
     }
     public function getKelompokMapelUmumB($keyword)
     {
-        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tanggal, siswa.bulan, siswa.tahun, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
         $this->db->from('nilai_siswa');
         $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
         $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
@@ -222,7 +222,7 @@ class Nilai_ujian_model extends CI_Model
     }
     public function getKelompokMapelPeminatanC($keyword)
     {
-        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tanggal, siswa.bulan, siswa.tahun, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
         $this->db->from('nilai_siswa');
         $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
         $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
@@ -234,7 +234,7 @@ class Nilai_ujian_model extends CI_Model
     }
     public function getKelompokMapelLintasMinat($keyword)
     {
-        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tanggal, siswa.bulan, siswa.tahun, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
         $this->db->from('nilai_siswa');
         $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
         $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');

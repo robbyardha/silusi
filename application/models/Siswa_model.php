@@ -34,6 +34,9 @@ class Siswa_model extends CI_Model
             'nomor_ujian' => htmlspecialchars($this->input->post('nomor_ujian')),
             'nama' => htmlspecialchars($this->input->post('nama')),
             'tempat_lahir' => htmlspecialchars($this->input->post('tempat_lahir')),
+            'tanggal' => htmlspecialchars($this->input->post('tanggal')),
+            'bulan' => htmlspecialchars($this->input->post('bulan')),
+            'tahun' => htmlspecialchars($this->input->post('tahun')),
             'tgl_lahir' => htmlspecialchars($this->input->post('tgl_lahir')),
             'kelas' => htmlspecialchars($this->input->post('kelas')),
             'status_keuangan' => htmlspecialchars($this->input->post('status_keuangan')),
@@ -49,6 +52,9 @@ class Siswa_model extends CI_Model
             'nomor_ujian' => htmlspecialchars($this->input->post('nomor_ujian')),
             'nama' => htmlspecialchars($this->input->post('nama')),
             'tempat_lahir' => htmlspecialchars($this->input->post('tempat_lahir')),
+            'tanggal' => htmlspecialchars($this->input->post('tanggal')),
+            'bulan' => htmlspecialchars($this->input->post('bulan')),
+            'tahun' => htmlspecialchars($this->input->post('tahun')),
             'tgl_lahir' => htmlspecialchars($this->input->post('tgl_lahir')),
             'kelas' => htmlspecialchars($this->input->post('kelas')),
             'status_keuangan' => htmlspecialchars($this->input->post('status_keuangan')),
@@ -87,9 +93,12 @@ class Siswa_model extends CI_Model
                     'nomor_ujian' => $sheetData[$i][2],
                     'nama' => $sheetData[$i][3],
                     'tempat_lahir' => $sheetData[$i][4],
-                    'tgl_lahir' => $sheetData[$i][5],
-                    'kelas' => $sheetData[$i][6],
-                    'status_keuangan' => $sheetData[$i][7]
+                    'tanggal' => $sheetData[$i][5],
+                    'bulan' => $sheetData[$i][6],
+                    'tahun' => $sheetData[$i][7],
+                    'tgl_lahir' => $sheetData[$i][8],
+                    'kelas' => $sheetData[$i][9],
+                    'status_keuangan' => $sheetData[$i][10]
                 ];
                 array_push($data, $dataBuffer);
             }

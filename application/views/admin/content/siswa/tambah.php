@@ -48,6 +48,43 @@
                                                 <?= form_error('tempat_lahir', '<small class="text-danger">', '</small>') ?>
                                             </div>
                                         </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2 col-form-label" for="tanggal">Tanggal Lahir</label>
+                                            <div class="col-md-10">
+                                                <input type="text" name="tanggal" id="tanggal" class="form-control">
+                                                <small class="text-muted">contoh: 05</small>
+                                                <?= form_error('tanggal', '<small class="text-danger">', '</small>') ?>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2 col-form-label" for="bulan">Bulan Lahir</label>
+                                            <div class="col-md-10">
+                                                <select class="form-control classselect2" name="bulan" id="bulan">
+                                                    <option value="Januari">Januari</option>
+                                                    <option value="Februari">Februari</option>
+                                                    <option value="Maret">Maret</option>
+                                                    <option value="April">April</option>
+                                                    <option value="Mei">Mei</option>
+                                                    <option value="Juni">Juni</option>
+                                                    <option value="Juli">Juli</option>
+                                                    <option value="Agustus">Agustus</option>
+                                                    <option value="September">September</option>
+                                                    <option value="Oktober">Oktober</option>
+                                                    <option value="November">November</option>
+                                                    <option value="Desember">Desember</option>
+                                                </select>
+                                                <small class="text-muted">contoh: Februari</small>
+                                                <?= form_error('bulan', '<small class="text-danger">', '</small>') ?>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2 col-form-label" for="tahun">Tahun Lahir</label>
+                                            <div class="col-md-10">
+                                                <input type="text" name="tahun" id="tahun" class="form-control">
+                                                <small class="text-muted">contoh: 2022</small>
+                                                <?= form_error('tahun', '<small class="text-danger">', '</small>') ?>
+                                            </div>
+                                        </div>
 
                                         <div class="form-group row">
                                             <label class="col-md-2 col-form-label" for="tgl_lahir">Tanggal Lahir</label>
