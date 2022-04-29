@@ -22,7 +22,7 @@
 
         .col-cetak-skl {
             width: 735px;
-            font-family: arial;
+            font-family: 'Times New Roman', Times, serif;
             font-weight: bold;
             font-size: 14pt;
             text-align: center;
@@ -30,7 +30,7 @@
 
         .col-lampiran {
             width: 735px;
-            font-family: arial;
+            font-family: 'Times New Roman', Times, serif;
             font-weight: bold;
             font-size: 14pt;
             text-align: center;
@@ -43,7 +43,7 @@
 
         .pernyataan {
             width: 700px;
-            font-family: arial;
+            font-family: 'Times New Roman', Times, serif;
             font-size: 12pt;
             text-align: left;
             margin-left: 20px
@@ -51,7 +51,7 @@
 
         .pernyataan2 {
             width: 645px;
-            font-family: arial;
+            font-family: 'Times New Roman', Times, serif;
             font-size: 12pt;
             text-align: left;
             margin-left: 20px;
@@ -61,7 +61,7 @@
 
         .berlaku {
             width: 700px;
-            font-family: arial;
+            font-family: 'Times New Roman', Times, serif;
             font-size: 12pt;
             text-align: justify;
             margin-left: 20px;
@@ -71,7 +71,7 @@
 
         .item-pernyataan {
             width: 700px;
-            font-family: arial;
+            font-family: 'Times New Roman', Times, serif;
             font-size: 12pt;
             text-align: left;
             margin-left: 10px;
@@ -80,7 +80,7 @@
 
         .menerangkan {
             width: 850px;
-            font-family: arial;
+            font-family: 'Times New Roman', Times, serif;
             font-size: 12pt;
             text-align: left;
             margin-left: 20px;
@@ -88,7 +88,7 @@
 
         .table-data-diri {
             width: 850px;
-            font-family: arial;
+            font-family: 'Times New Roman', Times, serif;
             font-size: 12pt;
             text-align: left;
             margin-left: 40px;
@@ -96,7 +96,7 @@
 
         .sbgbrkt {
             width: 700;
-            font-family: arial;
+            font-family: 'Times New Roman', Times, serif;
             font-size: 12pt;
             text-align: left;
         }
@@ -281,7 +281,7 @@
         <br>
         <br>
         <div class="row">
-            <div class="column" style="margin-right: 1.2cm;">
+            <div class="column" style="margin-right: 1,5 cm;">
                 <div class="foto">
                     <p>3X4 <br> Berwarna</p>
                 </div>
