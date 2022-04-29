@@ -74,7 +74,7 @@
                                                                     <img src="<?= base_url('assets/images/profile/blank_profile.png') ?>" class="img-thumbnail" height="150px">
                                                                 </div>
                                                                 <div class="col-11">
-                                                                    <h2>Selamat Ananda Dinyatakan <?= $nis['status_lulus'] ?>!
+                                                                    <h2>Selamat Ananda Dinyatakan <?= $nis['status_lulus'] ?>
                                                                         <h4>Berikut Adalah Detail Informasinya</h4>
                                                                     </h2>
                                                                     <br>
