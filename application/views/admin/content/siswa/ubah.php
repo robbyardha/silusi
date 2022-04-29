@@ -120,6 +120,14 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
+                                            <label class="col-md-2 col-form-label" for="namaortu">Nama Orangtua</label>
+                                            <div class="col-md-10">
+                                                <input type="text" name="namaortu" id="namaortu" class="form-control" value="<?= $siswa['namaortu'] ?>">
+                                                <small class="text-muted">contoh: Bambang</small>
+                                                <?= form_error('namaortu', '<small class="text-danger">', '</small>') ?>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
                                             <label class="col-md-2 col-form-label" for="kelas">Kelas</label>
                                             <div class="col-md-10">
                                                 <input type="text" name="kelas" id="kelas" class="form-control" value="<?= $siswa['kelas'] ?>">

@@ -106,6 +106,11 @@
                                                                             <input type="text" readonly name="ttl" id="ttl" class="form-control" value="<?= $nis['tempat_lahir'] ?>, <?= $nis['tanggal'] ?> <?= $nis['bulan'] ?> <?= $nis['tahun'] ?>">
                                                                         </div>
                                                                     </div>
+                                                                    <style>
+                                                                        .table {
+                                                                            text-align: left;
+                                                                        }
+                                                                    </style>
                                                                     <div class="form-group row">
                                                                         <label class="col-md-3 text-left col-form-label" for="nama">Nilai Siswa :</label>
                                                                         <table class="table table-striped">
@@ -113,9 +118,7 @@
                                                                                 <tr>
                                                                                     <th scope="col">No</th>
                                                                                     <th scope="col">Mata Pelajaran</th>
-                                                                                    <th scope="col">NR (Nilai Rata-Rata Rapot)</th>
                                                                                     <th scope="col">NUSP (Nilai Ujian Satuan Pendidikan)</th>
-                                                                                    <th scope="col">NSP (Nilai Satuan Pendidikan)</th>
                                                                                 </tr>
                                                                             </thead>
                                                                             <tbody>
@@ -126,9 +129,7 @@
                                                                                     <tr>
                                                                                         <td><?= $no++ ?></td>
                                                                                         <td><?= $np['nama_mapel'] ?></td>
-                                                                                        <td><?= $np['nilai_rapot'] ?></td>
                                                                                         <td><?= $np['nusp'] ?></td>
-                                                                                        <td><?= $np['nsp'] ?></td>
                                                                                     </tr>
 
                                                                             </tbody>
@@ -138,7 +139,7 @@
                                                                         // die;
                                                                         ?>
                                                                         <tbody>
-                                                                            <td colspan="4"><strong>Rata Rata</strong></td>
+                                                                            <td colspan="2"><strong>Rata Rata</strong></td>
                                                                             <td colspan="1"><Strong>
                                                                                     <?php
                                                                                     // var_dump($nilai_sum[0]['SUM(nsp)']);
@@ -152,13 +153,15 @@
                                                                                     // $result = $sum_avg / $count_mapel;
                                                                                     // var
                                                                                     if ($nilai_mapel[0]['kelas'] == "IPA") {
-                                                                                        $sum_avg_ipa = $nilai_sum[0]['SUM(nsp)'];
+                                                                                        // $sum_avg_ipa = $nilai_sum[0]['SUM(nsp)'];
+                                                                                        $sum_avg_ipa = $nilai_sum_nusp[0]['SUM(nusp)'];
                                                                                         // $sum_avg_ipa = $nilai_mapel[0]['nsp'] + $nilai_mapel[1]['nsp'] + $nilai_mapel[2]['nsp'] + $nilai_mapel[3]['nsp'] + $nilai_mapel[4]['nsp'] + $nilai_mapel[5]['nsp'] + $nilai_mapel[6]['nsp'] + $nilai_mapel[7]['nsp'] + $nilai_mapel[8]['nsp'] + $nilai_mapel[9]['nsp'] + $nilai_mapel[10]['nsp'] + $nilai_mapel[11]['nsp'] + $nilai_mapel[12]['nsp'] + $nilai_mapel[13]['nsp'] +  $nilai_mapel[18]['nsp'];
                                                                                         $count_mapel_ipa = $getnumrowsmapel;
                                                                                         $result = $sum_avg_ipa / $count_mapel_ipa;
                                                                                     } elseif ($nilai_mapel[0]['kelas'] == "IPS") {
                                                                                         // $sum_avg_ips = $nilai_mapel[0]['nsp'] + $nilai_mapel[1]['nsp'] + $nilai_mapel[2]['nsp'] + $nilai_mapel[3]['nsp'] + $nilai_mapel[4]['nsp'] + $nilai_mapel[5]['nsp'] + $nilai_mapel[6]['nsp'] + $nilai_mapel[7]['nsp'] + $nilai_mapel[8]['nsp'] + $nilai_mapel[9]['nsp'] + $nilai_mapel[14]['nsp'] + $nilai_mapel[15]['nsp'] + $nilai_mapel[16]['nsp'] + $nilai_mapel[17]['nsp'] + $nilai_mapel[18]['nsp'];
-                                                                                        $sum_avg_ips =  $nilai_sum[0]['SUM(nsp)'];
+                                                                                        // $sum_avg_ips =  $nilai_sum[0]['SUM(nsp)'];
+                                                                                        $sum_avg_ips = $nilai_sum_nusp[0]['SUM(nusp)'];
                                                                                         $count_mapel_ips = $getnumrowsmapel;
                                                                                         $result = $sum_avg_ips / $count_mapel_ips;
                                                                                     }

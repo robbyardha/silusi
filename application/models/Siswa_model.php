@@ -38,6 +38,7 @@ class Siswa_model extends CI_Model
             'bulan' => htmlspecialchars($this->input->post('bulan')),
             'tahun' => htmlspecialchars($this->input->post('tahun')),
             'tgl_lahir' => htmlspecialchars($this->input->post('tgl_lahir')),
+            'namaortu' => htmlspecialchars($this->input->post('namaortu')),
             'kelas' => htmlspecialchars($this->input->post('kelas')),
             'status_keuangan' => htmlspecialchars($this->input->post('status_keuangan')),
         ];
@@ -56,6 +57,7 @@ class Siswa_model extends CI_Model
             'bulan' => htmlspecialchars($this->input->post('bulan')),
             'tahun' => htmlspecialchars($this->input->post('tahun')),
             'tgl_lahir' => htmlspecialchars($this->input->post('tgl_lahir')),
+            'namaortu' => htmlspecialchars($this->input->post('namaortu')),
             'kelas' => htmlspecialchars($this->input->post('kelas')),
             'status_keuangan' => htmlspecialchars($this->input->post('status_keuangan')),
 
@@ -97,8 +99,9 @@ class Siswa_model extends CI_Model
                     'bulan' => $sheetData[$i][6],
                     'tahun' => $sheetData[$i][7],
                     'tgl_lahir' => $sheetData[$i][8],
-                    'kelas' => $sheetData[$i][9],
-                    'status_keuangan' => $sheetData[$i][10]
+                    'namaortu' => $sheetData[$i][9],
+                    'kelas' => $sheetData[$i][10],
+                    'status_keuangan' => $sheetData[$i][11]
                 ];
                 array_push($data, $dataBuffer);
             }
