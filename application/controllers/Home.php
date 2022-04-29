@@ -69,7 +69,9 @@ class Home extends CI_Controller
         $data['getnumrowsmapel'] = $this->Nilai_ujian_model->getNumRowsMapel($nis_siswa);
         $data['kelompokaumum'] = $this->Nilai_ujian_model->getKelompokMapelUmumA($nis_siswa);
         $data['kelompokbumum'] = $this->Nilai_ujian_model->getKelompokMapelUmumB($nis_siswa);
+        $data['kelompokbumummulok'] = $this->Nilai_ujian_model->getKelompokMapelUmumBMulok($nis_siswa);
         $data['kelompokcpeminatan'] = $this->Nilai_ujian_model->getKelompokMapelPeminatanC($nis_siswa);
+        $data['kelompokcpeminatanlintasminat'] = $this->Nilai_ujian_model->getKelompokMapelPeminatanCLintasminat($nis_siswa);
         $data['kelompoklintasminat'] = $this->Nilai_ujian_model->getKelompokMapelLintasMinat($nis_siswa);
         // var_dump($data['nilai_sum_nusp']);
         // die;

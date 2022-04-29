@@ -220,6 +220,18 @@ class Nilai_ujian_model extends CI_Model
         // var_dump($this->db->last_query());
         // die;
     }
+    public function getKelompokMapelUmumBMulok($keyword)
+    {
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tanggal, siswa.bulan, siswa.tahun, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
+        $this->db->from('nilai_siswa');
+        $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
+        $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
+        $this->db->like('nis', $keyword);
+        $this->db->where('mapel.kelompok_mapel = "Kelompok B Muatan Lokal"');
+        return $this->db->get()->result_array();
+        // var_dump($this->db->last_query());
+        // die;
+    }
     public function getKelompokMapelPeminatanC($keyword)
     {
         $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tanggal, siswa.bulan, siswa.tahun, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
@@ -228,6 +240,18 @@ class Nilai_ujian_model extends CI_Model
         $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
         $this->db->like('nis', $keyword);
         $this->db->where('mapel.kelompok_mapel = "Kelompok C"');
+        return $this->db->get()->result_array();
+        // var_dump($this->db->last_query());
+        // die;
+    }
+    public function getKelompokMapelPeminatanCLintasminat($keyword)
+    {
+        $this->db->select('nilai_siswa.*, siswa.id AS siswa_id, siswa.nis, siswa.nomor_ujian, siswa.nama, siswa.tempat_lahir, siswa.tanggal, siswa.bulan, siswa.tahun, siswa.tgl_lahir, siswa.kelas, siswa.status_keuangan,mapel.id AS mapel_id, mapel.nama_mapel, mapel.kelompok_mapel');
+        $this->db->from('nilai_siswa');
+        $this->db->join('siswa', 'siswa.id=nilai_siswa.siswa_id');
+        $this->db->join('mapel', 'mapel.id=nilai_siswa.mapel_id');
+        $this->db->like('nis', $keyword);
+        $this->db->where('mapel.kelompok_mapel = "Kelompok C Lintas Minat"');
         return $this->db->get()->result_array();
         // var_dump($this->db->last_query());
         // die;

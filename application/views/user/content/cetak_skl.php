@@ -342,6 +342,8 @@
         <br>
         <?php
         $no = 1;
+        $nob = 1;
+        $noc = 1;
         ?>
         <div class="table-data-diri">
             <table>
@@ -399,12 +401,23 @@
                 <tr>
                     <td colspan="3" class="kel-center">Kelompok B</td>
                 </tr>
-                <?php foreach ($kelompokbumum as $bumum) : ?>
 
+                <?php foreach ($kelompokbumum as $bumum) : ?>
                     <tr>
-                        <td class="kel-center"><?= $no++ ?></td>
+                        <td class="kel-center"><?= $nob++ ?></td>
                         <td><?= $bumum['nama_mapel'] ?></td>
                         <td class="kel-center"><?= $bumum['nusp'] ?></td>
+                    </tr>
+                <?php endforeach ?>
+
+                <tr>
+                    <td colspan="3" class="kel-center">Muatan Lokal</td>
+                </tr>
+                <?php foreach ($kelompokbumummulok as $bmulok) : ?>
+                    <tr>
+                        <td class="kel-center"><?= $nob++ ?></td>
+                        <td><?= $bmulok['nama_mapel'] ?></td>
+                        <td class="kel-center"><?= $bmulok['nusp'] ?></td>
                     </tr>
                 <?php endforeach ?>
                 <tr>
@@ -414,7 +427,7 @@
                 <?php foreach ($kelompokcpeminatan as $cminat) : ?>
 
                     <tr>
-                        <td class="kel-center"><?= $no++ ?></td>
+                        <td class="kel-center"><?= $noc++ ?></td>
                         <td><?= $cminat['nama_mapel'] ?></td>
                         <td class="kel-center"><?= $cminat['nusp'] ?></td>
                     </tr>
@@ -422,15 +435,24 @@
 
                 <!-- SESUAI FORMAT PADA WORD
 
-MENGHILANGKAN KELOMPOK PEMINATAN
--->
+                MENGHILANGKAN KELOMPOK PEMINATAN
+                -->
 
                 <!-- <tr>
                     <td colspan="3" class="kel-center">Kelompok Lintas Minat</td>
                 </tr> -->
 
+                <tr>
+                    <td colspan="3" class="kel-center">Pilihan Lintas Minat</td>
+                </tr>
+                <?php foreach ($kelompokcpeminatanlintasminat as $cminatlm) : ?>
 
-
+                    <tr>
+                        <td class="kel-center"><?= $noc++ ?></td>
+                        <td><?= $cminatlm['nama_mapel'] ?></td>
+                        <td class="kel-center"><?= $cminatlm['nusp'] ?></td>
+                    </tr>
+                <?php endforeach ?>
                 <?php foreach ($kelompoklintasminat as $lintasminat) : ?>
 
                     <tr>
